@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glu Pickem Live</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Source+Sans+3:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+  :root{
+    --bg:#F4F6F5;
+    --surface:#FFFFFF;
+    --surface-2:#EAEFEC;
+    --text:#101B15;
+    --text-dim:#5B6B62;
+    --border:#DCE3DE;
+    --accent:#1F7A3D;
+    --accent-soft:#E4F3E9;
+    --live:#B5650A;
+    --live-soft:#FBEBD9;
+    --bad:#B23A3A;
+    --bad-soft:#FBE9E9;
+    --neutral-soft:#EDEFED;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0B1210;
+      --surface:#121C17;
+      --surface-2:#182620;
+      --text:#E8EFEA;
+      --text-dim:#8FA69B;
+      --border:#233530;
+      --accent:#3FCB70;
+      --accent-soft:#153623;
+      --live:#F0A93A;
+      --live-soft:#3A2A11;
+      --bad:#E97874;
+      --bad-soft:#3A1E1E;
+      --neutral-soft:#1C2723;
+      color-scheme: dark;
+    }
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Source Sans 3', system-ui, sans-serif;
+    padding-inline:16px;
+    padding-block:20px 40px;
+  }
+  .wrap{max-width:960px; margin:0 auto;}
+
+  header.top{
+    display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:8px 20px;
+    margin-bottom:6px;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-dim);
+  }
+  h1{
+    font-family:'Barlow Condensed', sans-serif;
+    font-weight:700; text-transform:uppercase; letter-spacing:0.01em;
+    font-size:clamp(28px, 5vw, 40px);
+    margin:2px 0 0; text-wrap:balance;
+  }
+  .sub{color:var(--text-dim); font-size:14px; margin-top:4px;}
+
+  .statline{
+    display:flex; gap:14px; flex-wrap:wrap; align-items:center;
+    margin-block:16px 20px;
+  }
+  .stat{
+    background:var(--surface); border:1px solid var(--border); border-radius:10px;
+    padding:8px 14px; display:flex; flex-direction:column; gap:2px; min-width:86px;
+  }
+  .stat .n{font-family:'IBM Plex Mono', monospace; font-weight:600; font-size:20px; font-variant-numeric:tabular-nums;}
+  .stat .l{font-size:11px; color:var(--text-dim); letter-spacing:0.04em; text-transform:uppercase;}
+  .stat.good .n{color:var(--accent);}
+  .stat.bad .n{color:var(--bad);}
+
+  .refresh-row{
+    display:flex; align-items:center; gap:10px; margin-left:auto;
+  }
+  #refreshBtn{
+    font-family:'Source Sans 3', sans-serif; font-size:13px; font-weight:600;
+    background:var(--surface); color:var(--text); border:1px solid var(--border);
+    border-radius:8px; padding:7px 12px; cursor:pointer;
+  }
+  #refreshBtn:hover{background:var(--surface-2);}
+  #asof{font-size:12px; color:var(--text-dim); font-family:'IBM Plex Mono', monospace;}
+  #liveDot{display:inline-block; width:7px; height:7px; border-radius:50%; background:var(--accent); margin-right:6px; vertical-align:middle;}
+  #liveDot.off{background:var(--text-dim);}
+
+  .notice{
+    font-size:13px; background:var(--live-soft); color:var(--live); border-radius:8px;
+    padding:8px 12px; margin-bottom:16px; display:none;
+  }
+  .notice.show{display:block;}
+
+  .section-label{
+    font-family:'Barlow Condensed', sans-serif; font-weight:700; text-transform:uppercase;
+    letter-spacing:0.06em; font-size:15px; color:var(--text-dim);
+    margin:26px 0 10px; display:flex; align-items:center; gap:8px;
+  }
+  .section-label .dot{width:8px;height:8px;border-radius:50%;}
+  .section-label.live .dot{background:var(--live); box-shadow:0 0 0 3px var(--live-soft);}
+  .section-label.final .dot{background:var(--text-dim);}
+  .section-label.upcoming .dot{background:var(--border); border:1px solid var(--text-dim);}
+
+  .grid{display:flex; flex-direction:column; gap:10px;}
+
+  .card{
+    background:var(--surface); border:1px solid var(--border); border-left:4px solid var(--border);
+    border-radius:10px; padding:14px 16px; display:flex; flex-direction:column; gap:10px;
+  }
+  .card.tone-good{border-left-color:var(--accent);}
+  .card.tone-bad{border-left-color:var(--bad);}
+  .card.tone-live{border-left-color:var(--live);}
+
+  .row1{display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;}
+  .matchup{
+    font-family:'Barlow Condensed', sans-serif; font-weight:700; font-size:19px;
+    text-transform:uppercase; letter-spacing:0.01em; display:flex; align-items:baseline; gap:8px; flex-wrap:wrap;
+  }
+  .matchup .at{color:var(--text-dim); font-weight:600; font-size:14px;}
+  .pickmark{
+    font-family:'IBM Plex Mono', monospace; font-size:11px; font-weight:600;
+    color:var(--accent); background:var(--accent-soft); border-radius:5px; padding:2px 6px;
+    letter-spacing:0.03em;
+  }
+
+  .score{
+    font-family:'IBM Plex Mono', monospace; font-variant-numeric:tabular-nums;
+    display:flex; align-items:center; gap:8px; font-size:15px; white-space:nowrap;
+  }
+  .score .n{font-weight:600; font-size:18px;}
+  .badge{
+    font-family:'Source Sans 3', sans-serif; font-size:11px; font-weight:600; letter-spacing:0.04em;
+    text-transform:uppercase; padding:2px 8px; border-radius:20px;
+  }
+  .badge.live{background:var(--live-soft); color:var(--live);}
+  .badge.final{background:var(--neutral-soft); color:var(--text-dim);}
+
+  .status{
+    font-size:14.5px; line-height:1.45; color:var(--text);
+    background:var(--surface-2); border-radius:8px; padding:9px 12px;
+  }
+  .tone-good .status{background:var(--accent-soft); color:var(--text);}
+  .tone-bad .status{background:var(--bad-soft); color:var(--text);}
+  .status b{font-weight:600;}
+
+  .meta{font-size:12.5px; color:var(--text-dim); font-family:'IBM Plex Mono', monospace;}
+
+  footer{margin-top:30px; font-size:12px; color:var(--text-dim); text-align:center;}
+
+  @media (max-width:480px){
+    .matchup{font-size:17px;}
+    .score .n{font-size:16px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <div class="eyebrow">Glu Pickem Vol. 3 &middot; John Terwilliger</div>
+      <h1>Week 4 Picks</h1>
+      <div class="sub">Every pick you made, the live score, and exactly what still has to happen.</div>
+    </div>
+    <div class="refresh-row">
+      <span id="asof"><span id="liveDot"></span>loading…</span>
+      <button id="refreshBtn" type="button">Refresh</button>
+    </div>
+  </header>
+
+  <div class="notice" id="notice"></div>
+
+  <div class="statline" id="statline"></div>
+
+  <div id="sections"></div>
+
+  <footer>
+    Live scores pulled directly from ESPN's public scoreboard feed every 20 seconds while this page is open.
+  </footer>
+</div>
+
+<script>
+(function(){
+  // ---- static pick data, taken from the uploaded pickem sheet ----
+  var GAMES = [
+    {id:'g1',  away:'Chargers', awayAbbr:'LAC', home:'Bills',      homeAbbr:'BUF', pick:'home', spread:-7.5, network:null, kickoff:null, espn:{away:'LAC', home:'BUF'}},
+    {id:'g2',  away:'Panthers', awayAbbr:'CAR', home:'Browns',     homeAbbr:'CLE', pick:'home', spread:2.5,  network:null, kickoff:null, espn:{away:'CAR', home:'CLE'}},
+    {id:'g3',  away:'Jets',     awayAbbr:'NYJ', home:'Lions',      homeAbbr:'DET', pick:'home', spread:-6.5, network:null, kickoff:null, espn:{away:'NYJ', home:'DET'}},
+    {id:'g4',  away:'Texans',   awayAbbr:'HOU', home:'Colts',      homeAbbr:'IND', pick:'home', spread:2.5,  network:null, kickoff:null, espn:{away:'HOU', home:'IND'}},
+    {id:'g5',  away:'Patriots', awayAbbr:'NE',  home:'Jaguars',    homeAbbr:'JAC', pick:'away', spread:2.5,  network:null, kickoff:null, espn:{away:'NE',  home:'JAX'}},
+    {id:'g6',  away:'Chiefs',   awayAbbr:'KC',  home:'Dolphins',   homeAbbr:'MIA', pick:'away', spread:-11.5,network:null, kickoff:null, espn:{away:'KC',  home:'MIA'}},
+    {id:'g7',  away:'Titans',   awayAbbr:'TEN', home:'Giants',     homeAbbr:'NYG', pick:'away', spread:3.5,  network:null, kickoff:null, espn:{away:'TEN', home:'NYG'}},
+    {id:'g8',  away:'Bengals',  awayAbbr:'CIN', home:'Steelers',   homeAbbr:'PIT', pick:'away', spread:-3.5, network:null, kickoff:null, espn:{away:'CIN', home:'PIT'}},
+    {id:'g9',  away:'Seahawks', awayAbbr:'SEA', home:'Commanders', homeAbbr:'WAS', pick:'away', spread:-7.5, network:null, kickoff:null, espn:{away:'SEA', home:'WSH'}},
+    {id:'g10', away:'Cardinals',awayAbbr:'ARI', home:'49ers',      homeAbbr:'SF',  pick:'home', spread:-8.5, network:null, kickoff:null, espn:{away:'ARI', home:'SF'}},
+    {id:'g11', away:'Vikings',  awayAbbr:'MIN', home:'Buccaneers', homeAbbr:'TB',  pick:'home', spread:1.5,  network:null, kickoff:null, espn:{away:'MIN', home:'TB'}},
+    {id:'g12', away:'Ravens',   awayAbbr:'BAL', home:'Cowboys',    homeAbbr:'DAL', pick:'home', spread:2.5,  network:'CBS', kickoff:'Sun 4:25 PM ET', espn:{away:'BAL', home:'DAL'}},
+    {id:'g13', away:'Raiders',  awayAbbr:'LV',  home:'Saints',     homeAbbr:'NO',  pick:'home', spread:-3.5, network:'CBS', kickoff:'Sun 4:25 PM ET', espn:{away:'LV',  home:'NO'}},
+    {id:'g14', away:'Rams',     awayAbbr:'LA',  home:'Broncos',    homeAbbr:'DEN', pick:'home', spread:2.5,  network:'NBC', kickoff:'Sun 8:20 PM ET', espn:{away:'LAR', home:'DEN'}},
+    {id:'g15', away:'Eagles',   awayAbbr:'PHI', home:'Bears',      homeAbbr:'CHI', pick:'away', spread:-3.5, network:'ABC', kickoff:'Mon 8:15 PM ET', espn:{away:'PHI', home:'CHI'}}
+  ];
+
+  // fallback snapshot, used only until the first successful live fetch
+  var live = {
+    g1:{state:'final', away:16, home:24, period:4, clock:'0:00'},
+    g2:{state:'live',  away:18, home:21, period:4, clock:'1:13'},
+    g3:{state:'final', away:24, home:31, period:4, clock:'0:00'},
+    g4:{state:'final', away:17, home:19, period:4, clock:'0:00'},
+    g5:{state:'final', away:6,  home:35, period:4, clock:'0:00'},
+    g6:{state:'final', away:24, home:10, period:4, clock:'0:00'},
+    g7:{state:'final', away:7,  home:12, period:4, clock:'0:00'},
+    g8:{state:'final', away:27, home:30, period:4, clock:'0:00'},
+    g9:{state:'live',  away:31, home:33, period:4, clock:'2:00'},
+    g10:{state:'live', away:0,  home:7,  period:1, clock:'6:49'},
+    g11:{state:'live', away:10, home:7,  period:1, clock:'6:44'},
+    g12:{state:'live', away:0,  home:0,  period:1, clock:'13:18'},
+    g13:{state:'live', away:0,  home:0,  period:1, clock:'14:06'},
+    g14:{state:'pre'},
+    g15:{state:'pre'}
+  };
+  var lastUpdated = Date.now();
+  var fetchOk = false;
+  var POLL_MS = 20000;
+
+  function fmtAgo(ms){
+    var s = Math.max(0, Math.round((Date.now()-ms)/1000));
+    if (s < 60) return s + 's ago';
+    var m = Math.round(s/60);
+    if (m < 60) return m + 'm ago';
+    var h = Math.round(m/60);
+    return h + 'h ago';
+  }
+
+  function pickTeamName(g){ return g.pick === 'home' ? g.home : g.away; }
+  function pickAbbr(g){ return g.pick === 'home' ? g.homeAbbr : g.awayAbbr; }
+  function oppTeamName(g){ return g.pick === 'home' ? g.away : g.home; }
+  function ordinal(n){
+    if (n === 5) return 'OT';
+    return ['','1st','2nd','3rd','4th'][n] || ('Q'+n);
+  }
+
+  function statusFor(g, L){
+    if (!L || L.state === 'pre'){
+      return {
+        tone:'neutral', badgeText: g.kickoff || 'Upcoming',
+        line: '<b>' + pickTeamName(g) + '</b> ' + (g.spread<0 ? 'lays '+Math.abs(g.spread) : 'gets +'+g.spread) + ' once this kicks off' + (g.network ? ' on ' + g.network : '') + '.'
+      };
+    }
+    var pickScore = g.pick === 'home' ? L.home : L.away;
+    var oppScore  = g.pick === 'home' ? L.away : L.home;
+    var margin = pickScore - oppScore;
+    var cover = margin + g.spread;
+    var absCover = Math.abs(Math.round(cover*10)/10);
+    var final = L.state === 'final';
+    var timeLeft = (L.period && L.clock) ? (L.clock + ' left in ' + ordinal(L.period)) : '';
+
+    if (final){
+      if (cover > 0) return {tone:'good', badgeText:'Final', line: 'Final: <b>' + pickTeamName(g) + '</b> covered by <b>' + absCover + '</b>. Pick hits. ✅'};
+      if (cover === 0) return {tone:'neutral', badgeText:'Final', line: 'Final: landed exactly on the number. Push — stake back.'};
+      return {tone:'bad', badgeText:'Final', line: 'Final: missed the number by <b>' + absCover + '</b>. Pick misses. ❌'};
+    }
+
+    var liveBadge = ordinal(L.period) + (L.clock ? ' · ' + L.clock : '');
+    if (cover > 0){
+      var cushion = Math.floor(cover) + 1;
+      return {tone:'good', badgeText:liveBadge,
+        line: '<b>' + pickTeamName(g) + '</b> covering by <b>' + absCover + '</b> right now. ' + oppTeamName(g) + ' needs a ' + cushion + '+ point swing to flip it' + (timeLeft ? ', with ' + timeLeft + '.' : '.')};
+    } else if (cover === 0){
+      return {tone:'neutral', badgeText:liveBadge, line: 'Sitting dead on the number — the next score either way decides it' + (timeLeft ? ' (' + timeLeft + ').' : '.')};
+    } else {
+      var need = Math.ceil(absCover);
+      return {tone:'bad', badgeText:liveBadge,
+        line: '<b>' + pickTeamName(g) + '</b> needs a <b>' + need + '+ point swing</b> to get back on the right side of the number' + (timeLeft ? ', with ' + timeLeft + ' left.' : '.')};
+    }
+  }
+
+  function scoreHtml(g, L, st){
+    if (!L || L.state === 'pre') return '<span class="meta">' + (g.kickoff||'') + '</span>';
+    var badge = (L.state === 'live') ? '<span class="badge live">' + st.badgeText + '</span>' : '<span class="badge final">Final</span>';
+    return '<span class="score">' + badge +
+      '<span>' + g.awayAbbr + '</span><span class="n">' + L.away + '</span>' +
+      '<span>&ndash;</span>' +
+      '<span class="n">' + L.home + '</span><span>' + g.homeAbbr + '</span>' +
+      '</span>';
+  }
+
+  function render(){
+    var groups = {live:[], final:[], pre:[]};
+    var counts = {covering:0, trailing:0, won:0, lost:0, push:0, upcoming:0};
+
+    GAMES.forEach(function(g){
+      var L = live[g.id];
+      var st = statusFor(g, L);
+      var bucket = (!L || L.state==='pre') ? 'pre' : (L.state==='final' ? 'final' : 'live');
+      groups[bucket].push({g:g, L:L, st:st});
+      if (bucket === 'pre') counts.upcoming++;
+      else if (bucket === 'final'){ if (st.tone==='good') counts.won++; else if (st.tone==='bad') counts.lost++; else counts.push++; }
+      else { if (st.tone==='good') counts.covering++; else if (st.tone==='bad') counts.trailing++; }
+    });
+
+    document.getElementById('statline').innerHTML =
+      '<div class="stat good"><span class="n">' + counts.won + '</span><span class="l">Locked in</span></div>' +
+      '<div class="stat"><span class="n">' + counts.covering + '</span><span class="l">Covering now</span></div>' +
+      '<div class="stat bad"><span class="n">' + counts.trailing + '</span><span class="l">Trailing now</span></div>' +
+      '<div class="stat bad"><span class="n">' + counts.lost + '</span><span class="l">Lost</span></div>' +
+      '<div class="stat"><span class="n">' + counts.upcoming + '</span><span class="l">Upcoming</span></div>';
+
+    function cardHtml(item){
+      var g=item.g, L=item.L, st=item.st;
+      return '<div class="card tone-' + st.tone + '">' +
+        '<div class="row1">' +
+          '<div class="matchup">' + g.away + ' <span class="at">@</span> ' + g.home +
+            ' <span class="pickmark">PICK: ' + pickAbbr(g) + ' ' + (g.spread<0?g.spread:'+'+g.spread) + '</span></div>' +
+          scoreHtml(g, L, st) +
+        '</div>' +
+        '<div class="status">' + st.line + '</div>' +
+      '</div>';
+    }
+
+    var sections = '';
+    if (groups.live.length) sections += '<div class="section-label live"><span class="dot"></span>In progress</div><div class="grid">' + groups.live.map(cardHtml).join('') + '</div>';
+    if (groups.pre.length) sections += '<div class="section-label upcoming"><span class="dot"></span>Upcoming</div><div class="grid">' + groups.pre.map(cardHtml).join('') + '</div>';
+    if (groups.final.length) sections += '<div class="section-label final"><span class="dot"></span>Final</div><div class="grid">' + groups.final.map(cardHtml).join('') + '</div>';
+    document.getElementById('sections').innerHTML = sections;
+
+    var dot = document.getElementById('liveDot');
+    dot.className = fetchOk ? '' : 'off';
+    document.getElementById('asof').innerHTML = '<span id="liveDot" class="' + (fetchOk?'':'off') + '"></span>Updated ' + fmtAgo(lastUpdated) + (fetchOk ? '' : ' (live fetch unavailable)');
+  }
+
+  setInterval(render, 5000);
+
+  // ---- live fetch from ESPN's public scoreboard feed ----
+  function fetchScores(){
+    fetch('https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard', {cache:'no-store'})
+      .then(function(r){ if (!r.ok) throw new Error('bad response'); return r.json(); })
+      .then(function(data){
+        var byAbbr = {};
+        (data.events || []).forEach(function(ev){
+          var comp = ev.competitions && ev.competitions[0];
+          if (!comp) return;
+          var state = (ev.status && ev.status.type && ev.status.type.state) || 'pre';
+          var period = ev.status && ev.status.period;
+          var clock = ev.status && ev.status.displayClock;
+          var away, home;
+          (comp.competitors || []).forEach(function(c){
+            var entry = {abbr: c.team && c.team.abbreviation, score: parseInt(c.score, 10) || 0};
+            if (c.homeAway === 'home') home = entry; else away = entry;
+          });
+          if (!home || !away) return;
+          byAbbr[home.abbr + '|' + away.abbr] = {state:state, period:period, clock:clock, homeScore:home.score, awayScore:away.score};
+        });
+
+        var next = {};
+        var anyMatch = false;
+        GAMES.forEach(function(g){
+          var key = g.espn.home + '|' + g.espn.away;
+          var m = byAbbr[key];
+          if (!m){
+            next[g.id] = live[g.id] || {state:'pre'};
+            return;
+          }
+          anyMatch = true;
+          var st = m.state === 'post' ? 'final' : (m.state === 'in' ? 'live' : 'pre');
+          next[g.id] = {state: st, away: m.awayScore, home: m.homeScore, period: m.period, clock: m.clock};
+        });
+
+        if (anyMatch){
+          live = next;
+          lastUpdated = Date.now();
+          fetchOk = true;
+          document.getElementById('notice').className = 'notice';
+        } else {
+          throw new Error('no games matched');
+        }
+        render();
+      })
+      .catch(function(err){
+        fetchOk = false;
+        var n = document.getElementById('notice');
+        n.className = 'notice show';
+        n.textContent = 'Could not reach the live scores feed just now — showing the last data received. Will keep retrying every 20s.';
+        render();
+      });
+  }
+
+  document.getElementById('refreshBtn').addEventListener('click', fetchScores);
+
+  render();
+  fetchScores();
+  setInterval(fetchScores, POLL_MS);
+})();
+</script>
+</body>
+</html>
