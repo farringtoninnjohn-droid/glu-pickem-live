@@ -293,6 +293,20 @@
       '</span>';
   }
 
+  function situationHtml(g, L){
+    if (!L || L.state !== 'live' || !L.downDistanceText) return '';
+    var possAbbr = L.possessionAbbr;
+    var possName = possAbbr === g.homeAbbr ? g.home : (possAbbr === g.awayAbbr ? g.away : possAbbr);
+    var redzone = L.isRedZone ? ' <span class="rz">RED ZONE</span>' : '';
+    return '<div class="situation">' +
+      '<span class="ball">🏈</span>' +
+      (possName ? '<b>' + possName + '</b> ball · ' : '') +
+      L.downDistanceText +
+      (L.yardLineText ? ' · ' + L.yardLineText : '') +
+      redzone +
+      '</div>';
+  }
+
   function render(){
     var groups = {live:[], final:[], pre:[]};
     var counts = {covering:0, trailing:0, won:0, lost:0, push:0, upcoming:0};
