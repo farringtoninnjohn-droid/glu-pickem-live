@@ -155,6 +155,17 @@
 
   .meta{font-size:12.5px; color:var(--text-dim); font-family:'IBM Plex Mono', monospace;}
 
+  .situation{
+    font-size:13.5px; color:var(--text-dim); font-family:'IBM Plex Mono', monospace;
+    display:flex; align-items:center; gap:6px; margin-top:-2px;
+  }
+  .situation b{color:var(--text); font-family:'Source Sans 3', sans-serif; font-weight:600;}
+  .situation .ball{font-size:13px;}
+  .situation .rz{
+    color:var(--bad); font-weight:600; font-family:'Source Sans 3', sans-serif;
+    font-size:11px; letter-spacing:0.04em; background:var(--bad-soft); border-radius:20px; padding:1px 7px;
+  }
+
   footer{margin-top:30px; font-size:12px; color:var(--text-dim); text-align:center;}
 
   @media (max-width:480px){
@@ -167,9 +178,9 @@
 <div class="wrap">
   <header class="top">
     <div>
-      <div class="eyebrow">Glu Pickem Vol. 3 &middot; John Terwilliger</div>
+      <div class="eyebrow">SLU602 &middot; John Terwilliger</div>
       <h1>Week 4 Picks</h1>
-      <div class="sub">Every pick you made, the live score, and exactly what still has to happen.</div>
+      <div class="sub">Every pick you made, the live score, and exactly what still has to happen. Tiebreaker: 45 total points, ATL @ NO.</div>
     </div>
     <div class="refresh-row">
       <span id="asof"><span id="liveDot"></span>loading…</span>
@@ -192,40 +203,30 @@
 (function(){
   // ---- static pick data, taken from the uploaded pickem sheet ----
   var GAMES = [
-    {id:'g1',  away:'Chargers', awayAbbr:'LAC', home:'Bills',      homeAbbr:'BUF', pick:'home', spread:-7.5, network:null, kickoff:null, espn:{away:'LAC', home:'BUF'}},
-    {id:'g2',  away:'Panthers', awayAbbr:'CAR', home:'Browns',     homeAbbr:'CLE', pick:'home', spread:2.5,  network:null, kickoff:null, espn:{away:'CAR', home:'CLE'}},
-    {id:'g3',  away:'Jets',     awayAbbr:'NYJ', home:'Lions',      homeAbbr:'DET', pick:'home', spread:-6.5, network:null, kickoff:null, espn:{away:'NYJ', home:'DET'}},
-    {id:'g4',  away:'Texans',   awayAbbr:'HOU', home:'Colts',      homeAbbr:'IND', pick:'home', spread:2.5,  network:null, kickoff:null, espn:{away:'HOU', home:'IND'}},
-    {id:'g5',  away:'Patriots', awayAbbr:'NE',  home:'Jaguars',    homeAbbr:'JAC', pick:'away', spread:2.5,  network:null, kickoff:null, espn:{away:'NE',  home:'JAX'}},
-    {id:'g6',  away:'Chiefs',   awayAbbr:'KC',  home:'Dolphins',   homeAbbr:'MIA', pick:'away', spread:-11.5,network:null, kickoff:null, espn:{away:'KC',  home:'MIA'}},
-    {id:'g7',  away:'Titans',   awayAbbr:'TEN', home:'Giants',     homeAbbr:'NYG', pick:'away', spread:3.5,  network:null, kickoff:null, espn:{away:'TEN', home:'NYG'}},
-    {id:'g8',  away:'Bengals',  awayAbbr:'CIN', home:'Steelers',   homeAbbr:'PIT', pick:'away', spread:-3.5, network:null, kickoff:null, espn:{away:'CIN', home:'PIT'}},
-    {id:'g9',  away:'Seahawks', awayAbbr:'SEA', home:'Commanders', homeAbbr:'WAS', pick:'away', spread:-7.5, network:null, kickoff:null, espn:{away:'SEA', home:'WSH'}},
-    {id:'g10', away:'Cardinals',awayAbbr:'ARI', home:'49ers',      homeAbbr:'SF',  pick:'home', spread:-8.5, network:null, kickoff:null, espn:{away:'ARI', home:'SF'}},
-    {id:'g11', away:'Vikings',  awayAbbr:'MIN', home:'Buccaneers', homeAbbr:'TB',  pick:'home', spread:1.5,  network:null, kickoff:null, espn:{away:'MIN', home:'TB'}},
-    {id:'g12', away:'Ravens',   awayAbbr:'BAL', home:'Cowboys',    homeAbbr:'DAL', pick:'home', spread:2.5,  network:'CBS', kickoff:'Sun 4:25 PM ET', espn:{away:'BAL', home:'DAL'}},
-    {id:'g13', away:'Raiders',  awayAbbr:'LV',  home:'Saints',     homeAbbr:'NO',  pick:'home', spread:-3.5, network:'CBS', kickoff:'Sun 4:25 PM ET', espn:{away:'LV',  home:'NO'}},
-    {id:'g14', away:'Rams',     awayAbbr:'LA',  home:'Broncos',    homeAbbr:'DEN', pick:'home', spread:2.5,  network:'NBC', kickoff:'Sun 8:20 PM ET', espn:{away:'LAR', home:'DEN'}},
-    {id:'g15', away:'Eagles',   awayAbbr:'PHI', home:'Bears',      homeAbbr:'CHI', pick:'away', spread:-3.5, network:'ABC', kickoff:'Mon 8:15 PM ET', espn:{away:'PHI', home:'CHI'}}
+    {id:'g1',  away:'Steelers',  awayAbbr:'PIT', home:'Browns',     homeAbbr:'CLE', pick:'home', spread:2.5,  network:'Prime Video', kickoff:'Thu 8:15 PM ET', espn:{away:'PIT', home:'CLE'}},
+    {id:'g2',  away:'Colts',     awayAbbr:'IND', home:'Commanders', homeAbbr:'WAS', pick:'away', spread:-3.5, network:'NFLN', kickoff:'Sun 9:30 AM ET', espn:{away:'IND', home:'WSH'}},
+    {id:'g3',  away:'Patriots',  awayAbbr:'NE',  home:'Bills',      homeAbbr:'BUF', pick:'home', spread:-6.5, network:'CBS', kickoff:'Sun 1:00 PM ET', espn:{away:'NE',  home:'BUF'}},
+    {id:'g4',  away:'Titans',    awayAbbr:'TEN', home:'Ravens',     homeAbbr:'BAL', pick:'away', spread:11.5, network:'CBS', kickoff:'Sun 1:00 PM ET', espn:{away:'TEN', home:'BAL'}},
+    {id:'g5',  away:'Jets',      awayAbbr:'NYJ', home:'Bears',      homeAbbr:'CHI', pick:'away', spread:3.5,  network:'FOX', kickoff:'Sun 1:00 PM ET', espn:{away:'NYJ', home:'CHI'}},
+    {id:'g6',  away:'Jaguars',   awayAbbr:'JAX', home:'Bengals',    homeAbbr:'CIN', pick:'home', spread:-2.5, network:'CBS', kickoff:'Sun 1:00 PM ET', espn:{away:'JAX', home:'CIN'}},
+    {id:'g7',  away:'Cowboys',   awayAbbr:'DAL', home:'Texans',     homeAbbr:'HOU', pick:'away', spread:2.5,  network:'FOX', kickoff:'Sun 1:00 PM ET', espn:{away:'DAL', home:'HOU'}},
+    {id:'g8',  away:'Cardinals', awayAbbr:'ARI', home:'Giants',     homeAbbr:'NYG', pick:'away', spread:-0.5, network:'CBS', kickoff:'Sun 1:00 PM ET', espn:{away:'ARI', home:'NYG'}},
+    {id:'g9',  away:'Rams',      awayAbbr:'LA',  home:'Eagles',     homeAbbr:'PHI', pick:'home', spread:2.5,  network:'FOX', kickoff:'Sun 1:00 PM ET', espn:{away:'LAR', home:'PHI'}},
+    {id:'g10', away:'Packers',   awayAbbr:'GB',  home:'Buccaneers', homeAbbr:'TB',  pick:'home', spread:3.5,  network:'FOX', kickoff:'Sun 1:00 PM ET', espn:{away:'GB',  home:'TB'}},
+    {id:'g11', away:'Dolphins',  awayAbbr:'MIA', home:'Vikings',    homeAbbr:'MIN', pick:'away', spread:11.5, network:'FOX', kickoff:'Sun 4:05 PM ET', espn:{away:'MIA', home:'MIN'}},
+    {id:'g12', away:'Chiefs',    awayAbbr:'KC',  home:'Raiders',    homeAbbr:'LV',  pick:'home', spread:4.5,  network:'CBS', kickoff:'Sun 4:25 PM ET', espn:{away:'KC',  home:'LV'}},
+    {id:'g13', away:'Broncos',   awayAbbr:'DEN', home:'49ers',      homeAbbr:'SF',  pick:'home', spread:-2.5, network:'CBS', kickoff:'Sun 4:25 PM ET', espn:{away:'DEN', home:'SF'}},
+    {id:'g14', away:'Chargers',  awayAbbr:'LAC', home:'Seahawks',   homeAbbr:'SEA', pick:'away', spread:7.5,  network:'CBS', kickoff:'Sun 4:25 PM ET', espn:{away:'LAC', home:'SEA'}},
+    {id:'g15', away:'Lions',     awayAbbr:'DET', home:'Panthers',   homeAbbr:'CAR', pick:'away', spread:-3.5, network:'NBC', kickoff:'Sun 8:20 PM ET', espn:{away:'DET', home:'CAR'}},
+    {id:'g16', away:'Falcons',   awayAbbr:'ATL', home:'Saints',     homeAbbr:'NO',  pick:'home', spread:-2.5, network:'ESPN', kickoff:'Mon 8:15 PM ET', espn:{away:'ATL', home:'NO'}}
   ];
 
-  // fallback snapshot, used only until the first successful live fetch
+  // fallback snapshot — none of this week's games have kicked off yet
   var live = {
-    g1:{state:'final', away:16, home:24, period:4, clock:'0:00'},
-    g2:{state:'live',  away:18, home:21, period:4, clock:'1:13'},
-    g3:{state:'final', away:24, home:31, period:4, clock:'0:00'},
-    g4:{state:'final', away:17, home:19, period:4, clock:'0:00'},
-    g5:{state:'final', away:6,  home:35, period:4, clock:'0:00'},
-    g6:{state:'final', away:24, home:10, period:4, clock:'0:00'},
-    g7:{state:'final', away:7,  home:12, period:4, clock:'0:00'},
-    g8:{state:'final', away:27, home:30, period:4, clock:'0:00'},
-    g9:{state:'live',  away:31, home:33, period:4, clock:'2:00'},
-    g10:{state:'live', away:0,  home:7,  period:1, clock:'6:49'},
-    g11:{state:'live', away:10, home:7,  period:1, clock:'6:44'},
-    g12:{state:'live', away:0,  home:0,  period:1, clock:'13:18'},
-    g13:{state:'live', away:0,  home:0,  period:1, clock:'14:06'},
-    g14:{state:'pre'},
-    g15:{state:'pre'}
+    g1:{state:'pre'}, g2:{state:'pre'}, g3:{state:'pre'}, g4:{state:'pre'},
+    g5:{state:'pre'}, g6:{state:'pre'}, g7:{state:'pre'}, g8:{state:'pre'},
+    g9:{state:'pre'}, g10:{state:'pre'}, g11:{state:'pre'}, g12:{state:'pre'},
+    g13:{state:'pre'}, g14:{state:'pre'}, g15:{state:'pre'}, g16:{state:'pre'}
   };
   var lastUpdated = Date.now();
   var fetchOk = false;
@@ -336,6 +337,7 @@
             ' <span class="pickmark">PICK: ' + pickAbbr(g) + ' ' + (g.spread<0?g.spread:'+'+g.spread) + '</span></div>' +
           scoreHtml(g, L, st) +
         '</div>' +
+        situationHtml(g, L) +
         '<div class="status">' + st.line + '</div>' +
       '</div>';
     }
@@ -367,11 +369,27 @@
           var clock = ev.status && ev.status.displayClock;
           var away, home;
           (comp.competitors || []).forEach(function(c){
-            var entry = {abbr: c.team && c.team.abbreviation, score: parseInt(c.score, 10) || 0};
+            var entry = {abbr: c.team && c.team.abbreviation, id: c.team && c.team.id, score: parseInt(c.score, 10) || 0};
             if (c.homeAway === 'home') home = entry; else away = entry;
           });
           if (!home || !away) return;
-          byAbbr[home.abbr + '|' + away.abbr] = {state:state, period:period, clock:clock, homeScore:home.score, awayScore:away.score};
+
+          var sit = comp.situation;
+          var possAbbr = null, downDistanceText = null, yardLineText = null, isRedZone = false;
+          if (sit){
+            if (sit.possession){
+              if (String(sit.possession) === String(home.id)) possAbbr = home.abbr;
+              else if (String(sit.possession) === String(away.id)) possAbbr = away.abbr;
+            }
+            downDistanceText = sit.shortDownDistanceText || sit.downDistanceText || null;
+            yardLineText = sit.possessionText || null;
+            isRedZone = !!sit.isRedZone;
+          }
+
+          byAbbr[home.abbr + '|' + away.abbr] = {
+            state:state, period:period, clock:clock, homeScore:home.score, awayScore:away.score,
+            possessionAbbr:possAbbr, downDistanceText:downDistanceText, yardLineText:yardLineText, isRedZone:isRedZone
+          };
         });
 
         var next = {};
@@ -385,7 +403,10 @@
           }
           anyMatch = true;
           var st = m.state === 'post' ? 'final' : (m.state === 'in' ? 'live' : 'pre');
-          next[g.id] = {state: st, away: m.awayScore, home: m.homeScore, period: m.period, clock: m.clock};
+          next[g.id] = {
+            state: st, away: m.awayScore, home: m.homeScore, period: m.period, clock: m.clock,
+            possessionAbbr: m.possessionAbbr, downDistanceText: m.downDistanceText, yardLineText: m.yardLineText, isRedZone: m.isRedZone
+          };
         });
 
         if (anyMatch){
