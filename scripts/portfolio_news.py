@@ -33,8 +33,20 @@ def news(t):
                       "source": source, "time": when.astimezone(datetime.timezone.utc).isoformat()})
     return items
 
+_ciks = None
+def cik_for(ticker):
+    """Look up the SEC CIK for a ticker (newer listings are not found by ticker alone)."""
+    global _ciks
+    if _ciks is None:
+        data = json.loads(get("https://www.sec.gov/files/company_tickers.json"))
+        _ciks = {v["ticker"].upper(): str(v["cik_str"]) for v in data.values()}
+    return _ciks.get(ticker.upper())
+
 def filings(t):
-    url = ("https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=" + t["t"]
+    cik = cik_for(t["t"])
+    if not cik:
+        return []
+    url = ("https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=" + cik
            + "&type=&dateb=&owner=include&count=15&output=atom")
     ns = {"a": "http://www.w3.org/2005/Atom"}
     out = []
