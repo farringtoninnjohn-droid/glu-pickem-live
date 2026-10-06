@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Defense Sim Desk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: a trading-desk board — leaderboard first, one chart, then each book's blotter. */
+:root{
+  --bg:#f3f5f4; --panel:#ffffff; --ink:#18221f; --muted:#5d6b66; --line:#d6dedb;
+  --accent:#1e5b4f; --brass:#a1742a; --up:#1b7a43; --down:#b3362c; --stop:#7a5a12; --stopbg:#f6ecd4;
+  --display:"Archivo",system-ui,sans-serif; --body:"Source Sans 3",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
+  --s1:#1e5b4f; --s2:#a1742a; --s3:#3c6fb0; --s4:#b3362c; --s5:#7b8a86; --s6:#4f9db0; --s7:#2b2f33;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#111715; --panel:#18201d; --ink:#e4ebe8; --muted:#97a6a1; --line:#2c3833;
+  --accent:#6cc2ad; --brass:#d8a957; --up:#55c787; --down:#ef7d71; --stop:#e3bf6a; --stopbg:#3a3220;
+  --s1:#6cc2ad; --s2:#d8a957; --s3:#7fa8e6; --s4:#ef7d71; --s5:#8d9c97; --s6:#7cc6d8; --s7:#d5dad8; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#111715; --panel:#18201d; --ink:#e4ebe8; --muted:#97a6a1; --line:#2c3833;
+  --accent:#6cc2ad; --brass:#d8a957; --up:#55c787; --down:#ef7d71; --stop:#e3bf6a; --stopbg:#3a3220;
+  --s1:#6cc2ad; --s2:#d8a957; --s3:#7fa8e6; --s4:#ef7d71; --s5:#8d9c97; --s6:#7cc6d8; --s7:#d5dad8; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:16px/1.5 var(--body);margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:16px;padding-block:28px 48px;display:grid;gap:28px}
+header{display:grid;gap:6px}
+.eyebrow{font:600 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--brass)}
+h1{font:800 clamp(28px,5vw,42px)/1.05 var(--display);margin:0;text-wrap:balance;letter-spacing:-.01em}
+h2{font:700 20px var(--display);margin:0 0 10px;text-wrap:balance}
+.sub{color:var(--muted);max-width:68ch;margin:0}
+.meta{display:flex;flex-wrap:wrap;gap:8px 18px;font:13px var(--mono);color:var(--muted)}
+.meta b{color:var(--ink);font-weight:600}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:18px;min-width:0}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.up{color:var(--up)} .down{color:var(--down)}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th{font:600 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-align:left;padding:6px 8px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:7px 8px;border-bottom:1px solid var(--line);white-space:nowrap}
+td.r,th.r{text-align:right}
+tr:last-child td{border-bottom:0}
+.rank{font:700 14px var(--mono);color:var(--muted);width:28px}
+.key{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:8px;vertical-align:baseline}
+.bench td{color:var(--muted)}
+.pill{display:inline-block;font:600 11px var(--mono);padding:1px 7px;border-radius:999px;background:var(--stopbg);color:var(--stop)}
+.books{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,480px),1fr));gap:18px}
+.book h3{font:700 17px var(--display);margin:0;display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.book p{color:var(--muted);margin:4px 0 10px;font-size:14px}
+.tick{font:600 13px var(--mono)}
+#chart svg{width:100%;height:auto;display:block}
+#chart text{fill:var(--muted);font:11px var(--mono)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;margin-top:8px}
+.cal{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;font-size:14px}
+.cal .d{font:600 13px var(--mono);color:var(--accent);white-space:nowrap}
+.empty{color:var(--muted)}
+.live{display:inline-flex;align-items:center;gap:6px}.dot{width:8px;height:8px;border-radius:50%;background:var(--muted)}.dot.on{background:var(--up);animation:pulse 2s infinite}@keyframes pulse{50%{opacity:.35}}@media (prefers-reduced-motion:reduce){.dot.on{animation:none}}
+.warn{display:inline-block;font:600 11px var(--mono);padding:1px 7px;border-radius:999px;background:var(--stopbg);color:var(--down)}
+footer{font-size:13px;color:var(--muted)}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Paper trading &middot; $10,000 per book</div>
+    <h1>Defense Sim Desk</h1>
+    <p class="sub">Four simulated portfolios built from the three-factor screen (Israel defense, holdings of the named funds, pending U.S. spending), tracked against defense, Israel and S&amp;P 500 benchmarks.</p>
+    <div class="meta" id="meta"><span>Loading prices&hellip;</span></div>
+  </header>
+
+  <section class="panel">
+    <h2>Standings</h2>
+    <div class="scroll"><table id="board"><tbody><tr><td class="empty">Loading the books&hellip;</td></tr></tbody></table></div>
+  </section>
+
+  <section class="panel" id="chart">
+    <h2>Value over time</h2><p class="sub" style="font-size:14px;margin-bottom:8px">Daily closes since entry, plus a live point while the market is open.</p>
+    <div id="chartBody" class="empty">The chart appears after the first daily close.</div>
+  </section>
+
+  <section>
+    <h2>The books</h2>
+    <div class="books" id="books"></div>
+  </section>
+
+  <section class="panel">
+    <h2>Dates that can move these books</h2>
+    <div class="cal">
+      <span class="d">Oct 20</span><span>RTX Q3 earnings; AEVEX lead-plaintiff deadline</span>
+      <span class="d">Oct 22</span><span>Lockheed and Carpenter Q3 earnings</span>
+      <span class="d">Oct</span><span>AIRO in Drone Dominance Phase 2.5 testing (Camp Grayling)</span>
+      <span class="d">Oct 29</span><span>Leonardo DRS Q3</span>
+      <span class="d">Oct 30</span><span>Swarmer shareholder vote on Ratel Robotics deal</span>
+      <span class="d">Nov 2</span><span>Voyager and Palantir Q3</span>
+      <span class="d">Nov 3</span><span>Midterm elections; Kratos Q3</span>
+      <span class="d">Nov 5</span><span>Karman Q3; Unusual Machines Q3</span>
+      <span class="d">Nov 12-14</span><span>Ondas, Odysight, AIRO, AEVEX Q3; Q3 13F filings due Nov 14 (first look at who owns XTND)</span>
+    </div>
+  </section>
+
+  <footer id="rules">Live prices refresh every minute during market hours and may be delayed. Entry at Oct 6, 2026 midday prices, fractional shares, no fees. A holding that closes 25% or more below entry at a mark is sold at that mark and held as cash. Window ends Nov 6. Research for a simulation, not investment advice.</footer>
+</div>
+
+<script>
+const SER=['--s1','--s2','--s3','--s4','--s5','--s6','--s7'];
+const fmt$=v=>'$'+v.toLocaleString('en-US',{maximumFractionDigits:0});
+const fmtP=v=>(v>=0?'+':'')+v.toFixed(2)+'%';
+const fmtPx=v=>v>=1000?v.toLocaleString('en-US',{maximumFractionDigits:0}):v.toFixed(2);
+const cls=v=>v>0.0001?'up':(v<-0.0001?'down':'');
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const STOP=25, START='2026-10-06', END='2026-11-06';
+let books=[], closes={}, live={}, liveTime=null, mkt='', liveErr=false;
+
+function marks(){
+  // entry point, then each daily close, then a live point if today has no close yet
+  const m=[{date:START,label:'Entry',prices:Object.fromEntries(books.flatMap(b=>b.holdings.map(h=>[h.t,h.entry])))}];
+  Object.keys(closes).sort().forEach(d=>m.push({date:d,label:d.slice(5)+' close',prices:closes[d]}));
+  const today=new Date().toLocaleDateString('en-CA',{timeZone:'America/New_York'});
+  if(Object.keys(live).length && !closes[today] && today<=END) m.push({date:today,label:'Live',prices:live,live:true});
+  return m;
+}
+function evalBook(b,M){
+  const state=b.holdings.map(h=>({...h,stopped:null,last:h.entry,warn:false}));const series=[];
+  for(const m of M){let v=0;
+    for(const h of state){
+      if(h.stopped){v+=h.stopped.value;continue}
+      const p=m.prices[h.t];
+      if(typeof p==='number'&&p>0){h.last=p;h.warn=false;
+        if(p<=h.entry*(1-STOP/100)){ if(m.live) h.warn=true; else h.stopped={date:m.date,price:p,value:h.shares*p}; }}
+      v+=h.stopped?h.stopped.value:h.shares*h.last;}
+    series.push({label:m.label,v,live:!!m.live});}
+  const end=series.length?series[series.length-1].v:b.start;
+  return {...b,state,series,end,ret:(end/b.start-1)*100};
+}
+function render(){
+  const M=marks(); const ev=books.map(b=>evalBook(b,M));
+  const nCloses=Object.keys(closes).length;
+  const t=liveTime?new Date(liveTime).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'})+' ET':'';
+  const status=mkt==='REG_MKT'?'Market open':(mkt==='PRE_MKT'?'Pre-market':(mkt==='POST_MKT'?'After hours':'Market closed'));
+  document.getElementById('meta').innerHTML=`<span>Window <b>Oct 6 &ndash; Nov 6, 2026</b></span><span class="live"><span class="dot ${mkt==='REG_MKT'?'on':''}"></span><b>${liveErr?'Live prices unavailable':status}</b>${t?' &middot; updated '+t:''}</span><span>Daily closes saved <b>${nCloses}</b></span>`;
+  const spy=ev.find(b=>b.id==='b_spy'); const ranked=[...ev].sort((a,b)=>b.ret-a.ret);
+  document.getElementById('board').innerHTML='<thead><tr><th>#</th><th>Book</th><th class="r">Value</th><th class="r">Return</th><th class="r">vs SPY</th><th class="r">Best holding</th></tr></thead><tbody>'+
+   ranked.map((b,i)=>{const best=b.state.length>1?b.state.map(h=>({t:h.t,r:((h.stopped?h.stopped.price:h.last)/h.entry-1)*100})).sort((x,y)=>y.r-x.r)[0]:null;
+    const vs=spy&&b.id!=='b_spy'?b.ret-spy.ret:null;
+    return `<tr class="${b.benchmark?'bench':''}"><td class="rank">${i+1}</td><td><span class="key" style="background:var(${SER[b.order%7]})"></span>${esc(b.name)}</td><td class="r num">${fmt$(b.end)}</td><td class="r num ${cls(b.ret)}">${fmtP(b.ret)}</td><td class="r num ${vs==null?'':cls(vs)}">${vs==null?'&mdash;':fmtP(vs)}</td><td class="r num">${best?`<span class="tick">${best.t}</span> <span class="${cls(best.r)}">${fmtP(best.r)}</span>`:'&mdash;'}</td></tr>`}).join('')+'</tbody>';
+  drawChart(ev,M);
+  document.getElementById('books').innerHTML=ev.filter(b=>!b.benchmark).map(b=>`
+   <article class="panel book"><h3><span><span class="key" style="background:var(${SER[b.order%7]})"></span>${esc(b.name)}</span><span class="num ${cls(b.ret)}">${fmtP(b.ret)}</span></h3>
+   <p>${esc(b.thesis)}</p>
+   <div class="scroll"><table><thead><tr><th>Ticker</th><th class="r">Wt</th><th class="r">Entry</th><th class="r">Last</th><th class="r">Chg</th><th class="r">Value</th></tr></thead><tbody>
+   ${b.state.map(h=>{const p=h.stopped?h.stopped.price:h.last;const r=(p/h.entry-1)*100;const val=h.stopped?h.stopped.value:h.shares*p;
+     const tag=h.stopped?'<span class="pill">stopped '+esc(h.stopped.date.slice(5))+'</span>':(h.warn?'<span class="warn">below stop</span>':'');
+     return `<tr><td class="tick">${esc(h.t)} ${tag}</td><td class="r num">${h.w}%</td><td class="r num">${fmtPx(h.entry)}</td><td class="r num">${fmtPx(p)}</td><td class="r num ${cls(r)}">${fmtP(r)}</td><td class="r num">${fmt$(val)}</td></tr>`}).join('')}
+   </tbody></table></div></article>`).join('');
+}
+function drawChart(ev,M){
+  const box=document.getElementById('chartBody');
+  if(M.length<2){box.className='empty';box.textContent='The chart starts after the first daily close.';return}
+  box.className='';
+  const W=900,H=300,L=58,R=16,T=12,B=30;
+  const all=ev.flatMap(b=>b.series.map(s=>s.v));let lo=Math.min(...all,10000),hi=Math.max(...all,10000);
+  const pad=(hi-lo)*.12||200;lo-=pad;hi+=pad;
+  const n=M.length;const x=i=>L+(W-L-R)*(i/(n-1));const y=v=>T+(H-T-B)*(1-(v-lo)/(hi-lo));
+  const step=niceStep((hi-lo)/4);const ticks=[];for(let t=Math.ceil(lo/step)*step;t<=hi;t+=step)ticks.push(t);
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Book value at each daily close">`;
+  ticks.forEach(t=>{s+=`<line x1="${L}" x2="${W-R}" y1="${y(t)}" y2="${y(t)}" stroke="var(--line)" stroke-width="1"/><text x="${L-8}" y="${y(t)+4}" text-anchor="end">${fmt$(t)}</text>`});
+  s+=`<line x1="${L}" x2="${W-R}" y1="${y(10000)}" y2="${y(10000)}" stroke="var(--muted)" stroke-dasharray="4 4" stroke-width="1"/>`;
+  const every=Math.max(1,Math.ceil(n/8));
+  M.forEach((m,i)=>{if(i%every===0||i===n-1)s+=`<text x="${x(i)}" y="${H-8}" text-anchor="${i===0?'start':(i===n-1?'end':'middle')}">${m.live?'Live':(i===0?'Entry':m.date.slice(5))}</text>`});
+  ev.forEach(b=>{const c=`var(${SER[b.order%7]})`;const pts=b.series.map((p,i)=>`${x(i)},${y(p.v)}`).join(' ');
+    s+=`<polyline points="${pts}" fill="none" stroke="${c}" stroke-width="${b.benchmark?1.5:2.5}" ${b.benchmark?'stroke-dasharray="5 4"':''}/>`;
+    const lp=b.series[b.series.length-1];s+=`<circle cx="${x(n-1)}" cy="${y(lp.v)}" r="3.5" fill="${c}"/>`});
+  s+='</svg><div class="legend">'+ev.map(b=>`<span><span class="key" style="background:var(${SER[b.order%7]})"></span>${esc(b.name)}</span>`).join('')+'</div>';
+  box.innerHTML=s;
+}
+function niceStep(r){const p=Math.pow(10,Math.floor(Math.log10(r)));const f=r/p;return (f<1.5?1:f<3?2:f<7?5:10)*p}
+
+const Q='https://quote.cnbc.com/quote-html-webservice/restQuote/symbolType/symbol?requestMethod=itv&noform=1&partnerId=2&fund=1&exthrs=0&output=json&symbols=';
+async function quote(list){
+  const j=await (await fetch(Q+encodeURIComponent(list.join('|')),{cache:'no-store'})).json();
+  return j.FormattedQuoteResult.FormattedQuote;
+}
+async function refresh(){
+  try{
+    const tickers=[...new Set(books.flatMap(b=>b.holdings.map(h=>h.t)))];
+    let q=await quote(tickers);
+    const miss=q.filter(x=>x.last==null).map(x=>x.symbol);
+    if(miss.length){try{q=q.filter(x=>x.last!=null).concat(await quote(miss))}catch(e){}}
+    q.forEach(x=>{if(x.last!=null){live[x.symbol]=parseFloat(String(x.last).replace(/,/g,''));}
+      if(x.curmktstatus&&x.symbol==='SPY')mkt=x.curmktstatus; if(x.last_time&&x.symbol==='SPY')liveTime=x.last_time;});
+    liveErr=false;
+  }catch(e){liveErr=true}
+  render();
+}
+async function loadJSON(path){
+  const raw='https://raw.githubusercontent.com/farringtoninnjohn-droid/glu-pickem-live/main/'+path;
+  for(const u of [path+'?v='+Date.now(), raw]){try{const r=await fetch(u,{cache:'no-store'});if(r.ok)return await r.json()}catch(e){}}
+  return null;
+}
+(async()=>{
+  books=(await loadJSON('defense-books.json'))||[];
+  const h=await loadJSON('defense-history.json'); closes=(h&&h.closes)||{};
+  render(); await refresh();
+  setInterval(()=>{if(!document.hidden)refresh()},60000);
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden)refresh()});
+  setInterval(async()=>{const h=await loadJSON('defense-history.json');if(h&&h.closes){closes=h.closes;render()}},15*60000);
+})();
+</script>
+</body>
+</html>

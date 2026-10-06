@@ -1,0 +1,6 @@
+{
+  "note": "Daily closing prices for the defense sim. Appended automatically after each market close by .github/workflows/defense-closes.yml.",
+  "closes": {
+    "2026-10-06": {"RTX":183.29,"LMT":510.12,"KTOS":43.71,"DRS":36.78,"ESLT":691.10,"ONDS":7.41,"XTND":2.68,"SPCX":171.92,"CRS":395.71,"AIRO":6.53,"UMAC":22.36,"ODYS":2.78,"EIS":120.23,"TDG":1103.33,"AADX":11.80,"DPC":42.01,"VOYG":30.88,"AVEX":15.15,"SWMR":14.88,"ITA":208.23,"SPY":779.09}
+  }
+}

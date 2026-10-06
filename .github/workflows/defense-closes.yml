@@ -1,0 +1,25 @@
+name: Defense sim daily closes
+# Saves each day's closing prices for defense.html. Does not touch index.html (the NFL page).
+on:
+  schedule:
+    - cron: "20 21 * * 1-5"   # 5:20pm EDT / 4:20pm EST, after the close
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  closes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python scripts/defense_closes.py
+      - name: Commit if changed
+        run: |
+          if git diff --quiet defense-history.json; then echo "No change"; exit 0; fi
+          git config user.name "defense-sim-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add defense-history.json
+          git commit -m "Defense sim: closing prices $(TZ=America/New_York date +%F)"
+          git push
