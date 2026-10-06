@@ -1,0 +1,9 @@
+[
+  {"t":"XTND","name":"XTEND AI Robotics","q":"\"XTEND AI Robotics\" OR \"Xtend AI Robotics\" OR XTND stock"},
+  {"t":"ONDS","name":"Ondas","q":"\"Ondas Holdings\" OR \"Ondas Inc\" OR ONDS stock"},
+  {"t":"ODYS","name":"Odysight.ai","q":"Odysight OR \"Odysight.ai\""},
+  {"t":"NSRX","name":"Nasus Pharma","q":"\"Nasus Pharma\" OR NSRX"},
+  {"t":"ZIM","name":"ZIM Integrated Shipping","q":"\"ZIM Integrated Shipping\" OR \"ZIM shipping\" OR \"NYSE: ZIM\""},
+  {"t":"NVDA","name":"Nvidia","q":"Nvidia stock NVDA"},
+  {"t":"SPCX","name":"SpaceX","q":"SpaceX stock SPCX"}
+]

@@ -1,0 +1,32 @@
+name: Portfolio news
+# Refreshes headlines and SEC filings for portfolio.html. Saves only to the
+# portfolio-data branch, so main (and the NFL page) are never touched.
+on:
+  schedule:
+    - cron: "7,37 * * * *"     # every 30 minutes
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: portfolio-news
+  cancel-in-progress: false
+jobs:
+  news:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python scripts/portfolio_news.py
+      - name: Save to portfolio-data branch (one commit, replaced each run)
+        run: |
+          cp portfolio-news.json /tmp/portfolio-news.json
+          git config user.name "portfolio-news-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git checkout --quiet --orphan portfolio-data
+          git rm -rf --quiet .
+          cp /tmp/portfolio-news.json portfolio-news.json
+          git add portfolio-news.json
+          git commit --quiet -m "Portfolio news $(date -u +%FT%TZ)"
+          git push --force origin portfolio-data
