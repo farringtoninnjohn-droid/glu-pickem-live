@@ -76,10 +76,9 @@ footer{font-size:12.5px;color:var(--muted)}
   <section class="summary" id="summary" aria-label="Account summary"></section>
 
   <section class="panel">
-    <div class="head"><h2>Positions</h2><div style="display:flex;gap:8px;flex-wrap:wrap"><button id="editBtn" type="button">Edit shares</button><button id="linkBtn" type="button">Copy my private link</button></div></div>
-    <div id="editor" class="edit" hidden></div>
+    <div class="head"><h2>Positions</h2><span class="note" id="asof"></span></div>
     <div class="scroll"><table id="pos"><tbody><tr><td class="muted">Loading&hellip;</td></tr></tbody></table></div>
-    <p class="note" id="sharesNote" hidden>Share counts are saved only in this browser. Open your private link once on each device to load them.</p>
+    
   </section>
 
   <section class="panel">
@@ -88,7 +87,7 @@ footer{font-size:12.5px;color:var(--muted)}
     <div class="news" id="news"><p class="note">Loading headlines&hellip;</p></div>
   </section>
 
-  <footer>Prices refresh every minute from a free quote feed and may be delayed. Headlines and SEC filings refresh about every 30 minutes. Share counts live in your browser and your private link, never in this site's files. Not investment advice.</footer>
+  <footer>Prices refresh every minute from a free quote feed and may be delayed. Headlines and SEC filings refresh about every 30 minutes. Not investment advice.</footer>
 </div>
 
 <script>
@@ -104,18 +103,12 @@ const pc=v=>(v>=0?'+':'')+v.toFixed(2)+'%';
 const cls=v=>v>0.00001?'up':(v<-0.00001?'down':'muted');
 const px=v=>v>=1000?v.toLocaleString('en-US',{maximumFractionDigits:2}):v.toFixed(v<1?4:2);
 
-// ---- shares: from the private link (#XTND=749.06,...) or this browser ----
-let shares={};
-function loadShares(){
-  try{shares=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){shares={}}
-  const h=decodeURIComponent(location.hash.slice(1));
-  if(/^[A-Z]+=[\d.]+/.test(h)){
-    shares={};h.split(',').forEach(p=>{const [t,v]=p.split('=');if(t&&!isNaN(+v))shares[t.toUpperCase()]=+v});
-    saveShares();history.replaceState(null,'',location.pathname);
-  }
+// ---- shares: from portfolio-holdings.json in this repo ----
+let shares={},holdingsDate='';
+async function loadShares(){
+  for(const u of ['portfolio-holdings.json?v='+Date.now(),'https://raw.githubusercontent.com/farringtoninnjohn-droid/glu-pickem-live/main/portfolio-holdings.json']){
+    try{const r=await fetch(u,{cache:'no-store'});if(r.ok){const j=await r.json();shares=j.shares||{};holdingsDate=j.updated||'';return}}catch(e){}}
 }
-function saveShares(){try{localStorage.setItem(KEY,JSON.stringify(shares))}catch(e){}}
-function privateLink(){return location.origin+location.pathname+'#'+TICKERS.map(x=>x.t+'='+(shares[x.t]||0)).join(',')}
 
 // ---- quotes ----
 const Q='https://quote.cnbc.com/quote-html-webservice/restQuote/symbolType/symbol?requestMethod=itv&noform=1&partnerId=2&fund=1&exthrs=1&output=json&symbols=';
@@ -152,7 +145,7 @@ function renderPrices(){
     <div class="panel stat"><div class="k">Total value</div><div class="v">${$(total)}</div><div class="s muted">${rows.filter(r=>r.sh>0).length} positions</div></div>
     <div class="panel stat"><div class="k">Today (regular hours)</div><div class="v ${cls(day)}">${sd(day)}</div><div class="s ${cls(day)}">${prevTotal?pc(day/prevTotal*100):''}</div></div>
     <div class="panel stat"><div class="k">${mkt==='PRE_MKT'?'Pre-market':'After hours'}</div><div class="v ${cls(ext)}">${ext?sd(ext):'&mdash;'}</div><div class="s ${cls(ext)}">${ext&&total?pc(ext/(total-ext)*100):''}</div></div>`
-    :`<div class="panel stat"><div class="k">Positions</div><div class="v" style="font-size:17px">Add your share counts</div><div class="s muted">Use Edit shares, or open your private link.</div></div>`;
+    :`<div class="panel stat"><div class="k">Positions</div><div class="v" style="font-size:17px">Add your share counts</div><div class="s muted">Loading share counts&hellip;</div></div>`;
   document.getElementById('pos').innerHTML='<thead><tr><th>Stock</th><th class="r">Shares</th><th class="r">Price</th><th class="r">Today</th><th class="r">After hrs</th><th class="r">Value</th><th class="r">Day $</th><th class="r">Weight</th><th>52-wk range</th></tr></thead><tbody>'+
     rows.sort((a,b)=>(b.val||0)-(a.val||0)).map(r=>{const q=r.q;
       if(!q)return`<tr><td><div class="tk">${r.t}</div><div class="nm">${esc(r.name)}</div></td><td colspan="8" class="muted">Waiting for a price&hellip;</td></tr>`;
@@ -166,24 +159,8 @@ function renderPrices(){
       <td class="r num ${cls(r.day)}">${r.sh?sd(r.day):'&mdash;'}</td>
       <td class="r num muted">${r.sh&&total?(r.val/total*100).toFixed(1)+'%':'&mdash;'}</td>
       <td>${pos==null?'':`<span class="range" title="52-week low ${px(q.lo)} / high ${px(q.hi)}"><i style="left:calc(${(pos*100).toFixed(1)}% - 1px)"></i></span>`}</td></tr>`}).join('')+'</tbody>';
-  document.getElementById('sharesNote').hidden=false;
+  document.getElementById('asof').textContent=holdingsDate?'Shares as of '+new Date(holdingsDate+'T12:00').toLocaleDateString('en-US',{month:'short',day:'numeric'}):'';
 }
-
-// ---- share editor ----
-document.getElementById('editBtn').addEventListener('click',()=>{
-  const ed=document.getElementById('editor');
-  if(!ed.hidden){ed.hidden=true;document.getElementById('editBtn').textContent='Edit shares';return}
-  ed.innerHTML='<div class="editrow">'+TICKERS.map(x=>`<label for="sh-${x.t}">${x.t}</label><input id="sh-${x.t}" inputmode="decimal" value="${shares[x.t]||''}" placeholder="0">`).join('')+'</div><div><button id="saveSh" type="button">Save shares</button> <span class="note">Saved in this browser only.</span></div>';
-  ed.hidden=false;document.getElementById('editBtn').textContent='Close';
-  document.getElementById('saveSh').addEventListener('click',()=>{
-    TICKERS.forEach(x=>{const v=parseFloat(document.getElementById('sh-'+x.t).value);shares[x.t]=isNaN(v)?0:v});
-    saveShares();ed.hidden=true;document.getElementById('editBtn').textContent='Edit shares';renderPrices();});
-});
-document.getElementById('linkBtn').addEventListener('click',async e=>{
-  const link=privateLink();
-  try{await navigator.clipboard.writeText(link);e.target.textContent='Link copied'}catch(err){prompt('Copy your private link:',link)}
-  setTimeout(()=>e.target.textContent='Copy my private link',2500);
-});
 
 // ---- news ----
 let news=[],filter='ALL';
@@ -204,7 +181,7 @@ function renderNews(){
 }
 document.getElementById('chips').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;filter=b.dataset.t;renderNews()});
 
-loadShares();renderPrices();refresh();loadNews();
+(async()=>{await loadShares();renderPrices();refresh();loadNews();})();
 setInterval(()=>{if(!document.hidden)refresh()},60000);
 setInterval(()=>{if(!document.hidden)loadNews()},5*60000);
 document.addEventListener('visibilitychange',()=>{if(!document.hidden){refresh();loadNews()}});
