@@ -173,7 +173,7 @@ function renderPrices(){
   document.getElementById('summary').innerHTML=hasShares?`
     <div class="panel stat"><div class="k">Total value</div><div class="v">${$(total)}</div><div class="s muted">${rows.filter(r=>r.sh>0).length} positions</div></div>
     <div class="panel stat"><div class="k">Today (regular hours)</div><div class="v ${cls(day)}">${sd(day)}</div><div class="s ${cls(day)}">${prevTotal?pc(day/prevTotal*100):''}</div></div>
-    <div class="panel stat"><div class="k">${mkt==='PRE_MKT'?'Pre-market':(mkt==='POST_MKT'?'After hours':'Extended hours')}</div><div class="v ${cls(ext)}">${ext?sd(ext):'&mdash;'}</div><div class="s ${cls(ext)}">${ext&&total?pc(ext/(total-ext)*100):''}</div></div>`
+    ${(mkt==='PRE_MKT'||mkt==='POST_MKT')?`<div class="panel stat"><div class="k">${mkt==='PRE_MKT'?'Pre-market':'After hours'}</div><div class="v ${cls(ext)}">${ext?sd(ext):'&mdash;'}</div><div class="s ${cls(ext)}">${ext&&total?pc(ext/(total-ext)*100):''}</div></div>`:''}`
     :`<div class="panel stat"><div class="k">Positions</div><div class="v" style="font-size:17px">Add your share counts</div><div class="s muted">Loading share counts&hellip;</div></div>`;
   document.getElementById('pos').innerHTML='<thead><tr><th>Stock</th><th class="r">Shares</th><th class="r">Price</th><th class="r">Today</th><th class="r">Ext. hours</th><th class="r">Value</th><th class="r">Day $</th><th class="r">Weight</th><th>52-wk range</th></tr></thead><tbody>'+
     rows.sort((a,b)=>(b.val||0)-(a.val||0)).map(r=>{const q=r.q;
@@ -207,7 +207,8 @@ async function seriesFor(sym,r){
   const [label,src,days]=RANGES.find(x=>x[0]===r);
   let d=await bars(sym,src);
   if(label==='1D'&&d.length){const last=new Date(d[d.length-1].t).toLocaleDateString('en-CA',{timeZone:'America/New_York'});
-    d=d.filter(b=>new Date(b.t).toLocaleDateString('en-CA',{timeZone:'America/New_York'})===last)}
+    const mins=t=>{const [h,m]=new Date(t).toLocaleTimeString('en-GB',{timeZone:'America/New_York',hour:'2-digit',minute:'2-digit'}).split(':');return +h*60+ +m};
+    d=d.filter(b=>new Date(b.t).toLocaleDateString('en-CA',{timeZone:'America/New_York'})===last&&mins(b.t)>=570&&mins(b.t)<=960)}
   if(days&&d.length){const cut=d[d.length-1].t-days*864e5;d=d.filter(b=>b.t>=cut)}
   return d;
 }
