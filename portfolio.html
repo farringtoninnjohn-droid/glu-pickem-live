@@ -63,6 +63,25 @@ input{font:14px var(--mono);width:110px;padding:4px 6px;border:1px solid var(--l
 .editrow{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center}
 .editrow label{font:600 13px var(--mono);min-width:48px}
 footer{font-size:12.5px;color:var(--muted)}
+/* charts */
+.tabs{display:flex;gap:4px;overflow-x:auto;border-bottom:1px solid var(--line);margin:-4px -4px 12px;padding:0 4px}
+.tab{font:600 13px var(--mono);background:none;border:0;border-bottom:2px solid transparent;border-radius:0;padding:8px 10px;color:var(--muted);white-space:nowrap}
+.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent)}
+.tab:hover{color:var(--ink)}
+.chead{display:flex;justify-content:space-between;align-items:flex-end;gap:10px;flex-wrap:wrap}
+.cname{font:600 13px var(--body);color:var(--muted)}
+.cprice{font:600 28px var(--mono);font-variant-numeric:tabular-nums;line-height:1.1}
+.cchg{font:600 14px var(--mono)}
+.ranges{display:flex;gap:4px;flex-wrap:wrap}
+.rng{font:600 12px var(--mono);padding:4px 9px;border-radius:4px;background:none;border:1px solid transparent;color:var(--muted)}
+.rng[aria-pressed="true"]{background:var(--chip);color:var(--ink);border-color:var(--line)}
+.chart{position:relative;margin-top:10px;touch-action:pan-y}
+.chart svg{width:100%;height:auto;display:block}
+.chart text{fill:var(--muted);font:11px var(--mono)}
+.tip{position:absolute;top:0;pointer-events:none;font:12px var(--mono);background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:3px 7px;white-space:nowrap;transform:translateX(-50%)}
+.cnote{font-size:12.5px;color:var(--muted);margin-top:6px;min-height:1em}
+tr.pick{cursor:pointer} tr.pick:hover td{background:var(--chip)}
+
 </style>
 </head>
 <body>
@@ -74,6 +93,16 @@ footer{font-size:12.5px;color:var(--muted)}
   </header>
 
   <section class="summary" id="summary" aria-label="Account summary"></section>
+
+  <section class="panel" id="charts" aria-label="Charts">
+    <div class="tabs" id="tabs" role="tablist"></div>
+    <div class="chead">
+      <div><div class="cname" id="cname">Total value</div><div class="cprice" id="cprice">&mdash;</div><div class="cchg" id="cchg">&nbsp;</div></div>
+      <div class="ranges" id="ranges" role="group" aria-label="Time range"></div>
+    </div>
+    <div class="chart" id="chart"><svg viewBox="0 0 900 300"></svg></div>
+    <div class="cnote" id="cnote"></div>
+  </section>
 
   <section class="panel">
     <div class="head"><h2>Positions</h2><span class="note" id="asof"></span></div>
@@ -150,7 +179,7 @@ function renderPrices(){
     rows.sort((a,b)=>(b.val||0)-(a.val||0)).map(r=>{const q=r.q;
       if(!q)return`<tr><td><div class="tk">${r.t}</div><div class="nm">${esc(r.name)}</div></td><td colspan="8" class="muted">Waiting for a price&hellip;</td></tr>`;
       const pos=q.hi>q.lo?Math.max(0,Math.min(1,(q.last-q.lo)/(q.hi-q.lo))):null;
-      return`<tr><td><div class="tk">${r.t}</div><div class="nm">${esc(r.name)}</div></td>
+      return`<tr class="pick" data-t="${r.t}" title="Show ${r.t} chart"><td><div class="tk">${r.t}</div><div class="nm">${esc(r.name)}</div></td>
       <td class="r num">${r.sh?r.sh.toLocaleString('en-US',{maximumFractionDigits:6}):'<span class="muted">watch</span>'}</td>
       <td class="r num">${px(q.last)}</td>
       <td class="r num ${cls(q.chgp)}">${pc(q.chgp)}</td>
@@ -161,6 +190,115 @@ function renderPrices(){
       <td>${pos==null?'':`<span class="range" title="52-week low ${px(q.lo)} / high ${px(q.hi)}"><i style="left:calc(${(pos*100).toFixed(1)}% - 1px)"></i></span>`}</td></tr>`}).join('')+'</tbody>';
   document.getElementById('asof').textContent=holdingsDate?'Shares as of '+new Date(holdingsDate+'T12:00').toLocaleDateString('en-US',{month:'short',day:'numeric'}):'';
 }
+
+
+// ---- charts ----
+const RANGES=[['1D','1D'],['5D','5D'],['1M','1M',31],['3M','1M',92],['6M','1M',183],['1Y','1M',366],['5Y','5Y']];
+const CH='https://ts-api.cnbc.com/harmony/app/charts/';
+let tab='TOTAL',range='1D',series={},drawn=null;
+async function bars(sym,src){
+  const k=sym+'|'+src; const c=series[k];
+  if(c&&Date.now()-c.at<(src==='1D'||src==='5D'?60000:3600000))return c.data;
+  const j=await (await fetch(CH+src+'.json?symbol='+encodeURIComponent(sym),{cache:'no-store'})).json();
+  const data=(j.barData&&j.barData.priceBars||[]).map(b=>({t:+b.tradeTimeinMills,c:parseFloat(b.close)})).filter(b=>b.c>0);
+  series[k]={at:Date.now(),data};return data;
+}
+async function seriesFor(sym,r){
+  const [label,src,days]=RANGES.find(x=>x[0]===r);
+  let d=await bars(sym,src);
+  if(label==='1D'&&d.length){const last=new Date(d[d.length-1].t).toLocaleDateString('en-CA',{timeZone:'America/New_York'});
+    d=d.filter(b=>new Date(b.t).toLocaleDateString('en-CA',{timeZone:'America/New_York'})===last)}
+  if(days&&d.length){const cut=d[d.length-1].t-days*864e5;d=d.filter(b=>b.t>=cut)}
+  return d;
+}
+async function totalSeries(r){
+  const held=TICKERS.filter(x=>(+shares[x.t]||0)>0);
+  const all=await Promise.all(held.map(x=>seriesFor(x.t,r).catch(()=>[])));
+  const intraday=r==='1D'||r==='5D';
+  const step=intraday?5*60000:864e5;
+  const key=t=>intraday?Math.floor(t/step)*step:new Date(t).toLocaleDateString('en-CA',{timeZone:'America/New_York'});
+  const maps=all.map(d=>{const m=new Map();d.forEach(b=>m.set(key(b.t),b));return m});
+  const keys=[...new Set(all.flat().map(b=>key(b.t)))].sort();
+  const times=new Map();all.flat().forEach(b=>{const k=key(b.t);if(!times.has(k)||b.t>times.get(k))times.set(k,b.t)});
+  // start where every holding has a price (1D: seed with yesterday's close)
+  const last=held.map((x,i)=>r==='1D'&&quotes[x.t]?quotes[x.t].prev:null);
+  let start=0;
+  if(r!=='1D'){const firsts=all.map(d=>d.length?key(d[0].t):null).filter(Boolean);const latest=firsts.sort().pop();start=Math.max(0,keys.indexOf(latest))}
+  const out=[];
+  keys.forEach((k,i)=>{held.forEach((x,j)=>{const b=maps[j].get(k);if(b)last[j]=b.c});
+    if(i<start||last.some(v=>v==null))return;
+    out.push({t:times.get(k),c:held.reduce((a,x,j)=>a+shares[x.t]*last[j],0)})});
+  let note='';
+  if(r!=='1D'&&r!=='5D'&&out.length){const lim=held.filter((x,j)=>all[j].length&&key(all[j][0].t)===keys[start]).map(x=>x.t);
+    const want=RANGES.find(x=>x[0]===r)[2];if(want&&(out[out.length-1].t-out[0].t)<(want-7)*864e5&&lim.length)note='Starts '+new Date(out[0].t).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})+', when '+lim.join(', ')+' began trading.'}
+  return {d:out,note};
+}
+function renderTabs(){
+  const list=[{t:'TOTAL',label:'Total'}].concat(TICKERS.map(x=>({t:x.t,label:x.t})));
+  document.getElementById('tabs').innerHTML=list.map(x=>`<button type="button" class="tab" role="tab" data-t="${x.t}" aria-selected="${tab===x.t}">${x.label}</button>`).join('');
+  document.getElementById('ranges').innerHTML=RANGES.map(x=>`<button type="button" class="rng" data-r="${x[0]}" aria-pressed="${range===x[0]}">${x[0]}</button>`).join('');
+}
+async function drawChart(){
+  renderTabs();
+  const want=tab+range;
+  const name=tab==='TOTAL'?'Total value of current holdings':((TICKERS.find(x=>x.t===tab)||{}).name+' ('+tab+')');
+  document.getElementById('cname').textContent=name;
+  let d=[],note='';
+  try{ if(tab==='TOTAL'){const r=await totalSeries(range);d=r.d;note=r.note}else d=await seriesFor(tab,range);}catch(e){note='Chart data is unavailable right now. It will retry on the next refresh.'}
+  if(want!==tab+range)return;   // a newer tab or range was picked while loading
+  const svg=document.querySelector('#chart svg');
+  if(d.length<2){svg.innerHTML='';document.getElementById('cnote').textContent=note||'No chart data for this range yet.';drawn=null;return}
+  let base=d[0].c;
+  if(range==='1D'){ if(tab==='TOTAL'){base=TICKERS.reduce((a,x)=>a+(+shares[x.t]||0)*((quotes[x.t]&&quotes[x.t].prev)||0),0)||base} else if(quotes[tab]&&quotes[tab].prev)base=quotes[tab].prev; }
+  const lastV=d[d.length-1].c, chg=lastV-base, chgp=base?chg/base*100:0;
+  const money=tab==='TOTAL';
+  const fmtV=v=>money?$(v):(v>=1000?v.toLocaleString('en-US',{maximumFractionDigits:2}):v.toFixed(v<1?4:2));
+  document.getElementById('cprice').textContent=fmtV(lastV);
+  const cc=document.getElementById('cchg');cc.className='cchg '+cls(chg);
+  cc.textContent=(money?sd(chg):(chg>=0?'+':'')+chg.toFixed(Math.abs(chg)<1?3:2))+' ('+pc(chgp)+') '+({'1D':'today','5D':'past 5 days','1M':'past month','3M':'past 3 months','6M':'past 6 months','1Y':'past year','5Y':'past 5 years'}[range]);
+  document.getElementById('cnote').textContent=note;
+  const W=900,H=300,L=8,R=64,T=14,B=26;
+  let lo=Math.min(...d.map(p=>p.c),range==='1D'?base:Infinity),hi=Math.max(...d.map(p=>p.c),range==='1D'?base:-Infinity);
+  const pad=(hi-lo)*.08||hi*.01||1;lo-=pad;hi+=pad;
+  const t0=d[0].t,t1=d[d.length-1].t;
+  // 1D: spread over the 9:30-4:00 session so the line grows through the day
+  let xs0=t0,xs1=t1;
+  if(range==='1D'){const day=new Date(t1);const off=new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',timeZoneName:'shortOffset'}).formatToParts(day).find(q=>q.type==='timeZoneName').value.replace('GMT','');const open=Date.parse(day.toLocaleDateString('en-CA',{timeZone:'America/New_York'})+'T09:30:00'+(off.startsWith('-')?'-':'+')+String(Math.abs(parseInt(off))).padStart(2,'0')+':00');xs0=Math.min(t0,open);xs1=Math.max(t1,open+390*60000)}
+  const intraday=range==='1D'||range==='5D';
+  const xIdx=intraday&&range==='5D'; // 5D: evenly by bar so overnight gaps don't stretch
+  const x=(p,i)=>L+(W-L-R)*(xIdx?i/(d.length-1):(p.t-xs0)/((xs1-xs0)||1));
+  const y=v=>T+(H-T-B)*(1-(v-lo)/(hi-lo));
+  const col=chg>=0?'var(--up)':'var(--down)';
+  const pts=d.map((p,i)=>x(p,i).toFixed(1)+','+y(p.c).toFixed(1)).join(' ');
+  const step=niceStep((hi-lo)/4);let grid='';
+  for(let v=Math.ceil(lo/step)*step;v<=hi;v+=step)grid+=`<line x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)"/><text x="${W-R+6}" y="${y(v)+4}">${money?'$'+Math.round(v).toLocaleString():fmtV(v)}</text>`;
+  const fmtT=t=>intraday?(range==='1D'?new Date(t).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'}):new Date(t).toLocaleDateString('en-US',{weekday:'short',timeZone:'America/New_York'})):new Date(t).toLocaleDateString('en-US',range==='5Y'?{month:'short',year:'numeric'}:{month:'short',day:'numeric'});
+  let xl='';const nl=5;for(let k=0;k<nl;k++){const i=Math.round(k*(d.length-1)/(nl-1));xl+=`<text x="${x(d[i],i)}" y="${H-6}" text-anchor="${k===0?'start':(k===nl-1?'end':'middle')}">${fmtT(d[i].t)}</text>`}
+  const baseLine=range==='1D'?`<line x1="${L}" x2="${W-R}" y1="${y(base)}" y2="${y(base)}" stroke="var(--muted)" stroke-dasharray="3 4"/>`:'';
+  const area=`${x(d[0],0)},${H-B} ${pts} ${x(d[d.length-1],d.length-1)},${H-B}`;
+  svg.innerHTML=`<defs><linearGradient id="fill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="${col}" stop-opacity=".18"/><stop offset="1" stop-color="${col}" stop-opacity="0"/></linearGradient></defs>${grid}${baseLine}<polygon points="${area}" fill="url(#fill)"/><polyline points="${pts}" fill="none" stroke="${col}" stroke-width="2" stroke-linejoin="round"/><circle cx="${x(d[d.length-1],d.length-1)}" cy="${y(lastV)}" r="3.5" fill="${col}"/>${xl}<g id="hover" style="display:none"><line id="hl" y1="${T}" y2="${H-B}" stroke="var(--muted)"/><circle id="hc" r="4" fill="${col}"/></g>`;
+  drawn={d,x,y,fmtV,fmtT:t=>intraday?new Date(t).toLocaleString('en-US',{weekday:'short',hour:'numeric',minute:'2-digit',timeZone:'America/New_York'}):new Date(t).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}),W};
+}
+function niceStep(r){const p=Math.pow(10,Math.floor(Math.log10(r)));const f=r/p;return (f<1.5?1:f<3?2:f<7?5:10)*p}
+function hover(ev){
+  if(!drawn)return;const box=document.getElementById('chart');const svg=box.querySelector('svg');const rc=svg.getBoundingClientRect();
+  const cx=((ev.touches?ev.touches[0].clientX:ev.clientX)-rc.left)*drawn.W/rc.width;
+  let bi=0,bd=Infinity;drawn.d.forEach((p,i)=>{const dd=Math.abs(drawn.x(p,i)-cx);if(dd<bd){bd=dd;bi=i}});
+  const p=drawn.d[bi],px_=drawn.x(p,bi),py=drawn.y(p.c);
+  const g=svg.querySelector('#hover');g.style.display='';svg.querySelector('#hl').setAttribute('x1',px_);svg.querySelector('#hl').setAttribute('x2',px_);
+  svg.querySelector('#hc').setAttribute('cx',px_);svg.querySelector('#hc').setAttribute('cy',py);
+  let tip=box.querySelector('.tip');if(!tip){tip=document.createElement('div');tip.className='tip';box.appendChild(tip)}
+  tip.hidden=false;tip.textContent=drawn.fmtV(p.c)+' · '+drawn.fmtT(p.t);
+  tip.style.left=Math.max(70,Math.min(rc.width-70,px_*rc.width/drawn.W))+'px';
+}
+function unhover(){const box=document.getElementById('chart');const g=box.querySelector('#hover');if(g)g.style.display='none';const t=box.querySelector('.tip');if(t)t.hidden=true}
+const chartEl=document.getElementById('chart');
+chartEl.addEventListener('mousemove',hover);chartEl.addEventListener('touchmove',hover,{passive:true});
+chartEl.addEventListener('mouseleave',unhover);chartEl.addEventListener('touchend',unhover);
+function pick(t){tab=t;drawChart()}
+document.getElementById('tabs').addEventListener('click',e=>{const b=e.target.closest('.tab');if(b)pick(b.dataset.t)});
+document.getElementById('ranges').addEventListener('click',e=>{const b=e.target.closest('.rng');if(b){range=b.dataset.r;drawChart()}});
+document.getElementById('pos').addEventListener('click',e=>{const tr=e.target.closest('tr[data-t]');if(tr){pick(tr.dataset.t);document.getElementById('charts').scrollIntoView({behavior:'smooth',block:'start'})}});
 
 // ---- news ----
 let news=[],filter='ALL';
@@ -181,8 +319,8 @@ function renderNews(){
 }
 document.getElementById('chips').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;filter=b.dataset.t;renderNews()});
 
-(async()=>{await loadShares();renderPrices();refresh();loadNews();})();
-setInterval(()=>{if(!document.hidden)refresh()},60000);
+(async()=>{await loadShares();renderPrices();renderTabs();await refresh();drawChart();loadNews();})();
+setInterval(async()=>{if(!document.hidden){await refresh();if(range==='1D'||range==='5D')drawChart()}},60000);
 setInterval(()=>{if(!document.hidden)loadNews()},5*60000);
 document.addEventListener('visibilitychange',()=>{if(!document.hidden){refresh();loadNews()}});
 </script>
