@@ -122,7 +122,7 @@ async function refresh(){
     q.forEach(x=>{if(x.last==null)return;const e=x.ExtendedMktQuote||{};
       quotes[x.symbol]={name:x.name,last:num(x.last),chg:num(x.change)||0,chgp:num(x.change_pct)||0,prev:num(x.previous_day_closing),
         ext:num(e.last),extchg:num(e.change),extp:num(e.change_pct),hi:num(x.yrhiprice),lo:num(x.yrloprice),status:x.curmktstatus,time:x.last_time};
-      if(x.curmktstatus)mkt=x.curmktstatus;if(x.last_time&&(!qtime||x.last_time>qtime))qtime=x.last_time;});
+      if(x.curmktstatus&&(x.symbol==='NVDA'||!mkt))mkt=x.curmktstatus;if(x.last_time&&(!qtime||x.last_time>qtime))qtime=x.last_time;});
     qErr=false;
   }catch(e){qErr=true}
   renderPrices();
@@ -133,7 +133,7 @@ function renderPrices(){
   document.getElementById('status').innerHTML=`<span><span class="dot ${mkt==='REG_MKT'?'on':''}"></span>${qErr?'Prices unavailable right now':statusTxt}</span>${t?`<span>Last trade ${t}</span>`:''}<span>Refreshes every minute</span>`;
   const rows=TICKERS.map(x=>{const q=quotes[x.t];const sh=+shares[x.t]||0;
     if(!q)return{...x,sh,q:null};
-    const extOn=(q.status==='POST_MKT'||q.status==='PRE_MKT')&&q.ext!=null;
+    const extOn=(mkt==='POST_MKT'||mkt==='PRE_MKT')&&q.ext!=null;
     const now=extOn?q.ext:q.last;
     return{...x,sh,q,extOn,val:sh*now,day:sh*q.chg,ext:extOn?sh*(q.extchg||0):0};});
   const total=rows.reduce((a,r)=>a+(r.val||0),0);
@@ -144,9 +144,9 @@ function renderPrices(){
   document.getElementById('summary').innerHTML=hasShares?`
     <div class="panel stat"><div class="k">Total value</div><div class="v">${$(total)}</div><div class="s muted">${rows.filter(r=>r.sh>0).length} positions</div></div>
     <div class="panel stat"><div class="k">Today (regular hours)</div><div class="v ${cls(day)}">${sd(day)}</div><div class="s ${cls(day)}">${prevTotal?pc(day/prevTotal*100):''}</div></div>
-    <div class="panel stat"><div class="k">${mkt==='PRE_MKT'?'Pre-market':'After hours'}</div><div class="v ${cls(ext)}">${ext?sd(ext):'&mdash;'}</div><div class="s ${cls(ext)}">${ext&&total?pc(ext/(total-ext)*100):''}</div></div>`
+    <div class="panel stat"><div class="k">${mkt==='PRE_MKT'?'Pre-market':(mkt==='POST_MKT'?'After hours':'Extended hours')}</div><div class="v ${cls(ext)}">${ext?sd(ext):'&mdash;'}</div><div class="s ${cls(ext)}">${ext&&total?pc(ext/(total-ext)*100):''}</div></div>`
     :`<div class="panel stat"><div class="k">Positions</div><div class="v" style="font-size:17px">Add your share counts</div><div class="s muted">Loading share counts&hellip;</div></div>`;
-  document.getElementById('pos').innerHTML='<thead><tr><th>Stock</th><th class="r">Shares</th><th class="r">Price</th><th class="r">Today</th><th class="r">After hrs</th><th class="r">Value</th><th class="r">Day $</th><th class="r">Weight</th><th>52-wk range</th></tr></thead><tbody>'+
+  document.getElementById('pos').innerHTML='<thead><tr><th>Stock</th><th class="r">Shares</th><th class="r">Price</th><th class="r">Today</th><th class="r">Ext. hours</th><th class="r">Value</th><th class="r">Day $</th><th class="r">Weight</th><th>52-wk range</th></tr></thead><tbody>'+
     rows.sort((a,b)=>(b.val||0)-(a.val||0)).map(r=>{const q=r.q;
       if(!q)return`<tr><td><div class="tk">${r.t}</div><div class="nm">${esc(r.name)}</div></td><td colspan="8" class="muted">Waiting for a price&hellip;</td></tr>`;
       const pos=q.hi>q.lo?Math.max(0,Math.min(1,(q.last-q.lo)/(q.hi-q.lo))):null;
