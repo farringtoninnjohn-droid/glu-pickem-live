@@ -179,8 +179,8 @@
   <header class="top">
     <div>
       <div class="eyebrow">SLU602 &middot; John Terwilliger</div>
-      <h1>Week 4 Picks</h1>
-      <div class="sub">Every pick you made, the live score, and exactly what still has to happen. Tiebreaker: 45 total points, ATL @ NO.</div>
+      <h1>Week 5 Picks</h1>
+      <div class="sub">Every pick you made, the live score, and exactly what still has to happen.</div>
     </div>
     <div class="refresh-row">
       <span id="asof"><span id="liveDot"></span>loading…</span>
@@ -203,22 +203,21 @@
 (function(){
   // ---- static pick data, taken from the uploaded pickem sheet ----
   var GAMES = [
-    {id:'g1',  away:'Steelers',  awayAbbr:'PIT', home:'Browns',     homeAbbr:'CLE', pick:'home', spread:2.5,  network:'Prime Video', kickoff:'Thu 8:15 PM ET', espn:{away:'PIT', home:'CLE'}},
-    {id:'g2',  away:'Colts',     awayAbbr:'IND', home:'Commanders', homeAbbr:'WAS', pick:'away', spread:-3.5, network:'NFLN', kickoff:'Sun 9:30 AM ET', espn:{away:'IND', home:'WSH'}},
-    {id:'g3',  away:'Patriots',  awayAbbr:'NE',  home:'Bills',      homeAbbr:'BUF', pick:'home', spread:-6.5, network:'CBS', kickoff:'Sun 1:00 PM ET', espn:{away:'NE',  home:'BUF'}},
-    {id:'g4',  away:'Titans',    awayAbbr:'TEN', home:'Ravens',     homeAbbr:'BAL', pick:'away', spread:11.5, network:'CBS', kickoff:'Sun 1:00 PM ET', espn:{away:'TEN', home:'BAL'}},
-    {id:'g5',  away:'Jets',      awayAbbr:'NYJ', home:'Bears',      homeAbbr:'CHI', pick:'away', spread:3.5,  network:'FOX', kickoff:'Sun 1:00 PM ET', espn:{away:'NYJ', home:'CHI'}},
-    {id:'g6',  away:'Jaguars',   awayAbbr:'JAX', home:'Bengals',    homeAbbr:'CIN', pick:'home', spread:-2.5, network:'CBS', kickoff:'Sun 1:00 PM ET', espn:{away:'JAX', home:'CIN'}},
-    {id:'g7',  away:'Cowboys',   awayAbbr:'DAL', home:'Texans',     homeAbbr:'HOU', pick:'away', spread:2.5,  network:'FOX', kickoff:'Sun 1:00 PM ET', espn:{away:'DAL', home:'HOU'}},
-    {id:'g8',  away:'Cardinals', awayAbbr:'ARI', home:'Giants',     homeAbbr:'NYG', pick:'away', spread:-0.5, network:'CBS', kickoff:'Sun 1:00 PM ET', espn:{away:'ARI', home:'NYG'}},
-    {id:'g9',  away:'Rams',      awayAbbr:'LA',  home:'Eagles',     homeAbbr:'PHI', pick:'home', spread:2.5,  network:'FOX', kickoff:'Sun 1:00 PM ET', espn:{away:'LAR', home:'PHI'}},
-    {id:'g10', away:'Packers',   awayAbbr:'GB',  home:'Buccaneers', homeAbbr:'TB',  pick:'home', spread:3.5,  network:'FOX', kickoff:'Sun 1:00 PM ET', espn:{away:'GB',  home:'TB'}},
-    {id:'g11', away:'Dolphins',  awayAbbr:'MIA', home:'Vikings',    homeAbbr:'MIN', pick:'away', spread:11.5, network:'FOX', kickoff:'Sun 4:05 PM ET', espn:{away:'MIA', home:'MIN'}},
-    {id:'g12', away:'Chiefs',    awayAbbr:'KC',  home:'Raiders',    homeAbbr:'LV',  pick:'home', spread:4.5,  network:'CBS', kickoff:'Sun 4:25 PM ET', espn:{away:'KC',  home:'LV'}},
-    {id:'g13', away:'Broncos',   awayAbbr:'DEN', home:'49ers',      homeAbbr:'SF',  pick:'home', spread:-2.5, network:'CBS', kickoff:'Sun 4:25 PM ET', espn:{away:'DEN', home:'SF'}},
-    {id:'g14', away:'Chargers',  awayAbbr:'LAC', home:'Seahawks',   homeAbbr:'SEA', pick:'away', spread:7.5,  network:'CBS', kickoff:'Sun 4:25 PM ET', espn:{away:'LAC', home:'SEA'}},
-    {id:'g15', away:'Lions',     awayAbbr:'DET', home:'Panthers',   homeAbbr:'CAR', pick:'away', spread:-3.5, network:'NBC', kickoff:'Sun 8:20 PM ET', espn:{away:'DET', home:'CAR'}},
-    {id:'g16', away:'Falcons',   awayAbbr:'ATL', home:'Saints',     homeAbbr:'NO',  pick:'home', spread:-2.5, network:'ESPN', kickoff:'Mon 8:15 PM ET', espn:{away:'ATL', home:'NO'}}
+    {id:'g1',  away:'Buccaneers', awayAbbr:'TB',  home:'Cowboys',    homeAbbr:'DAL', pick:'away', spread:8.5,  network:'Prime Video', kickoff:'Thu 8:15 PM ET', espn:{away:'TB',  home:'DAL'}},
+    {id:'g2',  away:'Eagles',     awayAbbr:'PHI', home:'Jaguars',    homeAbbr:'JAX', pick:'away', spread:6.5,  network:'NFLN', kickoff:'Sun 9:30 AM ET', espn:{away:'PHI', home:'JAX'}},
+    {id:'g3',  away:'Bengals',    awayAbbr:'CIN', home:'Dolphins',   homeAbbr:'MIA', pick:'away', spread:-7.5, network:'FOX', kickoff:'Sun 1:00 PM ET', espn:{away:'CIN', home:'MIA'}},
+    {id:'g4',  away:'Raiders',    awayAbbr:'LV',  home:'Patriots',   homeAbbr:'NE',  pick:'home', spread:-3.5, network:'CBS', kickoff:'Sun 1:00 PM ET', espn:{away:'LV',  home:'NE'}},
+    {id:'g5',  away:'Vikings',    awayAbbr:'MIN', home:'Saints',     homeAbbr:'NO',  pick:'home', spread:1.5,  network:'FOX', kickoff:'Sun 1:00 PM ET', espn:{away:'MIN', home:'NO'}},
+    {id:'g6',  away:'Browns',     awayAbbr:'CLE', home:'Jets',       homeAbbr:'NYJ', pick:'away', spread:2.5,  network:'CBS', kickoff:'Sun 1:00 PM ET', espn:{away:'CLE', home:'NYJ'}},
+    {id:'g7',  away:'Colts',      awayAbbr:'IND', home:'Steelers',   homeAbbr:'PIT', pick:'home', spread:-2.5, network:'CBS', kickoff:'Sun 1:00 PM ET', espn:{away:'IND', home:'PIT'}},
+    {id:'g8',  away:'Texans',     awayAbbr:'HOU', home:'Titans',     homeAbbr:'TEN', pick:'away', spread:-7.5, network:'CBS', kickoff:'Sun 1:00 PM ET', espn:{away:'HOU', home:'TEN'}},
+    {id:'g9',  away:'Giants',     awayAbbr:'NYG', home:'Commanders', homeAbbr:'WAS', pick:'away', spread:3.5,  network:'FOX', kickoff:'Sun 1:00 PM ET', espn:{away:'NYG', home:'WSH'}},
+    {id:'g10', away:'Bears',      awayAbbr:'CHI', home:'Packers',    homeAbbr:'GB',  pick:'away', spread:-2.5, network:'FOX', kickoff:'Sun 1:00 PM ET', espn:{away:'CHI', home:'GB'}},
+    {id:'g11', away:'Broncos',    awayAbbr:'DEN', home:'Chargers',   homeAbbr:'LAC', pick:'home', spread:3.5,  network:'CBS', kickoff:'Sun 4:05 PM ET', espn:{away:'DEN', home:'LAC'}},
+    {id:'g12', away:'Lions',      awayAbbr:'DET', home:'Cardinals',  homeAbbr:'ARI', pick:'away', spread:-4.5, network:'FOX', kickoff:'Sun 4:25 PM ET', espn:{away:'DET', home:'ARI'}},
+    {id:'g13', away:'49ers',      awayAbbr:'SF',  home:'Seahawks',   homeAbbr:'SEA', pick:'away', spread:2.5,  network:'FOX', kickoff:'Sun 4:25 PM ET', espn:{away:'SF',  home:'SEA'}},
+    {id:'g14', away:'Ravens',     awayAbbr:'BAL', home:'Falcons',    homeAbbr:'ATL', pick:'away', spread:2.5,  network:'NBC', kickoff:'Sun 8:20 PM ET', espn:{away:'BAL', home:'ATL'}},
+    {id:'g15', away:'Bills',      awayAbbr:'BUF', home:'Rams',       homeAbbr:'LA',  pick:'away', spread:2.5,  network:'ESPN', kickoff:'Mon 8:15 PM ET', espn:{away:'BUF', home:'LAR'}}
   ];
 
   // fallback snapshot — none of this week's games have kicked off yet
@@ -226,7 +225,7 @@
     g1:{state:'pre'}, g2:{state:'pre'}, g3:{state:'pre'}, g4:{state:'pre'},
     g5:{state:'pre'}, g6:{state:'pre'}, g7:{state:'pre'}, g8:{state:'pre'},
     g9:{state:'pre'}, g10:{state:'pre'}, g11:{state:'pre'}, g12:{state:'pre'},
-    g13:{state:'pre'}, g14:{state:'pre'}, g15:{state:'pre'}, g16:{state:'pre'}
+    g13:{state:'pre'}, g14:{state:'pre'}, g15:{state:'pre'}
   };
   var lastUpdated = Date.now();
   var fetchOk = false;
