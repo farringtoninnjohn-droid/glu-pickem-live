@@ -179,8 +179,8 @@
   <header class="top">
     <div>
       <div class="eyebrow">SLU602 &middot; John Terwilliger</div>
-      <h1>Week 6 Picks</h1>
-      <div class="sub">Every pick you made, the live score, and exactly what still has to happen. Tiebreaker: 45 total points, WAS @ SF.</div>
+      <h1>Week 7 Picks</h1>
+      <div class="sub">Every pick you made, the live score, and exactly what still has to happen.</div>
     </div>
     <div class="refresh-row">
       <span id="asof"><span id="liveDot"></span>loading…</span>
@@ -203,26 +203,25 @@
 (function(){
   // ---- static pick data, taken from the uploaded pickem sheet ----
   var GAMES = [
-    {id:'g1',  away:'Seahawks',   awayAbbr:'SEA', home:'Broncos',    homeAbbr:'DEN', pick:'away', spread:-2.5, network:'Prime Video', kickoff:'Thu 8:15 PM ET', espn:{away:'SEA', home:'DEN'}},
-    {id:'g2',  away:'Texans',     awayAbbr:'HOU', home:'Jaguars',    homeAbbr:'JAX', pick:'away', spread:2.5,  network:'NFLN', kickoff:'Sun 9:30 AM ET', espn:{away:'HOU', home:'JAX'}},
-    {id:'g3',  away:'Bears',      awayAbbr:'CHI', home:'Falcons',    homeAbbr:'ATL', pick:'home', spread:3.5,  network:'FOX', kickoff:'Sun 1:00 PM ET', espn:{away:'CHI', home:'ATL'}},
-    {id:'g4',  away:'Ravens',     awayAbbr:'BAL', home:'Browns',     homeAbbr:'CLE', pick:'away', spread:-4.5, network:'FOX', kickoff:'Sun 1:00 PM ET', espn:{away:'BAL', home:'CLE'}},
-    {id:'g5',  away:'Titans',     awayAbbr:'TEN', home:'Colts',      homeAbbr:'IND', pick:'home', spread:-6.5, network:'CBS', kickoff:'Sun 1:00 PM ET', espn:{away:'TEN', home:'IND'}},
-    {id:'g6',  away:'Jets',       awayAbbr:'NYJ', home:'Patriots',   homeAbbr:'NE',  pick:'home', spread:-7.5, network:'CBS', kickoff:'Sun 1:00 PM ET', espn:{away:'NYJ', home:'NE'}},
-    {id:'g7',  away:'Saints',     awayAbbr:'NO',  home:'Giants',     homeAbbr:'NYG', pick:'away', spread:1.5,  network:'FOX', kickoff:'Sun 1:00 PM ET', espn:{away:'NO',  home:'NYG'}},
-    {id:'g8',  away:'Panthers',   awayAbbr:'CAR', home:'Eagles',     homeAbbr:'PHI', pick:'away', spread:1.5,  network:'CBS', kickoff:'Sun 1:00 PM ET', espn:{away:'CAR', home:'PHI'}},
-    {id:'g9',  away:'Steelers',   awayAbbr:'PIT', home:'Buccaneers', homeAbbr:'TB',  pick:'away', spread:-2.5, network:'CBS', kickoff:'Sun 1:00 PM ET', espn:{away:'PIT', home:'TB'}},
-    {id:'g10', away:'Cardinals',  awayAbbr:'ARI', home:'Rams',       homeAbbr:'LA',  pick:'away', spread:13.5, network:'FOX', kickoff:'Sun 4:05 PM ET', espn:{away:'ARI', home:'LAR'}},
-    {id:'g11', away:'Chargers',   awayAbbr:'LAC', home:'Chiefs',     homeAbbr:'KC',  pick:'away', spread:8.5,  network:'CBS', kickoff:'Sun 4:25 PM ET', espn:{away:'LAC', home:'KC'}},
-    {id:'g12', away:'Bills',      awayAbbr:'BUF', home:'Raiders',    homeAbbr:'LV',  pick:'away', spread:-5.5, network:'CBS', kickoff:'Sun 4:25 PM ET', espn:{away:'BUF', home:'LV'}},
-    {id:'g13', away:'Cowboys',    awayAbbr:'DAL', home:'Packers',    homeAbbr:'GB',  pick:'away', spread:1.5,  network:'NBC', kickoff:'Sun 8:20 PM ET', espn:{away:'DAL', home:'GB'}},
-    {id:'g14', away:'Commanders', awayAbbr:'WAS', home:'49ers',      homeAbbr:'SF',  pick:'home', spread:-7.5, network:'ABC', kickoff:'Mon 8:15 PM ET', espn:{away:'WSH', home:'SF'}}
+    {id:'g1',  away:'Patriots',  awayAbbr:'NE',  home:'Bears',     homeAbbr:'CHI', pick:'away', spread:3.5,  network:'Prime Video', kickoff:'Thu 8:15 PM ET', espn:{away:'NE',  home:'CHI'}},
+    {id:'g2',  away:'Steelers',  awayAbbr:'PIT', home:'Saints',    homeAbbr:'NO',  pick:'home', spread:3.5,  network:'NFLN', kickoff:'Sun 9:30 AM ET', espn:{away:'PIT', home:'NO'}},
+    {id:'g3',  away:'Giants',    awayAbbr:'NYG', home:'Texans',    homeAbbr:'HOU', pick:'home', spread:-9.5, network:'FOX', kickoff:'Sun 1:00 PM ET', espn:{away:'NYG', home:'HOU'}},
+    {id:'g4',  away:'Colts',     awayAbbr:'IND', home:'Vikings',   homeAbbr:'MIN', pick:'home', spread:-6.5, network:'CBS', kickoff:'Sun 1:00 PM ET', espn:{away:'IND', home:'MIN'}},
+    {id:'g5',  away:'Dolphins',  awayAbbr:'MIA', home:'Jets',      homeAbbr:'NYJ', pick:'away', spread:4.5,  network:'CBS', kickoff:'Sun 1:00 PM ET', espn:{away:'MIA', home:'NYJ'}},
+    {id:'g6',  away:'Browns',    awayAbbr:'CLE', home:'Titans',    homeAbbr:'TEN', pick:'away', spread:-1.5, network:'CBS', kickoff:'Sun 1:00 PM ET', espn:{away:'CLE', home:'TEN'}},
+    {id:'g7',  away:'Buccaneers',awayAbbr:'TB',  home:'Panthers',  homeAbbr:'CAR', pick:'home', spread:-3.5, network:'FOX', kickoff:'Sun 1:00 PM ET', espn:{away:'TB',  home:'CAR'}},
+    {id:'g8',  away:'49ers',     awayAbbr:'SF',  home:'Falcons',   homeAbbr:'ATL', pick:'home', spread:3.5,  network:'FOX', kickoff:'Sun 1:00 PM ET', espn:{away:'SF',  home:'ATL'}},
+    {id:'g9',  away:'Bengals',   awayAbbr:'CIN', home:'Ravens',    homeAbbr:'BAL', pick:'away', spread:2.5,  network:'CBS', kickoff:'Sun 1:00 PM ET', espn:{away:'CIN', home:'BAL'}},
+    {id:'g10', away:'Broncos',   awayAbbr:'DEN', home:'Cardinals', homeAbbr:'ARI', pick:'away', spread:-4.5, network:'CBS', kickoff:'Sun 4:05 PM ET', espn:{away:'DEN', home:'ARI'}},
+    {id:'g11', away:'Rams',      awayAbbr:'LA',  home:'Raiders',   homeAbbr:'LV',  pick:'away', spread:-4.5, network:'FOX', kickoff:'Sun 4:25 PM ET', espn:{away:'LAR', home:'LV'}},
+    {id:'g12', away:'Packers',   awayAbbr:'GB',  home:'Lions',     homeAbbr:'DET', pick:'away', spread:3.5,  network:'FOX', kickoff:'Sun 4:25 PM ET', espn:{away:'GB',  home:'DET'}},
+    {id:'g13', away:'Chiefs',    awayAbbr:'KC',  home:'Seahawks',  homeAbbr:'SEA', pick:'home', spread:-2.5, network:'NBC', kickoff:'Sun 8:20 PM ET', espn:{away:'KC',  home:'SEA'}},
+    {id:'g14', away:'Cowboys',   awayAbbr:'DAL', home:'Eagles',    homeAbbr:'PHI', pick:'away', spread:-4.5, network:'ABC', kickoff:'Mon 8:15 PM ET', espn:{away:'DAL', home:'PHI'}}
   ];
 
-  // fallback snapshot — g1 (Thu night SEA@DEN) already finished 14-17; the rest haven't kicked off
+  // fallback snapshot — none of this week's games have kicked off yet
   var live = {
-    g1:{state:'final', away:14, home:17, period:4, clock:'0:00'},
-    g2:{state:'pre'}, g3:{state:'pre'}, g4:{state:'pre'},
+    g1:{state:'pre'}, g2:{state:'pre'}, g3:{state:'pre'}, g4:{state:'pre'},
     g5:{state:'pre'}, g6:{state:'pre'}, g7:{state:'pre'}, g8:{state:'pre'},
     g9:{state:'pre'}, g10:{state:'pre'}, g11:{state:'pre'}, g12:{state:'pre'},
     g13:{state:'pre'}, g14:{state:'pre'}
