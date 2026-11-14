@@ -1,0 +1,990 @@
+{
+ "updated": "2026-11-14T06:58:46.492756+00:00",
+ "errors": [],
+ "items": [
+  {
+   "t": "SPCX",
+   "kind": "filing",
+   "title": "SEC filing: Form SCHEDULE 13G/A",
+   "url": "https://www.sec.gov/Archives/edgar/data/1181412/000142601226000007/0001426012-26-000007-index.htm",
+   "source": "SEC EDGAR",
+   "time": "2026-11-14T02:05:20+00:00"
+  },
+  {
+   "t": "SPCX",
+   "kind": "news",
+   "title": "SpaceX Stock Price Forecast: Morgan Stanley Maintains Overweight Rating, Sets $300 Price Target, Sees Over 100% Upside",
+   "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQcVpidU5HenBaS1lnN1RWUjBsRXZ4SHB0MGl0d05OV2U0VjZhYkExWlRMWW1FbkVZRk1NZ3JlWE9FYTFiWjRzektHbnFKMUdtS3NfbEI4SnJ2bHR1UTRsa2VoTGw5aWJ6NFlVSF8zSi15Z0IzTjh6bGt6WTJ2UnI4LUJYRmczazRLOVFkbkg4YzktWi1qdTBvT1lmdXUwOTE1cDE1ekp6TWpTS1huUzE4YWNMcU1fT2N3OHQ4aGw5UUxpRXRHbndTb090ZzBFalFKUWlzQXZLdVNweGM?oc=5",
+   "source": "TradingKey",
+   "time": "2026-11-14T02:04:04+00:00"
+  },
+  {
+   "t": "NSRX",
+   "kind": "news",
+   "title": "Form 4 Nasus Pharma Ltd: Brendan P. O\u2019Grady (Director, CEO) For: 8 October",
+   "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOQ29Gc2NqbmJrT3huckxyamJfZGx3MmZ5blNGMVFvWHF1S0pfY0F2dEFqQ0RrWTk4R1VNTjVuZHk5aGN2eGxqS3JIakRtU3l5UDQ4NFBZdjd1ZnJ3Ny1SZ1pnQzdoQUFNR3NEdEZnLW5panRKMjFGd3pXZjM2WXNxS2RjMFROZmZ3Tm5hU2VaUnNDcXFwVnNVNzFial9ybWJsa2VnZW4xT0xkcVR2UkRkYUNrVWhEY0xBSnZWZzU3VEJCbmVWZGxn?oc=5",
+   "source": "Investing.com UK",
+   "time": "2026-11-14T01:02:00+00:00"
+  },
+  {
+   "t": "SPCX",
+   "kind": "news",
+   "title": "SpaceX\u2019s Starship Just Did Something for Only the 2nd Time. Saturday Could Be Even Bigger.",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNZzZqaGpPQUdjdVpscFRkeDhJazd4YjVzbHRWbm5nLW5xTEVWWWhIQl9XZmZWNi1NTWJRbjRUUnFGN0VqdE1RWkcxMUZzMlBoVjAxaVZRMjhhMDdOZWRsM1JuLTRVRHY4RTZzTmc2X1publdjUnJWOEM5dG4yWTlJSUNMc2RmNWNtTkcxVDh6MnV2ZGFiVkxMZmZLWS1tNUtf?oc=5",
+   "source": "Yahoo Finance",
+   "time": "2026-11-14T00:35:00+00:00"
+  },
+  {
+   "t": "SPCX",
+   "kind": "news",
+   "title": "SpaceX\u2019s Starship Launched Today. No Booster Catch Might Hurt the Stock.",
+   "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPN2FMRnlaa3hwbWR5a1pDVUJKN09OS1ZMNXdnMkRnN19uTzlNVXgxdVhrVWQzSUxoNHBOdTZVTTlmNE0wcTlDd3YyRGxOUHpSai14X18zY0dQRnlWQjJCN1d0Vl90UThCdXZUQXFqTy1XSmMzRmtkTDE1X2VNMXJ5MGtR?oc=5",
+   "source": "Barron's",
+   "time": "2026-11-13T23:39:00+00:00"
+  },
+  {
+   "t": "ONDS",
+   "kind": "news",
+   "title": "Ondas (ONDS) Q3 Results Leave Stock Facing A Profitability Question",
+   "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQaDkwYnlJSXE5d3dpS3JlZ2FSdjRFdU9fU0hIMGlnS016ZUduNGJxTzVZUk5NZFVDdm9qc0tGQzZ3QTBBaHBDbS1DbWJKeTFjMDJqOG1VWFY5ZURTZUd6SW41SmVkTkpjMEptaUtGTzcxc0t1eDZhYnRISU9taTNtVlFvTDEwdTJIZGV5dzFBR0hPMjJYdmtXT0xPS012dmZqeldlTGRMek9QVER4UjVFUmdJdjd4VnFGMG5MN9IBwgFBVV95cUxQYlRxMldNdVlxcWU3UUNqQXQwODJvU3d2eGRnX2xkMGc1ak9sN1EzT0ZOdklMSmc5MWFnT3BQOFZldFZaNWJ4YW1pdng4NmJYNGhkczBXQ3NDRHY4VHM4ME9kUnE2WmxLWXA4ejE2M2JnYThQa0tuaVoxNVBsWFB4REhmSVFMdzJ2THRaclN1VUgtR3k1TW51LUZQVy1nLUNsOEExek5WLXhmNmxiWV90UVBGVnpCLUw1UzlBdDJhTWx2dw?oc=5",
+   "source": "Simply Wall St",
+   "time": "2026-11-13T23:38:34+00:00"
+  },
+  {
+   "t": "NVDA",
+   "kind": "news",
+   "title": "S&P 500, Dow, Nasdaq End Lower Amid Nvidia Turmoil, But Record Best Week Since August \u2014 SPCX, NVDA, ARM, AZN In Focus",
+   "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPWUpjR2Y4OTNkb290ZEs3VzNwNWlSRW5zQ19LYVJwRXQ1OTdtbUZadkdQUmNPZ0RaTHQ5VnVVXzA1VWp6VEJjQlkyeGFFNjJwVmdnU2dKM3J2WXpsYVVqRjRCZ0poOUhUWnRTbDZQX0tBbUo3QXlMVTdEV1BxQ0FGcWItZWZpcEZTd2dpZVRR?oc=5",
+   "source": "Yahoo Finance",
+   "time": "2026-11-13T23:37:29+00:00"
+  },
+  {
+   "t": "SPCX",
+   "kind": "news",
+   "title": "SpaceX's Starship Flight 15 Takes Off, Rocket Lab Preps For Milestone Mission",
+   "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOY1o4UW9WUTN5NEsxRmE5bWJWMFNCY29uZzBneER1OTJHREdoUzJmSjRhRlNjX05WN3NPdWtSLS1IWmxmdDlVSWtHQkR2QTlrV21lSE1NQmhnak1iUktyLW42NWlRbzQwQkdxZVh0ck5HRWhoVWpHQXRzcVlsejU5N3hRSmRpSkg0bWQ4MXY4V3ZTVEFTOGVRYkg4QUpQLUNLb2RPSGwzWWQxQ0hGX3czbl9WZFRWMXpTSlh2Rmx5RVY5RWd0cFY3X3l4NHE?oc=5",
+   "source": "Investor's Business Daily",
+   "time": "2026-11-13T23:12:00+00:00"
+  },
+  {
+   "t": "ONDS",
+   "kind": "news",
+   "title": "Ondas (NASDAQ:ONDS) Stock Falls 3% on Analyst Downgrade",
+   "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQQlBlRnNuUkp6ZXZBdUJVOGtxVlpTWHMxYUI0VkhlRGVyVlRnZ241WHo5SGJjcTNhX2RsLVNmbUd3dkJ1TzNmelRaamQyYjNmWnJsWGd6U0I1VTA0Y3F5UGQtd2Q4bmxIVmJyaFBPemVlSlRVWTU0UnJVakp4MEcycEZpUld4bEo3NUFmVnVuSWd1Z0dyalJ4QTRpQjI5a2ZhMHlwTmVwaTFUU0FPNDNzdEtB?oc=5",
+   "source": "MarketBeat",
+   "time": "2026-11-13T22:11:49+00:00"
+  },
+  {
+   "t": "ONDS",
+   "kind": "news",
+   "title": "Ondas Holdings stock: Q3 revenue surges, 2026 outlook raised",
+   "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPb09PZ3ZLbTd5b3Y4dzJvdnZTYTFpUmQxOURSN2MxQTJDNWNFOEN0ejFDMXFaUGpvaFd4cGx4eTNONEdnN3ZSbjR1MWhaZ1BfNU1YUi1qVncyNm9qT29aekl6OS1ObU9CNk83Y2ZUX09Vc2EtU0FUd2RrMkI4UE1jQnBQZW5mTlFGd0Rrd3FLTjZxZEFEeDJBRUF2STdid2dRUktrT2RoaUozN3FqUHRZVzhPYklFWm40Umo3ZXpB?oc=5",
+   "source": "ad-hoc-news.de",
+   "time": "2026-11-13T21:38:12+00:00"
+  },
+  {
+   "t": "NVDA",
+   "kind": "news",
+   "title": "Nvidia Stock Braces For AI Chipmaker's First Report Without Jensen Huang",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQb09Wd1BaSUZ6eXR5c3B3Si11cjE4NXNmV0pvT21JREtGZ21fUFhUZlNiTGJXc1AyMHJKUnZFLWFucnJoVFRMWGFWVnptcUJ3RXJ4eHN2ZlJ0STQzd1JTZG1oS2pxT3dfekdhdTlMeVZyenZ3cVNKbEFNdDA2emh3ZHlNV0oxV21nYkVZeEtaR1pVeVVoRWdyQk5nTks?oc=5",
+   "source": "Investor's Business Daily",
+   "time": "2026-11-13T21:30:00+00:00"
+  },
+  {
+   "t": "ONDS",
+   "kind": "news",
+   "title": "Lake Street Capital Issues Pessimistic Forecast for Ondas (NASDAQ:ONDS) Stock Price",
+   "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQcTBqUW4tWjViSEN3ektpeHpaNERGOGhMUVVfT1hUUWd4SXJUSGdGX1BpU2FxX3dCejlYd1NTOEtWd3lPTkhrRHNBMzRDbUlDWjFxNTJWalRqUmpoMjg0S0tFakNYcjV4Yzc5Zk1JeFhUbDJKU2ZxQ3dxU3pPN0Zrd3ZZX1NLZWRual83eTFCMGpna0hMR3Z4WC1SUnAtWnJyMnpyUnBScGhSaWZ6WTJ4eTN5SmxPVUN4THpWWV95aEJObENZMVpraWNqblVrQVh6WXVxSGE3WmRJNUE?oc=5",
+   "source": "MarketBeat",
+   "time": "2026-11-13T21:15:46+00:00"
+  },
+  {
+   "t": "SPCX",
+   "kind": "news",
+   "title": "SpaceX Could Announce a Deal for Tesla as Soon as December. Here's What It Would Do to SpaceX Stock.",
+   "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOT0EzSF9IUUZiT2RjVWt2cnRDRDVyRVJRVy1HMTVMOTFrZVg4SGRVZ01RU0RneGdHb2lnTE1qSjRNendaNDFPTlpPb09ZcEo1ajhDUU1NVGFfRUNkeDBobGFQYks0T0plWEdIbjlXN2dwaTFWYVJSM1NoTmZYZ3MyUVktR1Qya01DVkdXa3R6enh2azhOUHFjcERCV1Q4SVI2a1NqcHZTLWJQS21hT0Y2ajBERzFsYW9TRUlNU0U5MHRxX0Z3MmpDcWZDRFNHSnBJVUlBWjhEOU0?oc=5",
+   "source": "The Motley Fool",
+   "time": "2026-11-13T21:12:00+00:00"
+  },
+  {
+   "t": "NVDA",
+   "kind": "news",
+   "title": "Nvidia stock slips as investors digest CEO exit, broader chip sell-off accelerates",
+   "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPT1FhU3E0MEFkQjV4aHZ4WXk5cktoTzhKbE9Sd1ZKTS11dE5raks5bXA0dk5IOGZ1bzBfT2Y5LUluVTZENml5cnBxcVEyOWh6eU9UU0lIS3FNbmdxVnpvdVUyTkdRNlU0REJGYjhaQzhpZHlpWGV1U1pfRjFLVE5wb3h3NGxWbFJmSlRJNDktSENjNVVpUFlHbnNrcW1BMk9vN2NsNzFjQURkeUtGQXBrSWRsMzctNmRzWlhvSUJVQjk5aHZkeUNtYTh3?oc=5",
+   "source": "Yahoo Finance",
+   "time": "2026-11-13T21:04:14+00:00"
+  },
+  {
+   "t": "ONDS",
+   "kind": "filing",
+   "title": "SEC filing: Form SCHEDULE 13G",
+   "url": "https://www.sec.gov/Archives/edgar/data/1646188/000110465926127019/0001104659-26-127019-index.htm",
+   "source": "SEC EDGAR",
+   "time": "2026-11-13T21:01:21+00:00"
+  },
+  {
+   "t": "NVDA",
+   "kind": "news",
+   "title": "'Nothing has changed': Why some Nvidia stock bulls aren't wavering after Jensen Huang ouster",
+   "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPNElWbE1lOVJadXoxSXhxYy04M3B4ZG9PeWhIaW1lZE9maF91M3N1OXd6eFhSSDJZcVlkMm5oZFdoeDJiaVRqYnJBRVkzczJ0TG1kSjFVT0Y1dG5iV1JMS0NPTW9oeVNlYXZZS0haUThFQVNlcnhJbTlMTjAtZ1pQaFc5WDNhd1VDTFVqY1dDOF9NYlRhTE9xamFUdkpBVVo2MlIyOXJsYVdRYVNDV0RCTDRBS2dKRFc1YkR1Tnczc0VSbGNUX21pRTFsWUpDR0dNMmpLT2V4UmtheUs0WWs2YXRB?oc=5",
+   "source": "Yahoo Finance",
+   "time": "2026-11-13T20:45:22+00:00"
+  },
+  {
+   "t": "SPCX",
+   "kind": "news",
+   "title": "SpaceX: The Math Says 69% Downside (NASDAQ:SPCX)",
+   "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQcTJNeVZTU1IzYXFyU0JvYVRuYkZpRHVKRHNDbGx5clRMclhhRjhfX08wdy1sakJLamZhdGFYMEFjYVhTcGZ0TWcybUVxUnZlVUdhQWYxMGk5VlQwV0RpNVlLQVpiS3o1cE8yTThOaXk4NVhFMFdiOVYxQllmdTFXMFo4UQ?oc=5",
+   "source": "Seeking Alpha",
+   "time": "2026-11-13T20:30:31+00:00"
+  },
+  {
+   "t": "NVDA",
+   "kind": "news",
+   "title": "Wall Street Is Writing Off Nvidia Stock. Here's Why That's a Mistake.",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOcmRpZTdtOHZKeW9QTERCbGQ1VjNHcW9Qdm9lVnFTZWE3Wk1oQzJ4VHdjYWFYNEpCX0c1VFhoWjh0UGFfeGkzTG9PTE1xTWZGXzZ5SHNLclA4NHFqejdjbmdxZlBGWFNHRzI3VzBhVV9HRE5CaEVLS3BBbjR1b2RzaHZDUEU3ZWF3d3ZZVnZ0WmJ0RTBYSF8tSXczYw?oc=5",
+   "source": "Yahoo Finance",
+   "time": "2026-11-13T19:37:00+00:00"
+  },
+  {
+   "t": "SPCX",
+   "kind": "news",
+   "title": "SpaceX\u2019s Big Day: A Historic Starship Launch, a Tesla Merger Under Scrutiny, and a $74 Billion AI Bet",
+   "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNWDZJMHVySTJIZTlCX3hmeHIxWEJCQTZUblRPU0poOENiY0xsVEgxSkt4UEh5Zm9qc2pJcmRsZWtWT0lpYXM3aDVUZEw1d2JQMGZiYjhISUE5V0Ezc0owLWhSY281cVp6bjRFV3VybHZKaDRPc1hBaXVsV01yVlNpajgwSXRSbEx1M0twS0J4akZBX0FyZ0tNMm1kTS1LenB1UXdUMnZkRGwtc2NEWGU3U0J5S0dzazFkbnh2U05hYWxVem5iRFQ5UGpiMjhWQnZzS0R0cndR?oc=5",
+   "source": "The Motley Fool",
+   "time": "2026-11-13T19:25:00+00:00"
+  },
+  {
+   "t": "XTND",
+   "kind": "news",
+   "title": "Xtend AI Robotics (NYSE:XTND) - Stock Analysis",
+   "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFAwMnZZUkRxZm1XbkwzZzcyclhRdnFtelhMTmFWVzd0RHcyVDd4ckM1TENUSExrUk1VbUFoU3RqV1ZDZzduWGl3c1J5ZU53aFBWQktCcGZjS1ZYTGxkMmxjRFBWUVNiZzM0VE92LXRQOS1CT245M2hZMXdfS1RLQQ?oc=5",
+   "source": "Simply Wall St",
+   "time": "2026-11-13T19:01:05+00:00"
+  },
+  {
+   "t": "SPCX",
+   "kind": "news",
+   "title": "SpaceX Stock Will Rally If It Achieves One or More of These Potential Breakthroughs",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNVnJnUE1zMFN1dmNpT2N5Y0htTXM5MVNSd05qbUJGYi1WdDhCVHBZRXA3ZHhzYTMyeFctWFV6cmFqVExzTERXckdtdlJEcVhrQlVpNmtfMV8xSXRFX2F4aXl3RkNhYnhjUG5WVUNTdWVZWUhxUjlOU3ZrSmpPWWg0X2JUNURPcXZ3NWNHWXlGMHlBSThhNGdUMG5BWGs?oc=5",
+   "source": "Yahoo Finance",
+   "time": "2026-11-13T18:18:04+00:00"
+  },
+  {
+   "t": "ONDS",
+   "kind": "news",
+   "title": "ONDS Q3 Earnings Call Highlights Growth Targets and Margin Pressures",
+   "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQNEpSUlFvZHk3Z2VDQXY1Z3EtWDhDVXRWYzJpYVdEVmJWQmZaM0tPRTZueC1ZVFAxRDE4S1FaUWdUQnRVV2dBVlJhM3VHdGJ3WURMQjVPdHdYR0JLeDhJOG5lc2dlZGdFUGs1ZXJLZ0JXSXRYeGNJdjNGR2ZaMkFuVmN1Qkh0MTRzeFdsRFZaclllNk8taUtvS0pCdTBQS3VmakZYRjRTWFNTQ3gtUDhLdHh2bV9zUzV5WENYRS02ZWN0UQ?oc=5",
+   "source": "TradingView",
+   "time": "2026-11-13T18:08:00+00:00"
+  },
+  {
+   "t": "NVDA",
+   "kind": "news",
+   "title": "Here\u2019s How Much Traders Expect Nvidia Stock to Move After Earnings Next Week",
+   "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNQVhIYXNZbFpjNVdYNUQ1VUdubkR5WmNvRlIxZGg0X1V2dWpiS1JBMXRxU1ZlRzVkaVNfZXZMV1Uza2o1SlFlRGdWMkt0dU9ia3VxNmNXb2RzM0NocHhReHlQVTJPbFBHYXpEc0NLcGRJQ2JjSjFEei1XRHdkc1ZfZ2dsQkxIZ2VFMG1WTnZvZGZ6Xzh3SnNOUmdOdjJSRUtqRWlYNEdOU1UtNUlqLXc?oc=5",
+   "source": "Investopedia",
+   "time": "2026-11-13T17:42:14+00:00"
+  },
+  {
+   "t": "NVDA",
+   "kind": "news",
+   "title": "Nvidia\u2019s Chris Malachowsky cofounded the company and is seen as a potential successor to Huang",
+   "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPczNqY0NabFBsRjJnNXh1RTBGQ0xDZWVGYWFNcE9jVHNYd2hQRkNqTzg0MUNXTDJHdXJZWE5zVFRjZlJkeWJrUFFwb09BWHFxV1BUTkRPSkt5WEtKQ0hJaGNvYVM1RktxVFNNSVhLUGJIcVNEdjVWYlhDUnNzc3I4UDhXX1lkMWNKVExBdV9iS0w1eGJfbklSM25YcTFCcTZiYTRyM2s0QmNOYlNUS0pyZGJNSW56TUY1S1hUWDRUNy1jY0pnRkV2d0N6Rmw3bGttN29F?oc=5",
+   "source": "Yahoo Finance",
+   "time": "2026-11-13T17:27:41+00:00"
+  },
+  {
+   "t": "NVDA",
+   "kind": "news",
+   "title": "Nvidia CEO Jensen Huang\u2019s exit could be a buying opportunity for investors. Can you get rich off his fall from grace?",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQcEZOdnEtZFpRd0VjTVhMY3hRVUh0cjYzUW1mRzhzZVZVcnJ5bS0wRFpRQmd6bzRwenRfT1cwYjFxTlpLbnlsVVpmUmIwSnhYR3BWRE0wbE5OSzZDR00yTmNmUXpHWHNrSklwelAyYnV3NHFwbkMxUzVFWWtQaDdmSnp2aFdieEN0eTRNYTZhdGhWQnoxYW92dA?oc=5",
+   "source": "Yahoo Finance",
+   "time": "2026-11-13T17:10:00+00:00"
+  },
+  {
+   "t": "SPCX",
+   "kind": "news",
+   "title": "SpaceX faces key launch test tonight with 'double catch' of Starship and Super Heavy Booster",
+   "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQazk1NmNOT05GMDNaZTlTWEY4NDU3dmpmclVsaU1QNnRoSnRUWmtNWUxxNFRRV3BoN2NmQWt5ajN1cXpxZlFycFJ5Tk44NFQzMzc2UVNoY2hZSHZHcmVnMm1TMVBuN1hNTnZoNnd5dFBqSlZTdGJUUTN5OUVWZTBVbkJlaXhjRFNzMlBZS2NXVHpaMGx4VmdVQk9qeUJJNXEydEw2eFRnVXZCLWxObnA0bEYwUlV6WkN6V2J0XzAtMjRYVTVfNWdrMmFzQVpvYnQ1bElSdEtjRGtsY09KQ3NGWjBRdVNwdWppT2c?oc=5",
+   "source": "Yahoo Finance",
+   "time": "2026-11-13T17:00:32+00:00"
+  },
+  {
+   "t": "NVDA",
+   "kind": "news",
+   "title": "What to Watch in Nvidia Earnings: Leadership, China, Data Center Concerns Take Center Stage",
+   "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPbDhxQUxlWkU3SVVSNUZiZ0x2ZWo1WmZtRklVbWpZYThjVHBRZ28zS05kbGtNS2lzSHJsdXRRc09JcXU1clpOcWZ4VE9IT3BwMWIyNS1OS29vcEgyaVlfVnBjVUdudnJtOUdSZFFMWUFnTVpMTlc4UENmLWZwSTM2bnhoalpGME45ZGNqTFFUX2ExcXJ2WXlJMTVPVDY2d3JNZ3lucGRudVR3Y1pZLVhXeDROZEpDcEFxYnJtZ051Tk8?oc=5",
+   "source": "Morningstar",
+   "time": "2026-11-13T16:14:39+00:00"
+  },
+  {
+   "t": "NVDA",
+   "kind": "news",
+   "title": "Nvidia director sold nearly $1B in stock weeks before the Jensen Huang scandal broke \u2014 and no trading plan was flagged",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQLTktc1RQNWQxUnRyQXVkcVRpYUtRSUV6Y2dXX0lpYmduS2Q5NHBLXzc1Q2trUktLdi1RMGs4ekJycno1Q0pSTWpna29rV1p2LWNkVkhDQ2RuNmNHaGxHdkZTSEh2czQtS1RfVnFCb29DNU04a2ZjYnZXQ05nZlI3MThaQVZUTlFEMmliVmJ3R1FycnBtRFV6UndwNA?oc=5",
+   "source": "Yahoo Finance",
+   "time": "2026-11-13T16:00:00+00:00"
+  },
+  {
+   "t": "NVDA",
+   "kind": "news",
+   "title": "What the Nvidia scandal means for the company's earnings next week",
+   "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQamtxZ1JjdTA3UF8zODVhLVE4NDNCZWczZmE1REtITGRpTURvLVpGemMtaGJIRy15U1lQal9CVFBjanlXLW5xUzNuS2x0NVM4REhHVVZadGVrejN2bkdUVHZzTjhDWEpvWnl2RWdGM2Q0UDVGWjZ5TkJCZFB3YlJsa3RPV25LNWxUOGFpNEJRdm9iN3hrbm0tNHphZmRRTGxjV1M4UUJkODdKM21kcktzeUtsREptZDhiRmVmLXd5UmQ2bFk?oc=5",
+   "source": "Yahoo Finance",
+   "time": "2026-11-13T15:59:03+00:00"
+  },
+  {
+   "t": "NVDA",
+   "kind": "news",
+   "title": "HSBC downgrades Nvidia, says stock to struggle until new CEO named",
+   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPMEhJbkJpN0piTGdPZkpoZnJxc0FpU0lqSHVNRHBhekhJSGdYejRhVUc2MzBxV191dEd0MEJVem1NdkNHRXBJcWZnXy00enNhbGNmRjBiVjhvdk9TUnJDbnRFYVc0Z0UtRm4zd1ZQZmIzYTFXZFBVU2Z1SVd5OC1pck14R2x6Yi1TSll6NHQ2bS0zSENPbDNSU2VzYlNlU2hOQjR4Sg?oc=5",
+   "source": "CNBC",
+   "time": "2026-11-13T15:50:38+00:00"
+  },
+  {
+   "t": "SPCX",
+   "kind": "news",
+   "title": "SpaceX Cuts Grok Video Team: So Where Does Its $7.6B AI Business Get Its Money?",
+   "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOcFd6WlM1TjNOb1JLekszSV9xS2x1ZXF4QTJVOGp2VE9COGRnZ2paMVBHSm00bHF6d3RkdUxsMGMzT2UzT1NtOHZMb0tvbEhFN3R6cDZCTE0wTW9RS0wyaWNUd3hoZDUySy1iVk9TRHhjTnA0YmVQbjhQUlpBc0p3MDNOMjBWVWdoX0I3LU9ZT0Y0UWlaUEE?oc=5",
+   "source": "Yahoo Finance",
+   "time": "2026-11-13T15:05:52+00:00"
+  },
+  {
+   "t": "NVDA",
+   "kind": "news",
+   "title": "Is Nvidia Stock a Buy Right Now?",
+   "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQVVlsZDdWOVpLRER0R0Y5dXlYaVBlblBNTW9veWxRcEVCNERlNmZXd1AyX1pHNDVWZnJoWWE4bVk5NGVucEpsVTA2Yl9fQ3p5Z0dsVUdtVkJzWGR6eENrZ2hYNVV6S3ZHbms2QnF0aW1MUTlLdC1ZYzltRWxXd2FCTVl4TUIzNEhZYXpYaV9n?oc=5",
+   "source": "Yahoo Finance",
+   "time": "2026-11-13T14:04:57+00:00"
+  },
+  {
+   "t": "NVDA",
+   "kind": "news",
+   "title": "Here are 5 new share price forecasts for Nvidia after the Huang scandal",
+   "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQak1vN2J5dnZwOFYtbDhkS1dOZFF5M0R1TGtkcWtLQVhjWDJRZXZyeWYzSGJpaVJjRlJaYUh4S1JwR1NuMnpxMS1oVnpCUDlxRjNuN0lOQ0RGUlB4dTNUOXRJNFotTU9oWi14VTNNNzByUlFrUzRQY3QxM3dTTHR3OTZJTzdmUQ?oc=5",
+   "source": "Yahoo Finance UK",
+   "time": "2026-11-13T13:38:00+00:00"
+  },
+  {
+   "t": "NVDA",
+   "kind": "news",
+   "title": "Nvidia Stock Is Still a Buy After CEO Jensen Huang\u2019s Departure",
+   "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBTbHVXbEZWNnBkNlRaU1A5QWdvS3pNV1lWdF9yRkU2UVNpUUpLWlNEY0JhX1ZJLWYtMjFXZXlmeWgxV09DRUdRZ19HbEhrSlBVZ1ZzWVVVSkl3bFN2azlEM0VQMloydHY4MERiYTJzWU9qNlVGczlkcUhJRQ?oc=5",
+   "source": "Barron's",
+   "time": "2026-11-13T13:29:00+00:00"
+  },
+  {
+   "t": "ONDS",
+   "kind": "news",
+   "title": "Ondas (NASDAQ:ONDS) Stock Gets Price Target Cut from Needham & Company LLC",
+   "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNRlRCN2R4OTA4LUk0S1R1MGFzUTROeW1NeWxYSm56UkE5ZTJXZ3VaNEFtLXcwQ2todHUwZGY1OHFwa2M1OFBfeERTQzVENVgwOWhEOU04Ukt6eC00bm5rcG1xY1VyeHZQMXRlS3YzZWU2X3JGYVFlUnRIdzZyWExJTk5ZN2tWSkF5YW1ublFOUGE1SUZjTjlWVUhtX2c0c0tUMTBoaWtaS3c3ZjhxaFZmS1MyR05oaXVTNWhlVVFiaGlJZG1nemJMX2kxSEo?oc=5",
+   "source": "MarketBeat",
+   "time": "2026-11-13T13:26:40+00:00"
+  },
+  {
+   "t": "SPCX",
+   "kind": "news",
+   "title": "Tesla and SpaceX Could Announce a Merger as Soon as December",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNZVVQVmYzVUVURURhNGNRWnFzRUo0Ynpvc2gyYXJoeHh6Nkl2UDlUMm1VdTZiekhGV0NvRnd0UTFIZzBiTWlESlAxYXNScXdseExVVzkydVJiX0RhdFNsbDZMbUdqRXhVX2FVUlhWVGRJM2tvOFM5V25sQ2duTE1HSEpIbEw1YkhKZmdLTHlaOEdUdVUxRFFhcU9HOE1aQmFp?oc=5",
+   "source": "Yahoo Finance",
+   "time": "2026-11-13T13:08:02+00:00"
+  },
+  {
+   "t": "ONDS",
+   "kind": "news",
+   "title": "ONDS Maintained by Needham -- Price Target Lowered to $14.00",
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQRHhVc19RSHp4SVFBWU96bzBKdDhVVkF5cF9fZWloZEVUTGEzSU43RkE2RVNqeG42NVdJU3JvLWtMQ1lRdTZ1QkZBVWgwS0VQWWQwQ1B6QzdMdmxFWEVkNlYxQnhoTWl3cDBIdlRzQS1xU1RmYVF4N1E0ZjNjZjR6dXZYYWlTR01hM1J4VTZ2bEhBVWtJX2tqZ1dR?oc=5",
+   "source": "GuruFocus",
+   "time": "2026-11-13T12:35:37+00:00"
+  },
+  {
+   "t": "NVDA",
+   "kind": "news",
+   "title": "Michael Burry Sends Stark Warning on Chip Stocks After Huang's exit",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPa1RWS09uMkhMTnR1VV9faEQyWkZUaGFWcGRmOVU0dkFoVi16ckVUZzlDV25oZW56dUVDMi1zODdHdHd3ak8wdUhEcm5MUUw2M0pGTG9TSHdvbGNkRWFnbFhHblpaYkNmbEo4QjVrTnd4dExUakN1TXQtb0xKR1lyS251Rzc2X19qNzZyZlktQkV3c3BodS1Ic1VyejNHLUE?oc=5",
+   "source": "Yahoo Finance",
+   "time": "2026-11-13T11:41:11+00:00"
+  },
+  {
+   "t": "NVDA",
+   "kind": "news",
+   "title": "ETFs Are Buying NVIDIA (NVDA) on Wednesday",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQTk9RYS1DT3U1T212WGloT3RhMXpqSlF5R1pYWjVYdEItTUozaFRfTzdhRVpvdThlT0sxYnkzQkJTd1laYXVQNlJ5Q0R1bFFuZW85U082T1l0NUR6OVM4dFVUUWlrUU9MaDAxby1FQ204bHl6XzFmS3RJQUtsVnFyTWh2NnNQVFk1eTFSeDdIcjkySkY0ME1Wa2lqRDdaYzQ?oc=5",
+   "source": "Yahoo Finance",
+   "time": "2026-11-13T11:00:54+00:00"
+  },
+  {
+   "t": "NVDA",
+   "kind": "news",
+   "title": "Trump wants Tim Cook to replace Jensen Huang at Nvidia as $550B vanishes in a week. Don\u2019t bet your savings on 1 legend",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPeHFBYmNpWE5kRnlROFhqUXVkTzEtN212MGFDRXJzQ3hzbUp3c2xBNzItMlpLOWw0QWlpamVRLVdaczVYMDNDaGQzQTQ3dENNb2l4dXV3MUQ5a0MwUzJXSkh5S3B4LTdSZERMTDJNdHBhLURvdGhIV0lvaG9temRVc0w4eEtSTkpqODJKem9VOXI2Q1NWbG9yZA?oc=5",
+   "source": "Yahoo Finance",
+   "time": "2026-11-13T10:30:00+00:00"
+  },
+  {
+   "t": "NVDA",
+   "kind": "news",
+   "title": "Michael Burry Says Nvidia\u2019s \u2018Avalanche\u2019 Of AI Chips Is The Real Story \u2014 Here\u2019s What Investors Should Watch",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOU25MTGZpV1FtNllSaWdyNURGN3pxUXFDd29lMHlwS0VNYkU3ZmJVTG4tdFZJVE9ZQnZoZU5oZ0ktQlQxMHlLejREcmJ4QWpaaVNEbzlGc014UHFIZEpRdnNYT1hRUjZrQmxpNVNXZ3NoaDZmY2hPM0c3ck9Kbzk3aXRSUnZCcXVvNVhYc2FTVEhwTWg1MjVrZURHVWFSdVZf?oc=5",
+   "source": "Yahoo Finance",
+   "time": "2026-11-13T09:52:42+00:00"
+  },
+  {
+   "t": "NVDA",
+   "kind": "news",
+   "title": "Nvidia closes below $4T market cap for first time since July 2025 in Huang fallout",
+   "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQeHRJRmZaWDY1TDNwelllbWd6OUZiV1NzaEllNG9aekhVYVVGWWhOREZuczlHQzJEZXFoeUotM2wwOW5ZTEJTOWlkb2JqSV82U2hmU01GeVhzYVlmZDZVYVFMZFo4UTNBenhOa0N4ejd0bkczZ0Nsa0I5YThHbk9iVGFkWlHSAYoBQVVfeXFMTlpCeWpuYTJhM2NHaUxJc2dkRlVSQUZ4TWxuUjh1QU1NOFE0WjJ2QUVlc0E1VWhjLUZZeGJGdEw1emRmWHM1aUNXSDdjWGRXMUhGLXJXMEpqaWlZSjUzTmY3b3lVTWhSTENiV0M0WjNZeGJTREpab09JczdLejZRTzh3SGNZWGxGVUZB?oc=5",
+   "source": "CNBC",
+   "time": "2026-11-13T09:06:38+00:00"
+  },
+  {
+   "t": "NVDA",
+   "kind": "news",
+   "title": "Nvidia stock suffers longest weekly losing streak since 2012 as market value sinks by $1.7 trillion",
+   "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1DR2p3RENoZjJmOGRjTWRtaHZvSmtBVDRVUTRoMGFNNDB6Y1k4Y1J0T2xvTFF2ZENxZndVZVllTTZwc0dtNnRadFBGQVg2TmdUbkVUeXJ3Y0o2SmlBb1VLdXpkWndDMWdRZk9rSjhvaVphTENR0gF6QVVfeXFMUDJHWXl4WTl2eHVOV05LM0d1U1p3WHl5WjNsYkNjSDFpenJxODdDUm5hbU5YamhIQkF4RFVSVWluQ1FySERjQnA0X2o5Zms4Qzk4eF83akdEVEZKa094bjVzLVRsQ2U1SE5ZZmt0ODZmeGFyblptMWJsbkE?oc=5",
+   "source": "CNBC",
+   "time": "2026-11-13T05:51:34+00:00"
+  },
+  {
+   "t": "NVDA",
+   "kind": "news",
+   "title": "Despite NVDA Rout, Investors Have Poured In $37.5B In US Stock ETFs In 5 Days \u2013 Here\u2019s Where The Money Went",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQVngxYkdOcTdodlNJRnFIclFGMERlRFdYVlZHQkhuOUZVZmlaVDEtUzRJSTV4U0JGazdaOVJWeUFkS2l3cVdlTnJDVFNzZHlNdlNjSDBFVTI4TGtzNUt2bnlGVU1fS3NOSS1HWU5wYmRDc1cxVHFWaUhkbGFhQ01HTEY0R2EzbXV1MUFMbDdFTnBBeGhyM1pjQkZhejRNRDZs?oc=5",
+   "source": "Yahoo Finance",
+   "time": "2026-11-13T05:02:27+00:00"
+  },
+  {
+   "t": "NVDA",
+   "kind": "news",
+   "title": "CEO Resignation Might Change The Case For Investing In Nvidia (NVDA)",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPZVQydmRUQVRzYW16VnVfenRwd05yR0NnVW5EajFNR2JieUZCSi0zWmdoc2NmQWM4MjJ0d0EySTN0a0dZSTh1cTU2ekJ3UlR4V19KSkh5XzhzdDNPR29JcWtNM05lcFNiTUxHTTdSNEVhSk0yNGlTYS16ZmRzWklUWFJ1RUU1MUVaR2syaEptNVhuWjlJX29VOXh3UnZSSG8?oc=5",
+   "source": "Yahoo Finance",
+   "time": "2026-11-13T04:34:00+00:00"
+  },
+  {
+   "t": "NVDA",
+   "kind": "news",
+   "title": "Michael Burry Sees A \u2018Mechanical Bid\u2019 Under NVDA Stock \u2013 Even As He Questions Nvidia\u2019s Succession Plan And Asia Sales",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQcnhfVE1scE5nTUJyNWhaYXZPMTA3bGlVVy1LY3RWZ0ltczdZNklGUHZicENiTU9PdkdMT0prcldrdUxpZXZCX3ZCbFo2ay1RWmxmNVNIeDBSQUtRczhFYVZzTVRaSDhkV2hiS1FYcGUxd05FWFd4dGNzWWRnNFVPd2VuRmxZaEhKOUppN0REa3l5V2NwZl9CRGFHSVA2bmc?oc=5",
+   "source": "Yahoo Finance",
+   "time": "2026-11-13T04:22:18+00:00"
+  },
+  {
+   "t": "NVDA",
+   "kind": "news",
+   "title": "NVDA Stock Heads for Worst Week In Over A Year As Jensen Huang\u2019s CEO Saga Ends: Are Retail Traders Still Buying The Dip?",
+   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNT01iZUhhUlJVTG1XbTlKanJKckM3TjljeDJyZlhVXzZRN0NxNmtmME1qYlUtWmQ3ZlFfVFlHaGd4NFdHOTBBdjB4ODhMV0YxZmdDcm1CbFpfc3UtNU82bmNNeUNaOENIZUthU25TdFF5ZGNOT25zOHhfdXUwX1Y0XzBucGNxNnhHSW5ocGdDelYtRFJEaVZJ?oc=5",
+   "source": "Yahoo Finance",
+   "time": "2026-11-13T03:29:00+00:00"
+  },
+  {
+   "t": "SPCX",
+   "kind": "news",
+   "title": "SpaceX Stock (SPCX) Rises 0.1% to $139.94 (Nov 12)",
+   "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPUXVlYV9mVVM4UmkwX0prNG5YR096RGF1YjdMUjRZOGNzZlp3Y2FUdl91MjNZM0J5VjllYWFTV2hXRENKVXF1bUstelhkNGJpdDF1WFVCMURjQ0NpYmVTZlpLVEQ1cU1nMGYxRTh3ZmdTM3E1SzR0Si1kQmVqN28yVA?oc=5",
+   "source": "Gotrade",
+   "time": "2026-11-13T03:15:00+00:00"
+  },
+  {
+   "t": "SPCX",
+   "kind": "news",
+   "title": "A 68-Year-Old Retiree Bought 1,000 Tesla Shares at $108 in January 2023. Now Musk Could Merge Tesla Into SpaceX by December, and a 15% Premium Would Turn Her Stake Into About 3,270 SpaceX Shares",
+   "url": "https://news.google.com/rss/articles/CBMi0gJBVV95cUxNT3pBakh0NUdRUjZyLTRtc3RVRHFqM1B0SU5HQk9uOVhuZ3RoUkV5MmZud3NfNFZOemx1M2RaTkh3N1ZoOTVVS19hTDhJMTg2cFRveHdRMmpCWk5BRU1qT0RlVko4T3dmS1pKMHdqa2NSSmVyekp3NFQzSDhXTklQdWs1X2dORXJlY0tQTzJreXFocDAtNVBubjN2UUhtOERWSFI1QkZpTnBEUEp1ZEY3Vk1yaGRWMHdSOE1jRW1wNlFMb1hDUXFwZXlpYUYtbkJ0dVp2WWNpOFl2OWFDSmFCUU1OMU5MajZCczJlTjZEaDFHVGd6QmVuVU5COWVMOUtid0pMV2EzaVROcmNsYWJ2SjZBSS1ySFZybWZHVHFOaVVtTWhabW5lVThvQmg3azNDZ2Nvczc5WTNaZ2UwQWMzalpqMUlQWWp5M1FFYzBfTG5Cdw?oc=5",
+   "source": "24/7 Wall St.",
+   "time": "2026-11-13T00:17:00+00:00"
+  },
+  {
+   "t": "XTND",
+   "kind": "news",
+   "title": "Top XTEND AI Robotics (XTND) Competitors 2026",
+   "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE03NHBoeVhJcHVyYjRRNE0wSV9EZDNtb0pBLXMwVW9kRGtWZWxVQmtSQVVLaS00czB5RlBsaU1rdHM2WFpzb0hsbVBIQUZBUnI5MmNYTEVNZFpJME5JZlAwcWQyOHc2MW44VThYUURBYUU1WDItc3ozdGthVnprQQ?oc=5",
+   "source": "MarketBeat",
+   "time": "2026-11-13T00:07:05+00:00"
+  },
+  {
+   "t": "ONDS",
+   "kind": "news",
+   "title": "Is Ondas (ONDS) Pricing In Too Much Earnings Hope?",
+   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOZVl2aTNjV2pxQS0wandKcEtkS1ZiR2gzdW85OHNlM1IxLWM3UGhVYVRqMWw4UUZxaUJPblRoZ0ZpSkt6aXR4QTVSZno4cDRSR29SUzBvak9vVjRrczRUczhxYXJoTFVRRkpQcmNQLUlRb2ozSEc5REdsOVR5Q2dQamZEYTN2Wm9GVlNvX1Q0YzFrY1RUdU1Z?oc=5",
+   "source": "Yahoo Finance",
+   "time": "2026-11-12T23:28:11+00:00"
+  },
+  {
+   "t": "SPCX",
+   "kind": "news",
+   "title": "Here\u2019s Why Stifel\u2019s Jonathan Siegmann Still Backs SpaceX (SPCX) After Democratic Midterm Wins",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQS2txdmpadXc1cG5Uay12Yk5IRlpfMC15c0RVLXQ5eUEyX0JmeTA4VkFndExENG1DaDZUTktPZHhjNy1ZR1NmUHgxWEItWVktVVZweW10VlJndC1OTW5haGE0NmtLNVJoVGtiS3BLZ2F3RHdtVU52QlFvTC13UXFkQ2hwcE9jdzdlV05WaGxCSzJHZHRWNXBFUGlMdF9qamZ3?oc=5",
+   "source": "Yahoo Finance",
+   "time": "2026-11-12T23:14:49+00:00"
+  },
+  {
+   "t": "ONDS",
+   "kind": "news",
+   "title": "Ondas (NASDAQ:ONDS) Stock Falls 7.2% - Here's What Happened",
+   "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNZlNDSzhMeTYweThoZ2p3NW0zS1hqUk1KZi1MU3R2Wko1ZlZZV2ZqT2djSWRITFZMeldtYWI4T3Fra1JRTlZLY3pFWW9SNFBESWhSdEQ4NHM0cldTV19UUE1PTE9jel9ocUU1WW05dF8tMm9MbWNUN2RzNEhPTlFFcmg3allUNmdkUi1MZTJEeTBUN0d4YlVpLUtGSUVuZTlQTEtueUxrWG5ybzY2ZmZ0emlR?oc=5",
+   "source": "MarketBeat",
+   "time": "2026-11-12T22:24:16+00:00"
+  },
+  {
+   "t": "ONDS",
+   "kind": "news",
+   "title": "Ondas Inc Stock 12\u2011Month Price Target Cut to $18.38, Implies 221% Upside",
+   "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNTFRjRzZRRVdMRW5DNnowTUsyN0pOZzlnSm9VaWJlT3dvTUVYMXlFak45SThvLXNhTDYzY3RTbW1IOTdOclN4aDhsb1gtUkZxNUtTSTctTHpZNDJZUXFIMzQtME5lYnpRZkM1NXlBbl9UcUFUV2VMVGF4RkcyUEtOd2h2Yy1rNFlOU0pGYlpBd29ocld1cUZBSDNhazdjNVQyVWtlamxnTm4wbTA3VlNIMkJnNUswVDlpQXBaMXRvVUFBc2pnWldQTWw5bw?oc=5",
+   "source": "TradingView",
+   "time": "2026-11-12T22:20:00+00:00"
+  },
+  {
+   "t": "SPCX",
+   "kind": "news",
+   "title": "Here's Why the Anthropic IPO Could Mirror SpaceX\u2019s 50% Surge - SpaceX (NASDAQ:SPCX)",
+   "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxORG5Zd2VGUDZPUVFId1V2d1lKc2pfTk5ldjY2dGN0WHVyOE5JQV83N3cwVEQ5OVFVa2RQT0pINUhmTVFQUFdnUmJhV3NOQ3A1SDVqQVRicmp4VjlzQVJGQncxaGpHMlM3Wm5scFZEMHM4VEJfZXBSMk5qNjBkZ0NQQ0V1WENhRFVmNzRIeEtjMl8?oc=5",
+   "source": "Benzinga",
+   "time": "2026-11-12T22:00:08+00:00"
+  },
+  {
+   "t": "ONDS",
+   "kind": "filing",
+   "title": "SEC filing: Form 10-Q",
+   "url": "https://www.sec.gov/Archives/edgar/data/1646188/000119312526458517/0001193125-26-458517-index.htm",
+   "source": "SEC EDGAR",
+   "time": "2026-11-12T21:26:38+00:00"
+  },
+  {
+   "t": "SPCX",
+   "kind": "news",
+   "title": "SpaceX Announces $74 Billion AI Data-Center Expansions In Texas, Arizona",
+   "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNbFhoUmZPdDBKWHFJb0hYV0lhUmdSOV9oOFZDUnVxYm4yRENUUEpLeUY5NnJsSXFScFl2MXpSSmRxdzktOC14cmNfNERPT09UbmMwaUdIbHVpbnloOFg1QjZfNVkzZG1MRk9iNmFRVURpUGFVUmU2RkNlS19neXpNazREMUdFNFJRR0cyMlpETEIzT0ptLWtGZEZKOTBFZDl0eW5Qa3V3?oc=5",
+   "source": "Investor's Business Daily",
+   "time": "2026-11-12T21:26:00+00:00"
+  },
+  {
+   "t": "ONDS",
+   "kind": "news",
+   "title": "Ondas (ONDS) Stock May Look Overvalued Following Raised Outlook",
+   "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNOHpvWFFQaWU1eGppSW40WFpqeG5SUmNVdFhsT1B5VUdJS08zY0ppSGV1Y2c0R1JDWEdTRUdGTEYyMUJaQ3BObnhJZnU2LWsySkt1VldjLTU1N3RiSWltYVlKd1o2RHl0S24wemJnSVdGVmlPeHNTNDVFaFg0Y3BHS1JPb2QzYWhiY0IyVFctZ2o2V2RZTDVybERubWxMTEdOSzFkV0R1cXRqY0FVdFEwZWduaUVJak1aaGs0TdIBwgFBVV95cUxQRW02ZElhWlhNakhKTEpCWDAtdzFDR09Oc3dUMzBvZ2VMMkFRUHd6MnBDdlhSVkl3b0hIVUpUOXZEUFdSdDBrbFZ3MEV0Ukw4bzc3UmI2ak8tNHVNSDNOV3BIVVhwNndrV3FXYWwwa2k2REE0ZUNOSjZQMzdvTTNta0o1OXM3QU9UOGRZcTRsajBTNW9IU3FjZ2pkd2tSLWFhelBFd0hUN1YyLXBqTVliVS0tQnhSX3Y2NXJlVEI4TnlJQQ?oc=5",
+   "source": "Simply Wall St",
+   "time": "2026-11-12T21:21:41+00:00"
+  },
+  {
+   "t": "SPCX",
+   "kind": "news",
+   "title": "SpaceX-Tesla Merger Could Come Soon: What Do Shareholders Get?",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNMW9aemx6Rjkyb1pDcmpWZ3U1Y3RvY0pwczNrSlQ1TTFCN0FOV09GME9HTnh0Y0JfWC1LaTJibXFBS0ttelo2bkVHSmh0M1U2U09jU1JYdDdGZWdVYlFmQnJqbWh1UUlLT3Z2NktSRjlpNWhwZVFJLVdkUUpqazlKWUVJNVFKb1FtM0Q5bTRPbzZjc3JGRVpJMURwcw?oc=5",
+   "source": "Yahoo Finance",
+   "time": "2026-11-12T21:13:08+00:00"
+  },
+  {
+   "t": "SPCX",
+   "kind": "news",
+   "title": "SpaceX and Tesla Talks on Record Merger Are Said to Progress",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPaEJqa3FLNkpoME03TGN4YndCS1RYMGdsWUdYMnUzTHg5cFUzWE1yb0Q5enU5MEZ3TkRmMkJzT3ZaYTFFMWNCVVVRQzktM2I1TUppNzlWMHFSR2g0YUozSjdHVVV5TkdmVnRkLXRqeV9yWUlvZzhOVVJUNnFUaHFXbGJZeWVLaFhqY1BjazlCcEdJRU1xSG5NQnlDQ0F0QQ?oc=5",
+   "source": "Yahoo Finance",
+   "time": "2026-11-12T20:22:35+00:00"
+  },
+  {
+   "t": "SPCX",
+   "kind": "news",
+   "title": "What a $1,000 Investment in SpaceX Could Be Worth in 5 Years",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQSVQwdlpsTVNpWkE2dGpwdjAzdjNONzA3LUxwenYyOGRWUHBGRUFDQ2paclFGQTFSeTh1LXNRbjgwRU9TOEs0ZnFDakRkekxzX0NxOFNJOTdTdHdXU1BrNzhUV0dGM1lrLUNQYTFzUkhTbjFWM0tzQ3NrajdLdnFvQ3BkdlR5RGtkOW9JZExRdTJlZXdDM2lkUQ?oc=5",
+   "source": "The Motley Fool",
+   "time": "2026-11-12T19:15:00+00:00"
+  },
+  {
+   "t": "SPCX",
+   "kind": "news",
+   "title": "SpaceX Stock Rises Thursday on Speculation Huang Could Team Up With Musk",
+   "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPdUtVTDZ2X2VoX28wUy1jZ0p4VFVRMmFpS1FianZkTUpiLUYwak5DdlltcGFpT1U0a2VPVDJpNHliX08tc01wSVNleTdLZVh2SjRLcUNacExDQVRaUUI1MVMtcnZ1NEJFWFhWTm9CdlluRUMyUzEzR2tQMXRKb3N5WEFJazJsTHpLR25IRGJ0V0tOVlRmc0RWTXpzSXZTSGdpVmRfTmJONUdJUDFsa3ljTHNyR0tValVxNDNVdGkzWG5yY1BDdzFsLU0wQU1EZw?oc=5",
+   "source": "Benzinga",
+   "time": "2026-11-12T17:14:03+00:00"
+  },
+  {
+   "t": "SPCX",
+   "kind": "news",
+   "title": "Why SpaceX Stock Popped After Nvidia's CEO News",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOX1VTNVBEMEdrWDlNcVh3aXNTVzhHRkpOVUxoTWhKMG1BWnV3c0xJTEJjRXRobG9meUdyb2pIcE1sRlNBeWZhcnByV1MzWC1WWC1KcC1vX1BaemRTRUgzTXBKTV9Td2plY1oxaFRHUmM1djBTZlpfdHJrYzY3enRWdzVjd1ZsU0x2YzUzNHQ0R2RJQ0RCNmtCZ1A1U1c?oc=5",
+   "source": "Yahoo Finance",
+   "time": "2026-11-12T16:54:09+00:00"
+  },
+  {
+   "t": "SPCX",
+   "kind": "news",
+   "title": "SpaceX Gets State Street Boost Ahead Of Flight 15 \u2013 Here\u2019s What Investors Are Watching In The High-Stakes Starship Mission",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNSUh0NnpfNjZBVGpEU3kycEF5RUdua1dPeWFFbkFiWHEzVGllY2EzUTdsd2tsdnVtdEp1TDVuekItRTlTNkpmMHdGaGZyMGxRbTRWSjdQNFlHc09aWDN6UGFKc0s3azVsQjNHUEtJbW5WN2l6bHVMYlFVS2hQTktqWTNuRElReTF2WHVMQTFpWmFubGpVckJ2VGZqUQ?oc=5",
+   "source": "Yahoo Finance",
+   "time": "2026-11-12T16:45:16+00:00"
+  },
+  {
+   "t": "ONDS",
+   "kind": "news",
+   "title": "Ondas Inc. Q3FY26 Results: Revenue surges 16x, loss narrows to 10 cents",
+   "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOMTh2WGZMUFQzRkotd2d1TlFaTzlKLUxUVzhiTFZSbTRfV0h3TDZaT1VhODRIYUNrcGlyRng4djgtTC1YSmxrU2NzeWxqcW91Y0JTNmd3LUF6YTN3R1l2dTRTNGMzSEp0dG9OcGN4TGk0ZmNwazE5RUV0UzJIWVZHSkUzc2V2Tm1aR2Jfc1BxYy1DMXE2SmhfS1g1d0dKVTAwazVEaENGcDZmVy1OQ25XdGQyVjAxY1F2ZW9BYnlIWQ?oc=5",
+   "source": "scanx.trade",
+   "time": "2026-11-12T16:39:51+00:00"
+  },
+  {
+   "t": "SPCX",
+   "kind": "news",
+   "title": "SPCX Stock: SpaceX Will Try to Catch the Entire Starship for the First Time. Elon Musk Says It\u2019s the Key to Mars.",
+   "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxOSzdoLU41NjAxQlp0ZzdjeG9aalRvVW1Wa04ydm9PYkMtM0NYSW9veE94QzlzZURTQWdqS29NQThWdDdNTTI4bGZsS2JNYmFoUnhPQUthaG1GOEpJbGRaaU0xUGFzS2tMeHlRQWtfNUpXV0QxRDIxSnBfLV9MNnB1T1ptaWFWTWhVXzFCVXVGX3BBb3J3b1RmdHFFWmhkT0pIY1FNNHJmbWg2aFptWUdYa1FnUGpZdmtrclppWHMwWm5wb2VQU2FRUm9sUlZTbFNFeWJCSzNDelltWTZWQTNRUUtBTk1WUVFI?oc=5",
+   "source": "Barchart.com",
+   "time": "2026-11-12T16:31:18+00:00"
+  },
+  {
+   "t": "ONDS",
+   "kind": "news",
+   "title": "Drone Maker Ondas Raises Full-Year Outlook",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNOHBxTEtwbTRkQ21XNEdKR2VHUkNBX1AzQVlYWG9DY2d5ZVlfWU5MM2d4TFRya1BLY1F6T3hlTlZsb1lUTW14VjVuUUZaUlRickpILXFWUG92THdrMDhtWFNMZUpCMXE5ZVJYZ18zRDZDU1plSzFEMk5fTmNWZVp2cjUxazc4aFdDTE9KSnYwRlFYV3JtOVh3Tm0wU2JRQk4t?oc=5",
+   "source": "Benzinga",
+   "time": "2026-11-12T16:20:06+00:00"
+  },
+  {
+   "t": "SPCX",
+   "kind": "news",
+   "title": "SpaceX Stock (SPCX) Moved Up by 3.06% on Nov 12: Facts Behind the Movement",
+   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOU01NMkYtSEtoc0xzazJtN3pvamhtTnBvc2xUekEtWVVjdWoxRzdUR2NQX0RfZFc2eHRaLURkTWZQY0tJN2ZHVmVjbXRoeTBjMzVsWnhiSlBmX29Yc3JDSUhmZDFudFZTb0NwMDVXekhSUFEtbWVXVjZFc2l2LVZPc21CbDYtSUNZbnNV?oc=5",
+   "source": "TradingKey",
+   "time": "2026-11-12T16:15:37+00:00"
+  },
+  {
+   "t": "ONDS",
+   "kind": "news",
+   "title": "Ondas Retreats 5% Despite Record Revenue and Raised Outlook; Red Cat Drops 4%, AeroVironment Holds Steady",
+   "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPNTdLbVZjU2llZ0lRWEhUbE5Pb2pfSE1IN1p3YUZQaGRyaUxsQTJDX2NFSlpkWTljTVZFUHUyc05sbU9iSXVuaXR0eDlLb3YwaTQyWTJuZ3BoWmpjMU1BYmVoVTRXTEppWHZ3SXk3RlZxVmhBeDdBcXdQOGs2c01NN1E0eGNtaU56MXNTVk14a3JBUXVYaG9aZEdKOFFoSkVRbTBkVmhWc2pUOHY4YnZiYjhjNUwyc2tTWHpuVDFXdGxsVFNiUlltUEhMVkRubnU1eEczU1lJSVlRSkVaNlE?oc=5",
+   "source": "24/7 Wall St.",
+   "time": "2026-11-12T14:57:00+00:00"
+  },
+  {
+   "t": "ONDS",
+   "kind": "news",
+   "title": "Ondas Inc. (ONDS) Stock: Plunges in Premarket Despite Record Q3 Revenue and Strong Order Growth",
+   "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNdUhScDdMQ2FBMmtYVjBqbDZBZ2ZxOWJDOFhHcG92RFFZZXZRb01VMmFZdW0zVlBMamhYUzFUY0tpYUpScWZ4QmM3Wjl3VEowclBVemc4ajNYbUJ2eUVQa0RnbEszMVp6LUJPSzZndk9MWTFUMGFDeURsN05ma01ENHhKUFRPZHBVbEkwUlRQM3AwRzRFX2NJZTR6N2dITGFJTkpIb0lHOEpxTjVtNWhENDNuU2JQdw?oc=5",
+   "source": "Blockonomi",
+   "time": "2026-11-12T14:17:45+00:00"
+  },
+  {
+   "t": "ONDS",
+   "kind": "news",
+   "title": "Ondas Holdings Inc. (ONDS) Reports Q3 Loss, Beats Revenue Estimates",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPZWg2RW5mSEVlamlfZVZiQWgxXzNTVGhxM2NZS09PZUpaRFc1dVdqMXpfY1dha0pvaXlVRWxRWjZ4d3N5Sk1XUV9MNFNNYkdhSzd6VEowdHJDNndJcnIxcnRPU1lpU3dYRUVDbTN1Nkw3TEtQUUF2V0FKOW16YWR3aUpUWjhwbHB2VTJ4QTJaTnZ5ZVd6QVFNdmtqRmw?oc=5",
+   "source": "Yahoo Finance",
+   "time": "2026-11-12T14:00:01+00:00"
+  },
+  {
+   "t": "ONDS",
+   "kind": "news",
+   "title": "Ondas shares fall as loss deepens, margins shrink (ONDS:NASDAQ)",
+   "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOWFF3MGZJRGlfb2paRnhHWHc4RndxV09IRlFINTloZ0gxdHFtSDJtM1BHRlFGVUNldjNTT0N5ZnBHTDZsTXdlNDd3M1A1d1k0V3lKX3RvbGtqekExWjZNeUNtLU11MXZaX3NacURnaksyUG51eTNnSVBBM01mQTBmaFZpUFdJbGZ2V1dtZ0V2MA?oc=5",
+   "source": "Seeking Alpha",
+   "time": "2026-11-12T13:29:05+00:00"
+  },
+  {
+   "t": "ONDS",
+   "kind": "filing",
+   "title": "SEC filing: Form 8-K",
+   "url": "https://www.sec.gov/Archives/edgar/data/1646188/000119312526457088/0001193125-26-457088-index.htm",
+   "source": "SEC EDGAR",
+   "time": "2026-11-12T13:24:42+00:00"
+  },
+  {
+   "t": "ONDS",
+   "kind": "news",
+   "title": "NVDA CEO Drama Rattles Tech Stocks: INTC, BABA, NBIS, ONDS In Focus",
+   "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxONV8yaU5LajVrVFpSTUFRVVc2RWQyaktmWFpFMFh1bVRMWmJ5LVJhd0kwTk1SM21pQ216dVNjQ3dqV200VFZxNkdnNU1aaEFaeUJCY1c3UXRzMElxcXRnWVZRNnloSm5JY3k4ZmxLS3hsSk9BaHFZQklXOXNLZXU5ZkdkNWprWEZMcXVXMkNTVGxfclVadGFibHBhSFJ3ZEd6VHpENnBEdkROZ3ZSNGFBaTVKMW5YQkpCX0E4Z3VrNnoyTnBTQmVnbUtR?oc=5",
+   "source": "Stocktwits",
+   "time": "2026-11-12T10:32:12+00:00"
+  },
+  {
+   "t": "ONDS",
+   "kind": "news",
+   "title": "ONDS Stock Eyes Green Week: Retail Awaits Ondas\u2019 Defense Powerhouse Validation As Crucial Earnings Loom",
+   "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOR3NuOWQycjRtY216WE9zZkFZRWUwMVVVUDZqdi0xQlBoNnQ2R0xGbXBRTVV3dWlFd2JibnZNcGh5Y0UxNm5zWHNTQ1Zfc0dlWjVhMFl2T3RYeGk2VWpFN09nU2h4RkFWV3BaOXlPOVNhNnIxS3ZSREFUNGFScF80Qng4aWlOSTdERzhadmVqZXl0SGRTUEE?oc=5",
+   "source": "Yahoo Finance",
+   "time": "2026-11-12T06:21:00+00:00"
+  },
+  {
+   "t": "XTND",
+   "kind": "news",
+   "title": "XTND Jun 2027 1.000 put (XTND270617P00001000) Seasonal Returns Chart - Yahoo Finance",
+   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE42UUdCMWd1MEJZaGs2b0VTN2VjbkxsUDhzRnNMT094YWRpc1U3b1ZURnRkUjdLX0xOaDl1WlZHQm5IejVsWE56bE1TUG9FRUZPV21LN0QyQkgyeWlKUk5kbU85aWxpS3VaSjlMNWdDdERZbXpaTHc?oc=5",
+   "source": "Yahoo! Finance Canada",
+   "time": "2026-11-12T04:13:12+00:00"
+  },
+  {
+   "t": "XTND",
+   "kind": "news",
+   "title": "Xtend AI Robotics, Inc. Stock Price Prediction: Today, Tomorrow, Next Week (XTND)",
+   "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFB2SUNEQnRMTzNXY3d6U201eFVieVNnZjU5NnBtN2k4Z3hBOWRTMl9rMU9jZ0VfbDEtWmRKa2xLcW5LQUZhQ2tKYi10Y0VBSncyMlczaG9xUDJIWTBYeUhfTDhWU255bXoyY1hEYzlDcE9NNm9QWkVzUUJHdw?oc=5",
+   "source": "Traders Union",
+   "time": "2026-11-12T04:06:44+00:00"
+  },
+  {
+   "t": "ONDS",
+   "kind": "news",
+   "title": "Ondas (NASDAQ:ONDS) Stock Jumps 2.9% - Time to Buy?",
+   "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPTURzWnJxUzBrTm5fVzk0NkZOajFjbHlLWFgyLXNsaXRaT1c3a1Jub1FFemRyV2NrY0JQY1Nnd3AzM3NJYkhxU2ZGdEtnWWZBLTlxeVVvcm9rN28xdl9kbTZQUTVaWERUdzBxN3FNVDFZUmtSUGo0cnJpU3dyN2JjcXNNTHBaTjVHTnVJRnhQWnVzT1ZjckhiTHBTVmRRaV9STERQWEhQcw?oc=5",
+   "source": "MarketBeat",
+   "time": "2026-11-11T22:46:34+00:00"
+  },
+  {
+   "t": "XTND",
+   "kind": "news",
+   "title": "XTEND will report quarterly results before markets open Nov. 16, then meet investors in New York and California.",
+   "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPSjU3QmV1NHRsZm1nUUd6Y1JXX2NEMTg0R0x2c1FfT0hEVWVBQlZDZVRMOEhfdHNkQm54V2hHZVhzRjRNMm92QTM1UjJncm45ZHVYUWsxMjJhencyckNFTjhYWUwyMTdYa3ZJYWNqRko3bnNCdjh5bk5GVzNIOHFIOTlVQ05MTkxfLVFrNWI2eFFRZDRobU0taTE2Y21ZMy1sN2p3emNuUnNFeWNsenNlRFhrRy1oeGpWbVJVNw?oc=5",
+   "source": "Stock Titan",
+   "time": "2026-11-11T18:00:00+00:00"
+  },
+  {
+   "t": "ONDS",
+   "kind": "news",
+   "title": "Red Cat Climbs 5%, Ondas Gains 4% as Drone Stocks Rebound; AeroVironment Rises 2% on $405 Million Laser Order",
+   "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQQW14NDB1blhWUE82OWNHT2lnREhidTlUcmxDTzdHaDcyQkdYQ2pPQi1hd3RER0F5TEdGTEVIdXFaNmhwMVk5aWhhYUplbUVkS3VMWEZhNnZKZVR6ZEtNeVZxWENuSkpFQnRNNTc4X25NaHM3QkJPTnF2TmhRektmdW5KMy00NnpSdkRDbTFSYndqQTRwbXB1WHdOclVWZlQySmhaUDBtU2NUNklGcU5ZZ21uVzVZMTBRbjRoVkZxU0loMUdhNE1nYUdseEhhdXdCd08yQ3Q4WU5GTlVVV0cxbQ?oc=5",
+   "source": "24/7 Wall St.",
+   "time": "2026-11-11T17:53:00+00:00"
+  },
+  {
+   "t": "ONDS",
+   "kind": "news",
+   "title": "Ondas Inc. (ONDS) stock price, news, quote and history",
+   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBtYXpTaklLRHo0T3lfSjJ3dUd0MWhveFhXNHgyemZENXVlajF4dzdpQk10SFZlSWtCWlNRUU4tZ2tDSFNDUlRlUUxRb3c3bEpqUlE?oc=5",
+   "source": "Yahoo Finance Singapore",
+   "time": "2026-11-11T17:06:26+00:00"
+  },
+  {
+   "t": "ZIM",
+   "kind": "news",
+   "title": "Zim Integrated Shipping stock may move 3.7% on earnings report By Investing.com",
+   "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPSDVqRWh2TmVUNFJPb0VqNkVxYU5zMldTTkZlbGR1cU5VTXQtNFlTYUloNm92c2QyNHF0SnA2aGZZbElfZmUwazNnZks3LTF1TndvNmJHc0lPSFhhSUs4aEx1Ri1vVkI4ekJSVTNYWUI1VEwxWVM5cjlibjA2bkYwYTcxTE1qUXEwVUNTNHczV0lQUEVDaEhVekpnZXI5ZWI0Q0NwWk9mNFJnSEluejA2TjdCNTlBdUY0QUVfNWhB?oc=5",
+   "source": "Investing.com Nigeria",
+   "time": "2026-11-11T15:24:54+00:00"
+  },
+  {
+   "t": "ZIM",
+   "kind": "news",
+   "title": "Zim Integrated Shipping stock may move 3.7% on earnings report",
+   "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPN1VBX21wei1fQjRnSndaOU5RLTl1QkktdHh0X1FiVFNCMEIyaEZvZFp4VDZhRHY4dHg1b3VjemhhQml1NGdNTTRaQnhuWXpxQ0lfVkRUQUNFNXY5Y29wVVl1eGNTVUgyM01pNXNMUkhoeDVvanBGcjVYRVhzSU5jelc0OWRVMUt1a2EzOUVZT3VaeVdMbTVwUXl6UVRxNkpFal82N2tnV1VjMk15TGlxakx2SHhlTXdBdk9UMEQ2MA?oc=5",
+   "source": "Investing.com",
+   "time": "2026-11-11T15:11:14+00:00"
+  },
+  {
+   "t": "NSRX",
+   "kind": "news",
+   "title": "Nasus Pharma (NSRX) FDA Approvals, PDUFA Dates & Drug Alerts 2026",
+   "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBDVU0wdmtLS1VKeFdBeFROeGYwUUNpZnZaOUQ3aHNRbzZnWmV6TnhqaVlLYjBjZjlfNUJTYTl6QlgxRldTQW5kQWoxRFMxV2Z2azRuV1BCZlk5LWhqVHVpR2xoVmp5Q196b28zMmJ5WUk?oc=5",
+   "source": "MarketBeat",
+   "time": "2026-11-11T06:05:40+00:00"
+  },
+  {
+   "t": "ZIM",
+   "kind": "news",
+   "title": "Is ZIM Integrated Shipping Services (ZIM) A Bargain Following EPS Upgrades And Sector Outperformance?",
+   "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxOZlh1cm81NjUzdG9oa2syQzNCTm1zQ2xUSTZPSVoweEIzQlpQVzBJZnJwd0hRODJMMGJFVGJJVjJtZTZiXzg2QkF4R21mcVlkdGl1MDJMTzVfWmFraW5uaHhMdk5RRE45b2dSWnd5YVFqVWtobG1odW9vMVZEdUpTaVBNVzVxbDM1MkYwODN3TERBMjhhcXdNdjlKM21nTlR0UV9RbUhXZUx2ZkFDRUtLVGtSQkhXOFBTOTY5OW9NeHJRdmVPbTdkWVJMc2lFaWhTdE81YVJPU2QyRWZjWFYyWl9zUGFOcHVy0gHuAUFVX3lxTFBtbGVmdzRCMlI3R0xOZ1lGU1NLaEJfeGFJN1pUXzM2cVVtbERWXzlhODZCamtvNV9jaFZ5dWRsYU9sYmRqQ3NScjU2a0JXdHBfampHRDg1TUR4Nm8yMGNFX3RSeVJSTDlrdmxDSktUYXhaVmZNYlcwZW0tRHRkUjFrVVNVYUR6MV9uYk9qNndSMGtnZVNJMUZvUUgzSU10aUEzbmR6NTlyaEttM2pIVEhKTDN0NmtxNE9QcW1WNUNYTkNtZExSYVJUak5Ic0xpM3psa3o4MEJKdXRFTFcwVUtTb01pQkE3UGpMck40UUE?oc=5",
+   "source": "Simply Wall St",
+   "time": "2026-11-11T04:42:07+00:00"
+  },
+  {
+   "t": "XTND",
+   "kind": "news",
+   "title": "XTND Jun 2027 1.500 call (XTND270617C00001500) Interactive Stock Chart",
+   "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9LZFNqQXpZbXRGSkxXalBsVFBnMWNjSDJuR3VGYkFwMEx2aHZwYXlWTnl4UEt2MDBKM2QtVEVkekoyaTlEM200eTc0WUptamZhTmFQZ3JyMllxMUMzVHgxWGp4Qk1fWTIwMVFrVzlR?oc=5",
+   "source": "Yahoo! Finance Canada",
+   "time": "2026-11-10T22:29:35+00:00"
+  },
+  {
+   "t": "NSRX",
+   "kind": "news",
+   "title": "Nasus Pharma Ltd. (NSRX) Seasonal returns chart",
+   "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9KbkJqLXpJUzFtZEZSS1JCRzZRUlRwNVZpNUVWalEwMjZ1VDdEaWFUQ1NhYnZVUy16VFI0ejdjLVB3SWtSU2gwekJTZzlyWGNOY2EyUXNGSEdPSUd6cjhTS1hR?oc=5",
+   "source": "Yahoo Finance UK",
+   "time": "2026-11-10T15:16:43+00:00"
+  },
+  {
+   "t": "NSRX",
+   "kind": "news",
+   "title": "Nasus Pharma Announces Abstracts Accepted for Presentation at ACAAI 2026",
+   "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPVUE4UUN5Mm5ZRElEZ2JueVhoTlZhb0xIZ3p5MjNIYW8xXzZ1SzV0cXlpYXIxS2Y2TFhpamJvWGZvenFtdlJKcDdGSnNiTjRyYi1fMDZjTE84N3ZhNTd6WEFTbUY1UWlhdzc2YjQxNHlCOWxyMng1TWpPMFdhQ29CNEVjbTR2TzdIQU5jTTROYXkxVWdDWkxEdnBtOGpVTlhzS3dHdUZLV0lRdjFIcHZfS2hSOTdoc0c1RkhyQW1RbXhsUXJzS09MWHUyYmVNeGQ0SWJWNmxTVmU5UXNU?oc=5",
+   "source": "GlobeNewswire",
+   "time": "2026-11-10T13:00:00+00:00"
+  },
+  {
+   "t": "NSRX",
+   "kind": "news",
+   "title": "An experimental needle-free allergy medicine is absorbed under severe nasal congestion, an abstract says.",
+   "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxON19xUlkwUE50YlFORFJ2SUV3VDBScWU0OEQ1SWdVWFd2dFdpS2ZJVWE4ODA1M2xvMDhFa2JSN1FlN0JZY0JZU3NkQzN3WkIwX0lyeklrTG1peUdWNjFTQV9wMlJYeWY3UlNxRzVtaWgzdU91bkxnQzZlSnZoTnYxZ3ZnSWVrRmZNNXc3Y3RSblNyS2FkUWhEY0x5eWM0dlFIYUVISThaNHdCbDdsU0pJT190VmFFcUphWDkzcVVwOA?oc=5",
+   "source": "Stock Titan",
+   "time": "2026-11-10T13:00:00+00:00"
+  },
+  {
+   "t": "ODYS",
+   "kind": "news",
+   "title": "ODYSIGHT.AI to Participate in Upcoming Investor Conferences",
+   "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQZnduc3RlUk9TVnZ2RnpFZFpMVGphcTZSd21PX3FqMEN2LUFtU2VWd21VSFVoV0VGOXItVlhOLUdlcGgwZXlPQnJ1RWZWZ29veW9QeUp0Y0d3Uk5PZm55MTc1TUdzbzdvN19ucDFfY18yOVNBNTI0T3c4SGFnUlFhTzc0TkNFVG9sMEpLTGhUN3RhMDItZm1PT2RFb3Utc01vbVF3MEVLYjJ2SGFJb2J5ejh1c25ET2RyU1E?oc=5",
+   "source": "StreetInsider",
+   "time": "2026-11-10T09:56:15+00:00"
+  },
+  {
+   "t": "XTND",
+   "kind": "news",
+   "title": "XTND Dec 2026 1.500 put (XTND261218P00001500) stock price, news, quote and history",
+   "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE4zR1ZQVmxBYVlVQi00QjB3YVVrMG1VY2ZBeXl4RTliN0dxa05PMldMeHg5TFJUci1PbmpqWlJMNnptTGxKWmhlMEFKd0VUZnFLTVlEUjB2RkxZenB6YlZkLU9oQWxQQQ?oc=5",
+   "source": "Yahoo Finance Singapore",
+   "time": "2026-11-09T23:28:35+00:00"
+  },
+  {
+   "t": "ZIM",
+   "kind": "news",
+   "title": "ZIM Integrated: H2 Earnings Provide A Floor Against The Merger (NYSE:ZIM)",
+   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOVVFrS3UxYVRFN2s3dHB3M2NLT0FHOGpIYXFYMjc0eDBIdUlrTFRXazhEbjl1cHRtaHR2RDkzWmVxQkVDQXhydkpTWnNucTlKZWxpN29UQVBYVWVkenlsSXJWNEN0cTFIajBwbl9fM2gtbS1nd09PRUtFQ3VRRDNqWE9lMHI3cVRmTTE2aVpkU0VjWVl6aEZhRE0za0Y4ZUFaZDlseQ?oc=5",
+   "source": "Seeking Alpha",
+   "time": "2026-11-09T22:24:19+00:00"
+  },
+  {
+   "t": "XTND",
+   "kind": "news",
+   "title": "XTND Jun 2027 1.500 put (XTND270617P00001500) Stock Price, News, Quote & History",
+   "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBuYm1YZkdiaEJzSmZjM1I3UXNMcFYwc2N0cU1FendUT1lXekd0QWxBSWpjeDNudmllWUVlSDVILWJIaW9iY01BOUN1NWVJakdia180TGFvQzNjZnVGX2ROTHMtUEdOZw?oc=5",
+   "source": "Yahoo! Finance Canada",
+   "time": "2026-11-09T16:00:29+00:00"
+  },
+  {
+   "t": "XTND",
+   "kind": "news",
+   "title": "XTND Jun 2027 4.000 put (XTND270617P00004000) stock price, news, quote and history",
+   "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE81OXdKTEtqLVlla1M3dmJTWW5JYmhsME5SME1oQ3N2UllySEx0RUlQeXY3b0dYaDBGc0FldEpsWmNGTGRhZS1vX3VLdkdVaXBkQVd6c21jczBpdFUwUlhoSkhFejlGZw?oc=5",
+   "source": "Yahoo Finance Singapore",
+   "time": "2026-11-09T14:32:08+00:00"
+  },
+  {
+   "t": "XTND",
+   "kind": "news",
+   "title": "Xtend AI Robotics, Inc. (XTND) Forms 'Hammer Chart Pattern': Time for Bottom Fishing?",
+   "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOWnhhd1R3T3NGcWxuZ0dvVWFSVnN1eEtBMFc0YjNvY2xpcHd6OF85dW4wS2RiM2szdXRodkMwTUtTOElCWVZQUVB2c2xna2EtNmFIX2E1YUxUNHYwcnJTRzd3SjdyNGYtMnBoLVl2S1BNcGZUVUtibTlTV2VEVGNtNHZ3R0MwdzI4eEtVTXExaW5HMWdMWFE?oc=5",
+   "source": "Yahoo Finance",
+   "time": "2026-11-09T13:55:02+00:00"
+  },
+  {
+   "t": "ODYS",
+   "kind": "news",
+   "title": "ODYS Q3'26 Earnings: revenue estimate is 1.10M USD",
+   "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPeE0wcjE4YlRGa0pheFhyM2M4Ml9fcGxNYkNZU3ZXQ0x4R3NMUWJhRTdSVUJjMm4wV3h4VXJGSnU5OTNRQUNmM05xVXAtQmxTbmVnOXI2MGJKNEtuUzRqcHdrdWhCZDZhWEp1SUlaTENocFJkZmpfQ3FjOFRnc3lpM3pacnJ6eFZubUNlQVhpOGV2S1VQYnhQZ3pReTViQkdib2lWQmdmNWVlYXJidVFNRA?oc=5",
+   "source": "TradingView",
+   "time": "2026-11-09T12:00:19+00:00"
+  },
+  {
+   "t": "XTND",
+   "kind": "news",
+   "title": "XTND Mar 2027 0.500 call (XTND270319C00000500) Seasonal returns chart",
+   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5XNVVyQ3VGM3V3UmpSWURjdTUwajA4eFlabWwtYzRSQ2tMa0ltRm9ad1ZiMWJhU3pNcWtMeHdSUzY5TTB4dVpQSnBWR2dnOGt0azkwMUw5T1BJMWRoTC1jQmpQajVWWGo1YkpBd1VaZHZUdGpZRXc?oc=5",
+   "source": "Yahoo Finance UK",
+   "time": "2026-11-09T11:20:21+00:00"
+  },
+  {
+   "t": "ZIM",
+   "kind": "news",
+   "title": "Zacks.com featured highlights include DMC Global, HF Sinclair, Cenovus Energy, ZIM Integrated Shipping and POSCO",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNLU1XbGRVeEFoU2lQdUpKcFg1S3ljNDRBTlFLUkNfc2daaFhLZ0hvQWw5Qk1LQ1oyS0JKN2NxdWNBR1FlVE5WT1VORXZXQTB2VUJ0TDZKUk5ESkhJRnNTem9MRFQ4MENIZ3JlYkh2cHVpNjlhWGw2TlNIVW9taWVXVnlna3ljeHpnQ1Q5Y1JDdExHTFViTnNtTEJtdzA2Nzg?oc=5",
+   "source": "Yahoo Finance",
+   "time": "2026-11-09T09:29:00+00:00"
+  },
+  {
+   "t": "XTND",
+   "kind": "news",
+   "title": "XTND Nov 2026 1.000 call (XTND261120C00001000) interactive stock chart",
+   "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9fVzZpb2dVTlM3blJMZ3dwYTdxRGZGUUxUQ1JnTEc4RTRpRll3MnZGNEFrc1pETU12ckR4VVRqQzJFV2NIcWczSko1Y2w2N09SLTdZZGRpNnhCa0p4VXd5WFZ6M0Ftcl96aDFCaFln?oc=5",
+   "source": "Yahoo Finance UK",
+   "time": "2026-11-06T19:35:20+00:00"
+  },
+  {
+   "t": "XTND",
+   "kind": "news",
+   "title": "XTEND AI Robotics, Inc. Receives $8.3 Million Defense Order for Systems in Asia-Pacific",
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxORl9TZ09DdnJUQjlMWF82dF9CVHZfSHZoUTRFWWlsejRaY3NRTmFxdDdtUDViSmtHY2pwTVFWSnF2bjhYY0NoYVcxMmNfS3dKZUljNUh3R0ZhMmR0OFFaOUtyQzMzc1U4Vjd1cDdpclp4MElrOXg0bW1BRm9IU2lqUEdDWEZnem1sdE8zMkY5dzdUcWtOd2JoOTBn?oc=5",
+   "source": "Yahoo Finance",
+   "time": "2026-11-06T14:15:00+00:00"
+  },
+  {
+   "t": "ODYS",
+   "kind": "news",
+   "title": "Odysight.ai Inc. (ODYS) Stock Price Prediction for 2026, 2030-2040",
+   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBBOTFGa0dNUEM2RkdNRHFSdzl0MGw1WW1Xb0NZNU1KTnhySTlPZTJaRHdnX2M3VnJTU0xXTjhMc3p2OXdHZ2dQNlFfdm05MWdhZUxNcW56QVVfRGQ4VXItTE9iNmo?oc=5",
+   "source": "Traders Union",
+   "time": "2026-11-06T08:00:00+00:00"
+  },
+  {
+   "t": "ZIM",
+   "kind": "news",
+   "title": "ZIM Integrated Shipping Services (ZIM) Stock Moves -3.17%: What You Should Know",
+   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPZjVlZWtkOFE2Y1RwaWxMWnowbEp2ME1QSko0OGlfV3QyQ1ZXTHU4ZUZHNGw2MzQ5bXljeDc2VDBwRWxSeHFJS1ZkWjBJeXVGU0NOdzZSTFROcU41dFQtdWYzajNnQnN2YWtBS0oyWE8tUXIzR3ZOQ29nQUhMc2xKaGswWU5vT1piZVRiYjY5UEZ1RFdaQm5BUGdNc3ppRVptZWJV?oc=5",
+   "source": "Yahoo Finance",
+   "time": "2026-11-05T08:00:00+00:00"
+  },
+  {
+   "t": "ZIM",
+   "kind": "news",
+   "title": "ZIM Integrated Shipping Services (ZIM) Gains On Freight Recovery, Is It Fully Priced?",
+   "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQQ25DZWkxS1BINE40N1BFQ0RkQ1JqNUhGRzhYSkdrRHNDVEEyRlpQUVZweUtoc1ZuWFdjdkpkV19HN1hGTzVsT2lOalpwOVRGa3JEX3RKalAtZGJoV3lUTzlMMGZnd0h1aHhwZmFqS0xIb09NMks4Tmlwc283ZGJIbjNFQmp3cnp2Rnp1REFWb2QwUkY2czRoMlVkUFhROWU0WjJZQ0YzUE9LT18yTnExN2xfYmFzNU91OEt1ZVN1MjlLSk9BbXpWX2VULTM3aUZfZjZIQTRnY1RkaUZTay1yWUFyRWdiSHhzYlHSAe8BQVVfeXFMTUhvLVF5VmRMeU80QTVBT05JN2cwWFlBcDJLRGxCczhDb01yYUVsWVBmWDRJMWozclo4WDE3Qk5SMFF1d2hiczk4MXYzOHpremRGbnJnUEU4R1UyNzR2N0FvRW1zNnh6X3RkelMwVW8xdVdQQzAxamQ2Yk5JTEFTMllFSWV4c0hXSkhzbXVTVjdaN25wREZrM2ZpTUJobVB0UVpFN3dRSUpzandpa0F0b2thMl84Q2ZZVzJhQTVfbURGZ3EwaEhVUU40SUhGaDA0OTByRWZBV1gzeUl5aWlTeFVYSHROWW5FMmVtNC1iczQ?oc=5",
+   "source": "Simply Wall St",
+   "time": "2026-11-04T08:00:00+00:00"
+  },
+  {
+   "t": "ODYS",
+   "kind": "filing",
+   "title": "SEC filing: Form ARS",
+   "url": "https://www.sec.gov/Archives/edgar/data/1577445/000149315226049800/0001493152-26-049800-index.htm",
+   "source": "SEC EDGAR",
+   "time": "2026-11-03T21:15:31+00:00"
+  },
+  {
+   "t": "ODYS",
+   "kind": "filing",
+   "title": "SEC filing: Form DEFA14A",
+   "url": "https://www.sec.gov/Archives/edgar/data/1577445/000149315226049795/0001493152-26-049795-index.htm",
+   "source": "SEC EDGAR",
+   "time": "2026-11-03T21:10:28+00:00"
+  },
+  {
+   "t": "ODYS",
+   "kind": "news",
+   "title": "A December 17, 2026 vote at Odysight.ai (ODYS) would add 548,283 shares to its incentive plan if approved.",
+   "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOMlJLak1EQ3kzYThQX215M080QUx2T3ZjOFQ3UUNzOUJVb3JKWWNBbVk5RmlLdEJCU2ZFZGkzVDhXYkJRTmxCekktNnhJX0VrRDYyZVh4LThEcFlRT19hZXQ1MWQtcjBUdEdPN2NKelUxeXFUVjNURzRmbWVLcEpnZnFnQ3RxZXJWVWFqbVJ3UXRnOEx3Z3NyZGtTNGRDR2FTOU4tQ1BRNUI0YXpzT2V4MEt3?oc=5",
+   "source": "Stock Titan",
+   "time": "2026-11-03T21:06:29+00:00"
+  },
+  {
+   "t": "ODYS",
+   "kind": "filing",
+   "title": "SEC filing: Form DEF 14A",
+   "url": "https://www.sec.gov/Archives/edgar/data/1577445/000149315226049789/0001493152-26-049789-index.htm",
+   "source": "SEC EDGAR",
+   "time": "2026-11-03T21:05:48+00:00"
+  },
+  {
+   "t": "XTND",
+   "kind": "news",
+   "title": "XTEND AI Robotics, Inc. Completes Delivery Under $2.8 Million Defense Contract in Asia-Pacific",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQVjROSjEydGx6TjRYRnFmdm5OM1RqazVWblpHcVRFNVZkMnEzOTE5Qjd2R0dqdERiMERHX0Z4LUMzQU1HcjJSSVJ4RjJuMUpyLVFEN052UGw2dHdyU2d3djJYdF8yZ1F4QmVaWGNac2Zua0g2Y2dCNnExT3lReFhnY3RWeE81NWIzMl9RRzc0SzFaN3VNSkZ5TDlGNA?oc=5",
+   "source": "Yahoo Finance",
+   "time": "2026-11-03T08:00:00+00:00"
+  },
+  {
+   "t": "XTND",
+   "kind": "news",
+   "title": "XTND",
+   "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE4zRFZ3S3hWTDh2b21Id0pHQ2hfMkNPZHpfemNQNEU5ZGxXM05HUEh2Sm42clFxMmpLbmk3alpfeXVUdlFWN1JpTEtYX1l1VXZC?oc=5",
+   "source": "Quantisnow",
+   "time": "2026-11-03T08:00:00+00:00"
+  },
+  {
+   "t": "ZIM",
+   "kind": "news",
+   "title": "ZIM Integrated Shipping to Report Q3 2026 Financial Results November 18",
+   "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOWXpROW1LckFuanVUTmNHeHhrRVh4aHhxR010M1FBU29aVmVpZFNtSXBfenNDQzdkaVVHdGF0bkp2X095Y2tMYlBwTjFoWVVoY2tWakF0VGt6QTViV2JrTnRiZ2xDS1FjY1MxQXg0NThjTm9zV1htT1FpSEI3emQtSi1pekJnT1JEMkRHQnpHSXJtUnhJaGtiOC10VWxhaWxFa29Cd0xZTUVNYThuLU5RbUNCZTVSNURJZkpqbWdjU0Q2akVTRTg4R2Rn?oc=5",
+   "source": "Data Portuaria",
+   "time": "2026-11-02T14:10:14+00:00"
+  },
+  {
+   "t": "ZIM",
+   "kind": "news",
+   "title": "ZIM to Release Third Quarter 2026 Results on Wednesday, November 18, 2026",
+   "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQUV9GX2VKOTZib3RRSFA4UzlDRUJXWlp6SjczNWY5Y0dCTXBMZGNCOUJwek5rUnFUejhWTThnV1lqRzZfcHFXenRVYVZYT1Q0eVUwNzVma18xbHd2dm1iM3ItYjVlNHB2MkdXQlFaYUxXcjNGRklKOWp4OGtlTndNZEo1eXRnUUdEUldBaWJaeVBKUm5Wa1YzdGp1U1J2aV9iQ0g0dlpoNWJJX18zeWFHa19LeVB1d1U2VENVcUZWRU9qU2hDUGpia1p3?oc=5",
+   "source": "PR Newswire",
+   "time": "2026-11-02T13:52:49+00:00"
+  },
+  {
+   "t": "ZIM",
+   "kind": "news",
+   "title": "ZIM Integrated Shipping Services (NYSE:ZIM) Stock Forecast & Analyst Predictions",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPRVlWc0lERWtrTVZDUERNMkNCaGl4SWE5VWZJb2NjdkdsNG1EZENSNDEzSERoUmN0OTlsMkh0SFhlalFabUlydG5YQ2hNdUczX3Z4RW9MZDl2QmpTX2tEa1JwVVh3WDhNcXJuSmVQUG5VVkNJV2MzcjhGclVIYzNvUjl0b2dPX3JpTTNYVDJHa2tPSVZsTm5JblhQNA?oc=5",
+   "source": "Simply Wall St",
+   "time": "2026-11-01T07:00:00+00:00"
+  },
+  {
+   "t": "NSRX",
+   "kind": "news",
+   "title": "Maxim Group initiates coverage of Nasus Pharma at Buy, sets price target at $7",
+   "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOOU40YkVMUXpfZUozdllnWXpXeGxUWERORHZlSXltOVo5WURuUy1pUU9zSS0tR3VyX29mZkFzS2xXVWRKQk8xS2c0WDFrWnlnSkRWem8zbEpZcS1Sb1duMW9xY3lVNVR6TzItVDNQamxKbzk0TW92endsZ2FyS0NicWRXVDAydnFnc1NjTzkyT3BfaUkzT2VlblFLckg1Yjd2NHBiMFk4SFgxSVlNSTZFRER0U3J6YmtMdzhuZ2h5aTdzTHFadHhHM043cFNsbDdJeENrcQ?oc=5",
+   "source": "TradingView",
+   "time": "2026-10-30T07:00:00+00:00"
+  },
+  {
+   "t": "ZIM",
+   "kind": "news",
+   "title": "ZIM Integrated Shipping Services (ZIM) Sees a More Significant Dip Than Broader Market: Some Facts to Know",
+   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPWWpQVW04SU1qZHBpWVVNeGlRb3ljWm5pZUx3ZnZNaTAyelZVdlotYW5Kb2ZmQVlsSk8yMk9TU2FjSk10T2ZMRWhLWFZkM0dKTmIzMDVGeXNLalF0ODIxVU1lNERDZXhPZDNsUVJxZ2RaMEJkNktQMnNHa2VobjBRLXgyVDRuTlM0X3NMWi16bmlKNW5aSU5talM1Yjh5WHkwQVBZ?oc=5",
+   "source": "Yahoo Finance",
+   "time": "2026-10-30T07:00:00+00:00"
+  },
+  {
+   "t": "ZIM",
+   "kind": "news",
+   "title": "Zacks Industry Outlook Highlights International Seaways, ZIM Integrated Shipping Services and KNOT Offshore",
+   "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNRlVWYjRlMDY3ZEx5cDM1eDF2dHJMNnJ4N3M5UkhOWGc2U2Z5cTlGcUp2NjVfM3d3T1Y1ZmtHQVBTaTd2RlJTdDR2LTBXM3kteURvLUNiTjRMRXZSZWduVmFsRXRSZXRnTHFuekowc0hTbk1FdHFBWWo5RWZRNlV6WnBHTG5zR3B4U1pfS0h1VlF4R1cyS29UaGZDV0hkbFZuczRQVVhnUDVRWmladlZoYjd3?oc=5",
+   "source": "Yahoo Finance",
+   "time": "2026-10-30T07:00:00+00:00"
+  },
+  {
+   "t": "ZIM",
+   "kind": "news",
+   "title": "ZIM Integrated Shipping Services Ltd. (ZIM) Seasonal Returns Chart",
+   "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE13bjR1NzF5T1BQZlB2WDhseHdnTDhaYW5hTHV2Snc0MjB5dy1nU3g5VnZndC1ZMzlOY0ZuSlJPZzdTa0Z0U3RSeHZzWmx6eWg4ajkyVEhKX0M3c0s1MktRUw?oc=5",
+   "source": "Yahoo! Finance Canada",
+   "time": "2026-10-29T22:05:09+00:00"
+  },
+  {
+   "t": "ZIM",
+   "kind": "news",
+   "title": "ZIM Integrated Shipping Services (ZIM) Declines More Than Market: Some Information for Investors",
+   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOUXk0NWNoZ1Z1aGNCdVFNS1lSc0ZtbnZnSG9RaVN3bF9RUVUtYjg2VFdCLThBX2lhN1N5VHp5U0FoX2RfVU9iRXllODRBa0tyX2NQS3VjdDV0QmgyLTdsS2FOelJEQXR0dEphVHd1QTYtazYzZVlyYVdnMHJYNXZ0UmNJS09QZUluYUMzdG5lTFk3SWIwVk93dmZPWV85RjU5OG40?oc=5",
+   "source": "Yahoo Finance",
+   "time": "2026-10-29T07:00:00+00:00"
+  },
+  {
+   "t": "XTND",
+   "kind": "news",
+   "title": "A $2.35 million defense order bundles XTEND drones with software licenses",
+   "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPcnRXSXR6MHplVUFXVDIyTVV5eXQ0bjlnUEVHSW5YQzZqUlZEOU5IWDJJYU54VW94cGNqYm12aTdqZlYyLUx2aGtiaHk1WTc3elhrQ3FXUjNQTzVrQzJZa3FJcUhyd092MkJIcXdNc0ZJa01yYXUxNW9qUlByOE96X3dBVHNOQlNFc1JNTzYxeVNzckExUkV4aUdsbV9KZGIzbm0wWi1zSnlpLUlLbkh5b3drYXNQUG9YVUxhNGxlTEk?oc=5",
+   "source": "Stock Titan",
+   "time": "2026-10-27T07:00:00+00:00"
+  },
+  {
+   "t": "XTND",
+   "kind": "filing",
+   "title": "SEC filing: Form 8-K",
+   "url": "https://www.sec.gov/Archives/edgar/data/2111860/000119312526431933/0001193125-26-431933-index.htm",
+   "source": "SEC EDGAR",
+   "time": "2026-10-26T20:11:05+00:00"
+  },
+  {
+   "t": "XTND",
+   "kind": "news",
+   "title": "Why Is Xtend AI Robotics Stock Surging Monday?",
+   "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNc2hPc19Wb2l1bXFSeEY4STQwSXlmNUgxVXFXRTY0YkN1eXo2YUNmODlwMjhpQXVMNnBDVldKQkloWXZia2wwM3ZsUmJDaWtyN01FM0JPRm5PNEdxT0plQlNUN09RSUJiaW5FQjNqZWNtbnVhMFRFdl80ejRrQ3BYRHBDMEM4SGhSdnBaZWVSWWRmSlJtSUkzM1RVVE9pWkhTSHc5SmlEdHc0Zw?oc=5",
+   "source": "Benzinga",
+   "time": "2026-10-26T07:00:00+00:00"
+  },
+  {
+   "t": "XTND",
+   "kind": "news",
+   "title": "XTND Nov 2026 6.000 put (XTND261120P00006000) stock price, news, quote and history",
+   "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFAzMGZzZXZGNVZZb0o5ODlwN29tZHdKU0s0Y0lURnRaVmJ0UlpRTy16U09Vb0pWOXlLclJwMl93b2ZleTRsLVhCSjRNNnptUDlmRy11Ukp0NXpUZjFXbzYtTkFiY2dXdw?oc=5",
+   "source": "Yahoo Finance Singapore",
+   "time": "2026-10-25T15:07:03+00:00"
+  },
+  {
+   "t": "ZIM",
+   "kind": "news",
+   "title": "ZIM Integrated Shipping Services (ZIM) Returns To Suez Route As Valuation Debate Heats Up",
+   "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPSXljVDlvSXJhbTlOcmVmekRKRDdlRWs3bzlNMWRIZ2tRYm5xVnRyb0hmTk1EX0VBUlM4TjAzQmFZd24zdEJUOEVHTWs2ai1WbG04enNNM3FqUzg5WThrd2UtZEpBcXVSbHFVLWFVRVhxcGdBZGNXbF9KSkNpQjdINFhuWlNvRmR0S1ZWTVFRS1hNaFBTTi1DVW5tVzBGcnFwRDFvVFFjRV9zZ0hsc1g1OHVZUFVVRkw4VzZqQ2VvMVFBaFE0d2FCeFA3VlRBbkpOeUd1NC1SZFRBcEs0WHRSTjJxQUdOMHlQMXfSAe8BQVVfeXFMTVRMRHBlZ2lHc3NRcV92aU53UzNZZE83OTBuU0Ezc3U5dnFjd09kb1NnRDZFRmNKNWgxamR6d0xxWEdyNWJaNU41VTYyVHRBZnYtOXJJRE9oOS02bUJzSGY2X29MbnFHb1hJdWduX2E5d1VuZXlMMUpKcmFjb2lrS2tNbE84TkFjb09hbUhDR1h5NzctZTM2d0RwZUx4ek1uaXo4OUhPYXh0MnZVZDdXZGNnUzZiM0VlNllLR25jekZzcS1lT0J1dlYxeW1FcFJNdlRJTDVfenZ2cHJJel9nUEZBTXdwenhPckVvOGRDTjQ?oc=5",
+   "source": "Simply Wall St",
+   "time": "2026-10-25T07:00:00+00:00"
+  },
+  {
+   "t": "NSRX",
+   "kind": "news",
+   "title": "Nasus Pharma (NSRX) Jumps 8.05% to $3.49 as Shares Press Toward Upper Trading Range - Jurik MA",
+   "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPSDV3VjJoTW1zWjJSMFlXUDVRMy1wYkROOEthVWcybm96eEtNeG5UNWExd0k1RkduZ0VyMWVPZExTbDBMczFxSEJIVUF1LUVfWDVkNWNfTlE0RHZRU0ZfM0d0RDh0eWVzRWtNOW94NC0yM2hDeTJlSmxRTGh0QUJoSXlCenVjSmZVbDA5OEtQT09aM0g0cWNjeGxRUENJTzMtY0VkUUoweXd4dUlBc0tLdFJLLWtNY1V0bVFLYzZmbw?oc=5",
+   "source": "www.dars.gov.et",
+   "time": "2026-10-24T07:00:00+00:00"
+  }
+ ]
+}
